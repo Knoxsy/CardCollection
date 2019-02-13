@@ -21,7 +21,6 @@ class CreateCardsTable extends Migration
             $table->string('card_number'); // this is a string becuase some cards have numbers and letters
             $table->string('front_image');
             $table->string('back_image');
-            $table->string('condition'); //the condition that the card is in
             // $table->longText('notes'); long text for things longer than a string
             $table->timestamps();
         });

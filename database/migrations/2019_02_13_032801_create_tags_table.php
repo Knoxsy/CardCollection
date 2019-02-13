@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMyCardsTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateMyCardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('my_cards', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('card_id');
-            $table->string('condition'); //the condition that the card is in
+            $table->string('name')->nullable(false);
             $table->timestamps();
-        });
-
-        Schema::table('my_cards', function ($table) {
-          $table->foreign('card_id')->references('id')->on('cards');
         });
     }
 
@@ -32,6 +27,6 @@ class CreateMyCardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('my_cards');
+        Schema::dropIfExists('tags');
     }
 }
