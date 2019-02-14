@@ -14,11 +14,16 @@ class Card extends Model
       return $this->hasMany('App\MyCard');
     }  //Card can have many MyCards
 
-    //belongsTo
-    //hasOne
-    //hasMany
-
     public function tags(){
       return $this->morphMany('App\Tag', 'taggable');
     }  //Card can have many tags
+
+    public function users(){
+      return $this->morphMany('App\User');
+    }  //Card can have many Users
 }
+
+
+    //belongsTo
+    //hasOne
+    //hasMany
