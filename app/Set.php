@@ -11,12 +11,14 @@ class Set extends Model
     }  //Set can have many Cards
 
     public function myCards(){
-      return $this->hasMany('App\MyCard');
+      return $this->hasManyThrough('App\MyCard', 'App\Card');
     }  //Set can have many MyCards
 
     public function users(){
       return $this->morphMany('App\User');
     }  //Set can have many Users
+
+
 
     //No relation to tag since tags only apply to Cards or MyCards
 
