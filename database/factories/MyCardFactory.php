@@ -6,23 +6,21 @@ use Faker\Generator as Faker;
 
 use App\User as User;
 
+use App\Card as Card;
+
 
 $factory->define(App\MyCard::class, function (Faker $faker) {
 
+  return [
+    'user_id' => User::inRandomOrder()->first()->id,
 
+    'card_id' => Card::inRandomOrder()->first()->id,
 
-    return [
-      'user_id' => User::inRandomOrder()->first()->id,
-
-      'card_id' => function () {
-          return factory(App\Card::class)->create()->id;
-      },
-      
-      'condition' => function () {
-        $mycardcondition = [
-          'MT', 'NM', 'EX', 'VG', 'G'
-        ];
-        return $mycardcondition[array_rand($mycardcondition)];
-      }
-    ];
+    'condition' => function () {
+      $mycardcondition = [
+        'MT', 'NM', 'EX', 'VG', 'G'
+      ];
+      return $mycardcondition[array_rand($mycardcondition)];
+    }
+  ];
 });

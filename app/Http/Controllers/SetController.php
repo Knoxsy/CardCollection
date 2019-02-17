@@ -14,7 +14,8 @@ class SetController extends Controller
      */
     public function index()
     {
-        //
+      $data['Set'] = Set::orderBy('year', 'DESC')->get();
+      return view('public/browse', $data);
     }
 
     /**

@@ -14,8 +14,8 @@ class Card extends Model
       return $this->hasMany('App\MyCard');
     }  //Card can have many MyCards
 
-    public function tags(){
-      return $this->morphMany('App\Tag', 'taggable');
+    public function cardtags(){
+      return $this->morphMany('App\CardTag', 'cardtaggable');
     }  //Card can have many tags
 
     public function users(){

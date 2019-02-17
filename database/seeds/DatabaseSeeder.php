@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
 
         factory(App\MyCard::class, 50)->create();
 
-        factory(App\Tag::class, 20)->create();
+        factory(App\Tag::class, 5)->create();
+
+        factory(App\CardTag::class, 20)->create();
 
     }
 }
