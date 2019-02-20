@@ -1,4 +1,5 @@
-### WORK IN PROGRESS 
+### WORK IN PROGRESS
+### There are still bits I need to fill in and edit
 
 # Card Collection App
 
