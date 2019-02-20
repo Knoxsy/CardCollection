@@ -15,7 +15,7 @@ class SetController extends Controller
     public function index()
     {
       $data['set'] = Set::orderBy('genre', 'asc')->get();
-      return view('/browse', $data);
+      return view('browse', $data);
     }
 
     /**
@@ -37,6 +37,31 @@ class SetController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = array(
+          'genre'  => 'required',
+          'year' => 'required',
+          'brand' => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        //process the login
+        if($validator->fails()) {
+          return Redirect::to('sets/create')
+            ->withErrors($validator)
+            ->withInput(Input::except('password'));
+    } else {
+        // store
+        $set = new Set;
+        $set->genre       = Input::get('genre');
+        $set->year      = Input::get('year');
+        $set->brand = Input::get('brand');
+        $set->count = Input::get('count');
+        $set->save();
+
+        // redirect
+            Session::flash('message', 'Successfully created set!');
+            return Redirect::to('set');
+        }
     }
 
     /**
@@ -47,7 +72,9 @@ class SetController extends Controller
      */
     public function show(Set $set)
     {
-        //
+         $set = Set::find($set);
+         return View::make('set.show')
+            ->with('set', $set);
     }
 
     /**
@@ -59,6 +86,7 @@ class SetController extends Controller
     public function edit(Set $set)
     {
         //
+        $set = Nerd::find($set)
     }
 
     /**
@@ -71,6 +99,7 @@ class SetController extends Controller
     public function update(Request $request, Set $set)
     {
         //
+
     }
 
     /**

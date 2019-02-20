@@ -18,4 +18,9 @@ Route::get('/loggedin_collection', 'SiteController@loggedin_collection');
 Route::get('/browse', 'SiteController@browse');
 Route::get('/search', 'SiteController@search');
 
-Route::get('/browse', 'SetController@index');
+//Route::get('/browse', 'SetController@index');
+
+Route::resource('card', 'CardController');
+Route::resource('tag', 'TagController');
+Route::resource('mycard', 'MyCardController');
+Route::resource('set', 'SetController');
