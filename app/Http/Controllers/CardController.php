@@ -14,7 +14,9 @@ class CardController extends Controller
      */
     public function index()
     {
-        //
+      $data['card'] = Card::orderBy('card_number', 'asc')
+        ->get();
+      return view('/browse', $data);
     }
 
     /**

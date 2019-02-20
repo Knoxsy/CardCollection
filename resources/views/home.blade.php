@@ -11,4 +11,8 @@
   <p>INTRO PIC</p>
   <a href="/CardCollection/public/register">REGISTER</a>
   <a href="/CardCollection/public/login">LOGIN</a>
+  </br>
+  <a href="/CardCollection/public/browse">BROWSE</a>
+  <a href="/CardCollection/public/search">SEARCH</a>
+
 @endsection

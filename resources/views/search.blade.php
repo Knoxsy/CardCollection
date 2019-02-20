@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Browse Page')
+@section('title', 'Search Page')
 
 @section('content')
   <h1>BROWSE PAGE</h1>
@@ -16,5 +16,4 @@
     <h2>Team</h2> -->
   </div>
   <!-- Running multiple functions on page gtting errors  -->
-
 @endsection

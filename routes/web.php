@@ -15,4 +15,7 @@ Route::get('/', 'SiteController@home');
 Route::get('/register', 'SiteController@register');
 Route::get('/login', 'SiteController@login');
 Route::get('/loggedin_collection', 'SiteController@loggedin_collection');
-Route::get('/browse', 'SetController@browse');
+Route::get('/browse', 'SiteController@browse');
+Route::get('/search', 'SiteController@search');
+
+Route::get('/browse', 'SetController@index');
