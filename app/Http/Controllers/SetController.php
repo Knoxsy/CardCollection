@@ -86,7 +86,7 @@ class SetController extends Controller
     public function edit(Set $set)
     {
         //
-        $set = Nerd::find($set)
+        $set = Set::find($set)
     }
 
     /**

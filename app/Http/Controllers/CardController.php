@@ -38,6 +38,32 @@ class CardController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = array(
+          'name'  => 'required',
+          'card_number' => 'required',
+          'front_image' => 'required',
+          'back_image' => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        //process the login
+        if($validator->fails()) {
+          return Redirect::to('cards/create')
+            ->withErrors($validator)
+            ->withInput(Input::except('password'));
+    } else {
+        // store
+        $card = new Card;
+        $card->name = Input::get('name');
+        $card->card_number = Input::get('card_number');
+        $card->front_image = Input::get('front_image');
+        $card->back_image = Input::get('back_image');
+        $card->save();
+
+        // redirect
+            Session::flash('message', 'Successfully created card!');
+            return Redirect::to('card');
+        }
     }
 
     /**
