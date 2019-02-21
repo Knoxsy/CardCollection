@@ -26,6 +26,7 @@ class SetController extends Controller
     public function create()
     {
         //
+        return View::make('sets.create');
     }
 
     /**
@@ -86,7 +87,7 @@ class SetController extends Controller
     public function edit(Set $set)
     {
         //
-        $set = Nerd::find($set)
+        $set = Set::find($set)
     }
 
     /**
@@ -99,6 +100,28 @@ class SetController extends Controller
     public function update(Request $request, Set $set)
     {
         //
+        $rules = array(
+            'genre'       => 'required',
+            'year'      => 'required|numeric',
+            'brand' => 'required'
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::to('set/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $set = Set::find($id);
+            $set->name       = Input::get('name');
+            $set->year      = Input::get('year');
+            $set->brand = Input::get('brand');
+            $set->count = Input::get('count');
+            $set->save();
+
+            Session::flash('message', 'Successfully updated nerd!');
+            return Redirect::to('set');
+        }
 
     }
 
@@ -111,5 +134,10 @@ class SetController extends Controller
     public function destroy(Set $set)
     {
         //
+        $set = Set::find($id); //OR ($set)
+        $set->delete();
+
+        Session::flash('message', 'Successfully deleted the nerd!');
+       return Redirect::to('set');
     }
 }
