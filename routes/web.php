@@ -19,8 +19,3 @@ Route::get('/browse', 'SiteController@browse');
 Route::get('/search', 'SiteController@search');
 
 //Route::get('/browse', 'SetController@index');
-
-Route::resource('card', 'CardController');
-Route::resource('tag', 'TagController');
-Route::resource('mycard', 'MyCardController');
-Route::resource('set', 'SetController');

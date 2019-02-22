@@ -41,29 +41,28 @@ class CardController extends Controller
         $rules = array(
           'name'  => 'required',
           'card_number' => 'required',
-          'front_image' => 'required',
-          'back_image' => 'required',
         );
-        $validator = Validator::make(Input::all(), $rules);
 
-        //process the login
-        if($validator->fails()) {
-          return Redirect::to('cards/create')
-            ->withErrors($validator)
-            ->withInput(Input::except('password'));
-    } else {
+    //     $validator = Validator::make(Input::all(), $rules);
+    //
+    //     //process the login
+    //     if($validator->fails()) {
+    //       return Redirect::to('cards/create')
+    //         ->withErrors($validator)
+    //         ->withInput(Input::except('password'));
+    // } else {
         // store
         $card = new Card;
-        $card->name = Input::get('name');
-        $card->card_number = Input::get('card_number');
-        $card->front_image = Input::get('front_image');
-        $card->back_image = Input::get('back_image');
+        $card->name = $request->input('name');
+        $card->card_number = $request->input('card_number');
+        $card->front_image = $request->input('front_image');
+        $card->back_image = $request->input('back_image');
         $card->save();
 
         // redirect
-            Session::flash('message', 'Successfully created card!');
-            return Redirect::to('card');
-        }
+            // Session::flash('message', 'Successfully created card!');
+            // return Redirect::to('card');
+      //}
     }
 
     /**
@@ -106,29 +105,27 @@ class CardController extends Controller
       $rules = array(
         'name'  => 'required',
         'card_number' => 'required',
-        'front_image' => 'required',
-        'back_image' => 'required',
       );
-      $validator = Validator::make(Input::all(), $rules);
-
-      //process the login
-      if($validator->fails()) {
-        return Redirect::to('cards/' . $id . '/edit')
-          ->withErrors($validator)
-          ->withInput(Input::except('password'));
-  } else {
+  //     $validator = Validator::make(Input::all(), $rules);
+  //
+  //     //process the login
+  //     if($validator->fails()) {
+  //       return Redirect::to('cards/' . $id . '/edit')
+  //         ->withErrors($validator)
+  //         ->withInput(Input::except('password'));
+  // } else {
       // store
       $card = Card::find($id);
-      $card->name = Input::get('name');
-      $card->card_number = Input::get('card_number');
-      $card->front_image = Input::get('front_image');
-      $card->back_image = Input::get('back_image');
+      $card->name = $request->input('name');
+      $card->card_number = $request->input('card_number');
+      $card->front_image = $request->input('front_image');
+      $card->back_image = $request->input('back_image');
       $card->save();
 
-      // redirect
-          Session::flash('message', 'Successfully updated card!');
-          return Redirect::to('cards');
-      }
+      // // redirect
+      //     Session::flash('message', 'Successfully updated card!');
+      //     return Redirect::to('cards');
+      // }
   }
 
 

@@ -19,8 +19,8 @@ class CreateCardsTable extends Migration
             //$table->foreign('set_id')->references('id')->on('sets');  //FK
             $table->string('name')->nullable(false);
             $table->string('card_number'); // this is a string becuase some cards have numbers and letters
-            $table->string('front_image');
-            $table->string('back_image');
+            $table->string('front_image')->nullable();
+            $table->string('back_image')->nullable();
             // $table->longText('notes'); long text for things longer than a string
             $table->timestamps();
         });

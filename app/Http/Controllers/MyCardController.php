@@ -53,9 +53,9 @@ class MyCardController extends Controller
   } else {
       // store
       $mycard = new MyCard;
-      $mycard->user_id = Input::get('user_id');
-      $mycard->card_id = Input::get('card_id');
-      $mycard->condition = Input::get('condition');
+      $mycard->user_id = $request->input('user_id');
+      $mycard->card_id = $request->input('card_id');
+      $mycard->condition = $request->input('condition');
       $mycard->save();
 
       // redirect
@@ -116,9 +116,9 @@ class MyCardController extends Controller
   } else {
       // store
       $mycard = MyCard::find($id);
-      $mycard->user_id = Input::get('user_id');
-      $mycard->card_id = Input::get('card_id');
-      $mycard->condition = Input::get('condition');
+      $mycard->user_id = $request->input('user_id');
+      $mycard->card_id = $request->input('card_id');
+      $mycard->condition = $request->input('condition');
       $mycard->save();
 
       // redirect

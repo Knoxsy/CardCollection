@@ -42,27 +42,30 @@ class SetController extends Controller
           'genre'  => 'required',
           'year' => 'required',
           'brand' => 'required',
+          'count' => 'required',
         );
-        $validator = Validator::make(Input::all(), $rules);
 
-        //process the login
-        if($validator->fails()) {
-          return Redirect::to('sets/create')
-            ->withErrors($validator)
-            ->withInput(Input::except('password'));
-    } else {
+    //     $validator = Validator::make(Input::all(), $rules);
+    //
+    //     //process the login
+    //     if($validator->fails()) {
+    //       return Redirect::to('sets/create')
+    //         ->withErrors($validator)
+    //         ->withInput(Input::except('password'));
+    // } else {
+    
         // store
         $set = new Set;
-        $set->genre       = Input::get('genre');
-        $set->year      = Input::get('year');
-        $set->brand = Input::get('brand');
-        $set->count = Input::get('count');
+        $set->genre       = $request->input('genre');
+        $set->year      = $request->input('year');
+        $set->brand = $request->input('brand');
+        $set->count = $request->input('count');
         $set->save();
 
         // redirect
-            Session::flash('message', 'Successfully created set!');
-            return Redirect::to('set');
-        }
+            // Session::flash('message', 'Successfully created set!');
+            // return Redirect::to('set');
+      //
     }
 
     /**
@@ -87,7 +90,7 @@ class SetController extends Controller
     public function edit(Set $set)
     {
         //
-        $set = Set::find($set)
+        $set = Set::find($set);
     }
 
     /**
@@ -113,10 +116,10 @@ class SetController extends Controller
         } else {
             // store
             $set = Set::find($id);
-            $set->name       = Input::get('name');
-            $set->year      = Input::get('year');
-            $set->brand = Input::get('brand');
-            $set->count = Input::get('count');
+            $set->name       = $request->input('name');
+            $set->year      = $request->input('year');
+            $set->brand = $request->input('brand');
+            $set->count = $request->input('count');
             $set->save();
 
             Session::flash('message', 'Successfully updated nerd!');

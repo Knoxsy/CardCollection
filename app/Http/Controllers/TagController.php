@@ -15,8 +15,8 @@ class TagController extends Controller
     public function index()
     {
         //
-        $tag = Tag::all();
-        return View::make('tag.index')
+        $data['tags'] = Tag::all();
+        return View::make('tag.index', $data)
         ->with('tag', $tag);
     }
 
@@ -53,7 +53,7 @@ class TagController extends Controller
         } else {
             // store
             $tag = new Tag;
-            $tag->name       = Input::get('name');
+            $tag->name       = $request->input('name');
             $tag->save();
 
             // redirect
@@ -85,7 +85,7 @@ class TagController extends Controller
     public function edit(Tag $tag)
     {
         //
-        $tag = Tag::find($tag);
+
         return View::make('tag.edit')
           ->with('tag', $tag);
     }
@@ -112,8 +112,8 @@ class TagController extends Controller
                 ->withInput(Input::except('password'));
         } else {
             // store
-            $tag = Tag::find(Tag $tag);
-            $tag->name       = Input::get('name');
+            $tag = Tag::find($tag);
+            $tag->name       = $request->input('name');
             $tag->save();
 
             // redirect
@@ -131,7 +131,7 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
       // delete
-      $tag = Tag::find(Tag $tag);
+      $tag = Tag::find($tag);
       $tag->delete();
 
       // redirect
