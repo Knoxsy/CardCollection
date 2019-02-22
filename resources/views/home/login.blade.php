@@ -18,7 +18,7 @@
         <label><input type="checkbox">REMEMBER ME</label>
         <br />
         <input type='submit'></input>
-        <a href="/CardCollection/public/loggedin_collection">LOGGEDIN COLLECTION</a>
+        <a href="profile">Profile Page</a>
       </div>
     </form>
 @endsection

@@ -10,5 +10,13 @@
   <div>
     <div>User Name</div>
     <div>Cards:</div>
+  </div>
+
+  <div>
+    <div>My Collection</div>
+    <div>Set Genre</div>
+    <div>Sets:</div>
+    <div>Cards:</div>
+
 
 @endsection

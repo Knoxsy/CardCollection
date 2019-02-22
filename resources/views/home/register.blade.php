@@ -23,5 +23,6 @@
       <br />
       <input type='submit'></input>
     </form>
+    <a href="profile">Profile Page</a>
   </div>
 @endsection

@@ -9,9 +9,9 @@
 @section('content')
   <h2>HOME PAGE</h2>
   <p>INTRO PIC</p>
-  <a href="/CardCollection/public/login">LOGIN</a>
-  <a href="/CardCollection/public/register">REGISTER</a>
+  <a href="login">LOGIN</a>
+  <a href="register">REGISTER</a>
   </br>
-  <a href="/CardCollection/public/browse">BROWSE</a>
-  <a href="/CardCollection/public/search">SEARCH</a>
+  <a href="browse">BROWSE</a>
+  <a href="search">SEARCH</a>
 @endsection

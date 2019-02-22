@@ -1,6 +1,6 @@
 @extends('master/master')
 
-@section('title', 'loggedin_collection')
+@section('title', 'Site Name - Collection Page')
 
 {{--
   here we define a section that corresponds with the yield
@@ -9,12 +9,12 @@
 @section('content')
   <h2>DATABASE COLLECTIONS</h2>
   <div>
-    <div>1987 Topps Baseball</div>
+    <div>Random image from set if available</div>
+    <div>Set Year & Brand</div>
     <div>Total cards:</div>
   </div>
-  <div>
-    <div>1989 Topps Baseball</div>
-    <div>Total cards:</div>
-  </div>
+
+
+This Nav Bar will be removed eventually
 @include('partials.collection_navbar')
 @endsection

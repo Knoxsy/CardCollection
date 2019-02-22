@@ -22,4 +22,6 @@
 </div>
 <!-- Running multiple functions on page gtting errors  -->
 
+This Nav Bar will be removed eventually
+@include('partials.collection_navbar')
 @endsection
