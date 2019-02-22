@@ -2,11 +2,12 @@
 
 @section('title', 'Browse Page')
 
+
 @section('content')
   <h1>BROWSE PAGE</h1>
   <div>
     <h2>GENRE</h2>
-    @foreach($set as $set)
+    @foreach($items as $item)
       <!-- need to filter out duplicates pluck or unique possibly -->
         <a href="browse/{{$set->genre}}.php">{{$set->genre}}</a> |
     @endforeach

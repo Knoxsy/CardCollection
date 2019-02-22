@@ -14,7 +14,7 @@ class SetController extends Controller
      */
     public function index()
     {
-      $data['set'] = Set::orderBy('genre', 'asc')->get();
+      $data['items'] = Set::orderBy('genre', 'asc')->get();
       return view('browse', $data);
     }
 
@@ -53,7 +53,7 @@ class SetController extends Controller
     //         ->withErrors($validator)
     //         ->withInput(Input::except('password'));
     // } else {
-    
+
         // store
         $set = new Set;
         $set->genre       = $request->input('genre');
