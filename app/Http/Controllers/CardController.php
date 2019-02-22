@@ -41,6 +41,7 @@ class CardController extends Controller
         $rules = array(
           'name'  => 'required',
           'card_number' => 'required',
+          'set_id' => 'required',
         );
 
     //     $validator = Validator::make(Input::all(), $rules);
@@ -57,6 +58,7 @@ class CardController extends Controller
         $card->card_number = $request->input('card_number');
         $card->front_image = $request->input('front_image');
         $card->back_image = $request->input('back_image');
+        $card->set_id = $request->input('set_id');
         $card->save();
 
         // redirect
@@ -120,6 +122,7 @@ class CardController extends Controller
       $card->card_number = $request->input('card_number');
       $card->front_image = $request->input('front_image');
       $card->back_image = $request->input('back_image');
+      $card->set_id = $request->input('set_id');
       $card->save();
 
       // // redirect

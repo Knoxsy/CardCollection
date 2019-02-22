@@ -41,7 +41,6 @@ class MyCardController extends Controller
       $rules = array(
         'user_id'  => 'required',
         'card_id' => 'required',
-        'condition' => 'required',
       );
       $validator = Validator::make(Input::all(), $rules);
 
@@ -104,7 +103,6 @@ class MyCardController extends Controller
       $rules = array(
         'user_id'  => 'required',
         'card_id' => 'required',
-        'condition' => 'required',
       );
       $validator = Validator::make(Input::all(), $rules);
 
