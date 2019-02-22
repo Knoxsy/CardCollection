@@ -2,11 +2,8 @@
 
 @section('title', 'Site Name - Set Page')
 
-{{--
-  here we define a section that corresponds with the yield
-  present in the master template.
-   --}}
 @section('content')
+  <h2>DATABASE SET VIEW</h2>
   <div>
     <div>Random Card Image</div>
     <div>
@@ -17,8 +14,10 @@
     card 1<br>
     card 2<br>
     card 3...<br>
+  </div>
 
-
-
+<br />
+<br />
+This Nav Bar will be removed eventually
 @include('partials.collection_navbar')
 @endsection

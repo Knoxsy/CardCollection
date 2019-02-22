@@ -1,4 +1,4 @@
-<div class="nav_bar">
+<div>
   <div>
     <button>MENU</button>
   </div>

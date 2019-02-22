@@ -7,6 +7,7 @@
   present in the master template.
    --}}
 @section('content')
+  <h2>PROFILE PAGE</h2>
   <div>
     <div>User Name</div>
     <div>Cards:</div>

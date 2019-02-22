@@ -21,6 +21,8 @@
   </div>
   <div>SEARCH RESULTS</div>
 
+<br />
+<br />
 This Nav Bar will be removed eventually
 @include('partials.collection_navbar')
 @endsection
