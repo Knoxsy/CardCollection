@@ -15,6 +15,3 @@ $factory->define(App\CardTag::class, function (Faker $faker) {
 
     ];
 });
-
-
-      // 'card_id' => $faker->numberBetween($min = 1, $max = 800),

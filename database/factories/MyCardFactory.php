@@ -1,7 +1,5 @@
 <?php
 
-
-
 use Faker\Generator as Faker;
 
 use App\User as User;
