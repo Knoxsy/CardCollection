@@ -10,7 +10,7 @@
     </head>
     <body>
       <div class="container">
-        @include('components.navbar')
+        @include('partials.navbar')
         @yield('content')
       </div>
     </body>

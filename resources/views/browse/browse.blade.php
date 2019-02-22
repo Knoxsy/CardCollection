@@ -1,6 +1,6 @@
-@extends('master')
+@extends('master/master')
 
-@section('title', 'browse')
+@section('title', 'Site Name - Browse Page')
 
 {{--
   here we define a section that corresponds with the yield
@@ -15,11 +15,11 @@
       <a href="browse/{{$set->genre}}.php">{{$set->genre}}</a> |
   @endforeach
   <h2>YEAR</h2>
+    <p>Need another
   <h2>BRAND</h2>
   <!--  <h2>Name</h2>
   <h2>Team</h2> -->
 </div>
 <!-- Running multiple functions on page gtting errors  -->
-  @endforeach
 
 @endsection
