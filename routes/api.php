@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('card', 'CardController');
+Route::resource('tag', 'TagController');
+Route::resource('mycard', 'MyCardController');
+Route::resource('set', 'SetController');

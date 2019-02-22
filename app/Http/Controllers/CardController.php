@@ -16,7 +16,7 @@ class CardController extends Controller
     {
       $data['card'] = Card::orderBy('card_number', 'asc')
         ->get();
-      return view('/browse', $data);
+      return view('browse', $data);
     }
 
     /**
@@ -38,6 +38,34 @@ class CardController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = array(
+          'name'  => 'required',
+          'card_number' => 'required',
+          'set_id' => 'required',
+        );
+
+    //    NEED TO WORK ON VALIDATION
+    //    $validator = Validator::make(Input::all(), $rules);
+    //
+    //     //process the login
+    //     if($validator->fails()) {
+    //       return Redirect::to('cards/create')
+    //         ->withErrors($validator)
+    //         ->withInput(Input::except('password'));
+    // } else {
+        // store
+        $card = new Card;
+        $card->name = $request->input('name');
+        $card->card_number = $request->input('card_number');
+        $card->front_image = $request->input('front_image');
+        $card->back_image = $request->input('back_image');
+        $card->set_id = $request->input('set_id');
+        $card->save();
+
+        // redirect
+            // Session::flash('message', 'Successfully created card!');
+            // return Redirect::to('card');
+      //}
     }
 
     /**
@@ -48,7 +76,9 @@ class CardController extends Controller
      */
     public function show(Card $card)
     {
-        //
+      $card = Card::find($card);
+      return View::make('card.show')
+         ->with('card', $card);
     }
 
     /**
@@ -59,7 +89,11 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-        //
+        $card = Card::find($id);
+
+        // show the edit form and pass the card
+       return View::make('cards.edit')
+           ->with('card', $card);
     }
 
     /**
@@ -71,8 +105,33 @@ class CardController extends Controller
      */
     public function update(Request $request, Card $card)
     {
-        //
-    }
+      $rules = array(
+        'name'  => 'required',
+        'card_number' => 'required',
+      );
+  //     $validator = Validator::make(Input::all(), $rules);
+  //
+  //     //process the login
+  //     if($validator->fails()) {
+  //       return Redirect::to('cards/' . $id . '/edit')
+  //         ->withErrors($validator)
+  //         ->withInput(Input::except('password'));
+  // } else {
+      // store
+      $card = Card::find($id);
+      $card->name = $request->input('name');
+      $card->card_number = $request->input('card_number');
+      $card->front_image = $request->input('front_image');
+      $card->back_image = $request->input('back_image');
+      $card->set_id = $request->input('set_id');
+      $card->save();
+
+      // // redirect
+      //     Session::flash('message', 'Successfully updated card!');
+      //     return Redirect::to('cards');
+      // }
+  }
+
 
     /**
      * Remove the specified resource from storage.
@@ -82,6 +141,12 @@ class CardController extends Controller
      */
     public function destroy(Card $card)
     {
-        //
+      // delete
+      $card = Card::find($id);
+      $card->delete();
+
+      // redirect
+      Session::flash('message', 'Successfully deleted the card!');
+      return Redirect::to('cards');
     }
 }

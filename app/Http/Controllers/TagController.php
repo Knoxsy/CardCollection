@@ -15,6 +15,9 @@ class TagController extends Controller
     public function index()
     {
         //
+        $data['tags'] = Tag::all();
+        return View::make('tag.index', $data)
+        ->with('tag', $tag);
     }
 
     /**
@@ -25,6 +28,7 @@ class TagController extends Controller
     public function create()
     {
         //
+        return View::make('tag.create');
     }
 
     /**
@@ -36,6 +40,26 @@ class TagController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = array(
+            'name'       => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('nerds/create')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $tag = new Tag;
+            $tag->name       = $request->input('name');
+            $tag->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created tag!');
+            return Redirect::to('tag');
+        }
     }
 
     /**
@@ -47,6 +71,9 @@ class TagController extends Controller
     public function show(Tag $tag)
     {
         //
+        $tag = Tag::find($tag);
+        return View::make('tag.show')
+          ->with('tag', $tag);
     }
 
     /**
@@ -58,6 +85,9 @@ class TagController extends Controller
     public function edit(Tag $tag)
     {
         //
+
+        return View::make('tag.edit')
+          ->with('tag', $tag);
     }
 
     /**
@@ -70,6 +100,26 @@ class TagController extends Controller
     public function update(Request $request, Tag $tag)
     {
         //
+        $rules = array(
+            'name'       => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('tag/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $tag = Tag::find($tag);
+            $tag->name       = $request->input('name');
+            $tag->save();
+
+            // redirect
+          Session::flash('message', 'Successfully updated tag!');
+          return Redirect::to('tag');
+      }
     }
 
     /**
@@ -80,6 +130,12 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+      // delete
+      $tag = Tag::find($tag);
+      $tag->delete();
+
+      // redirect
+      Session::flash('message', 'Successfully deleted the tag!');
+      return Redirect::to('tag');
     }
 }

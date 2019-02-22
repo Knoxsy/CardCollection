@@ -14,8 +14,8 @@ class SetController extends Controller
      */
     public function index()
     {
-      $data['set'] = Set::orderBy('genre', 'asc')->get();
-      return view('/browse', $data);
+      $data['items'] = Set::orderBy('genre', 'asc')->get();
+      return view('browse', $data);
     }
 
     /**
@@ -26,6 +26,7 @@ class SetController extends Controller
     public function create()
     {
         //
+        return View::make('sets.create');
     }
 
     /**
@@ -37,6 +38,34 @@ class SetController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = array(
+          'genre'  => 'required',
+          'year' => 'required',
+          'brand' => 'required',
+          'count' => 'required',
+        );
+
+    //     $validator = Validator::make(Input::all(), $rules);
+    //
+    //     //process the login
+    //     if($validator->fails()) {
+    //       return Redirect::to('sets/create')
+    //         ->withErrors($validator)
+    //         ->withInput(Input::except('password'));
+    // } else {
+
+        // store
+        $set = new Set;
+        $set->genre       = $request->input('genre');
+        $set->year      = $request->input('year');
+        $set->brand = $request->input('brand');
+        $set->count = $request->input('count');
+        $set->save();
+
+        // redirect
+            // Session::flash('message', 'Successfully created set!');
+            // return Redirect::to('set');
+      //
     }
 
     /**
@@ -47,7 +76,9 @@ class SetController extends Controller
      */
     public function show(Set $set)
     {
-        //
+         $set = Set::find($set);
+         return View::make('set.show')
+            ->with('set', $set);
     }
 
     /**
@@ -59,6 +90,7 @@ class SetController extends Controller
     public function edit(Set $set)
     {
         //
+        $set = Set::find($set);
     }
 
     /**
@@ -71,6 +103,29 @@ class SetController extends Controller
     public function update(Request $request, Set $set)
     {
         //
+        $rules = array(
+            'genre'       => 'required',
+            'year'      => 'required|numeric',
+            'brand' => 'required'
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::to('set/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $set = Set::find($id);
+            $set->name       = $request->input('name');
+            $set->year      = $request->input('year');
+            $set->brand = $request->input('brand');
+            $set->count = $request->input('count');
+            $set->save();
+
+            Session::flash('message', 'Successfully updated nerd!');
+            return Redirect::to('set');
+        }
+
     }
 
     /**
@@ -82,5 +137,10 @@ class SetController extends Controller
     public function destroy(Set $set)
     {
         //
+        $set = Set::find($id); //OR ($set)
+        $set->delete();
+
+        Session::flash('message', 'Successfully deleted the nerd!');
+       return Redirect::to('set');
     }
 }
