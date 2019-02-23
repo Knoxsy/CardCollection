@@ -95,7 +95,7 @@ class CardController extends Controller
         $card = Card::find($id);
 
         // show the edit form and pass the card
-       return View::make('cards.edit')
+       return View::make('card.edit')
            ->with('card', $card);
     }
 

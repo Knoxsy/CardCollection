@@ -16,7 +16,7 @@ class TagController extends Controller
     {
         //
         $data['tags'] = Tag::all();
-        return View::make('tag.index', $data)
+        return View::make('resource.tag.index', $data)
         ->with('tag', $tag);
     }
 

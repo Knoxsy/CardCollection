@@ -93,7 +93,7 @@ class MyCardController extends Controller
       $mycard = MyCard::find($id);
 
       // show the edit form and pass the mycard
-     return View::make('mycards.edit')
+     return View::make('mycard.edit')
          ->with('mycard', $mycard);
     }
 
