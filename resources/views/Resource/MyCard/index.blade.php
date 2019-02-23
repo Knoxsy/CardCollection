@@ -1,9 +1,9 @@
 <ul>
-@foreach($mycards as $mycard)
+@foreach($items as $item)
 
   <li>
-  {{$mycard->user_id}}
-  {{$mycard->card_id}}
+  {{$item->user_id}}
+  {{$item->card_id}}
   </li>
 @endforeach
 </ul>

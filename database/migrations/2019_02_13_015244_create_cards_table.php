@@ -17,7 +17,7 @@ class CreateCardsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('set_id');
             //$table->foreign('set_id')->references('id')->on('sets');  //FK
-            $table->string('name')->nullable(false);
+            $table->string('name');
             $table->string('card_number'); // this is a string becuase some cards have numbers and letters
             $table->string('front_image')->nullable();
             $table->string('back_image')->nullable();

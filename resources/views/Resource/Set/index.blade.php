@@ -1,8 +1,8 @@
 <ul>
 @foreach($items as $item)
-  <pre>
+  <!-- <pre>
     {{$item}}
-  </pre>
+  </pre> -->
   <li>
   {{$item->count}}
   {{$item->genre}}

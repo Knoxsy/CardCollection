@@ -27,7 +27,7 @@ class SetController extends Controller
     public function create()
     {
         //
-        return View::make('sets.create');
+        return View::make('set.create');
     }
 
     /**
@@ -57,8 +57,8 @@ class SetController extends Controller
 
         // store
         $set = new Set;
-        $set->genre       = $request->input('genre');
-        $set->year      = $request->input('year');
+        $set->genre = $request->input('genre');
+        $set->year  = $request->input('year');
         $set->brand = $request->input('brand');
         $set->count = $request->input('count');
         $set->save();
@@ -109,23 +109,22 @@ class SetController extends Controller
             'year'      => 'required|numeric',
             'brand' => 'required'
         );
-        $validator = Validator::make(Input::all(), $rules);
-        if ($validator->fails()) {
-            return Redirect::to('set/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+        // $validator = Validator::make(Input::all(), $rules);
+        // if ($validator->fails()) {
+        //     return Redirect::to('set/' . $id . '/edit')
+        //         ->withErrors($validator)
+        //         ->withInput(Input::except('password'));
+        // } else {
             // store
-            $set = Set::find($id);
             $set->name       = $request->input('name');
             $set->year      = $request->input('year');
             $set->brand = $request->input('brand');
             $set->count = $request->input('count');
             $set->save();
 
-            Session::flash('message', 'Successfully updated nerd!');
-            return Redirect::to('set');
-        }
+            // Session::flash('message', 'Successfully updated nerd!');
+            // return Redirect::to('set');
+        // }
 
     }
 
@@ -138,10 +137,9 @@ class SetController extends Controller
     public function destroy(Set $set)
     {
         //
-        $set = Set::find($id); //OR ($set)
         $set->delete();
 
-        Session::flash('message', 'Successfully deleted the nerd!');
-       return Redirect::to('set');
+       //  Session::flash('message', 'Successfully deleted the set!');
+       // return Redirect::to('set');
     }
 }
