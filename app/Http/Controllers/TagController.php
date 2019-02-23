@@ -43,23 +43,23 @@ class TagController extends Controller
         $rules = array(
             'name'       => 'required',
         );
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('nerds/create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+        // $validator = Validator::make(Input::all(), $rules);
+        //
+        // // process the login
+        // if ($validator->fails()) {
+        //     return Redirect::to('nerds/create')
+        //         ->withErrors($validator)
+        //         ->withInput(Input::except('password'));
+        // } else {
             // store
             $tag = new Tag;
             $tag->name       = $request->input('name');
             $tag->save();
 
             // redirect
-            Session::flash('message', 'Successfully created tag!');
-            return Redirect::to('tag');
-        }
+            // Session::flash('message', 'Successfully created tag!');
+            // return Redirect::to('tag');
+        // }
     }
 
     /**
@@ -103,23 +103,22 @@ class TagController extends Controller
         $rules = array(
             'name'       => 'required',
         );
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('tag/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+        // $validator = Validator::make(Input::all(), $rules);
+        //
+        // // process the login
+        // if ($validator->fails()) {
+        //     return Redirect::to('tag/' . $id . '/edit')
+        //         ->withErrors($validator)
+        //         ->withInput(Input::except('password'));
+        // } else {
             // store
-            $tag = Tag::find($tag);
-            $tag->name       = $request->input('name');
+            $tag->name = $request->input('name');
             $tag->save();
 
             // redirect
-          Session::flash('message', 'Successfully updated tag!');
-          return Redirect::to('tag');
-      }
+          // Session::flash('message', 'Successfully updated tag!');
+          // return Redirect::to('tag');
+      // }
     }
 
     /**
@@ -131,11 +130,10 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
       // delete
-      $tag = Tag::find($tag);
       $tag->delete();
 
       // redirect
-      Session::flash('message', 'Successfully deleted the tag!');
-      return Redirect::to('tag');
+      // Session::flash('message', 'Successfully deleted the tag!');
+      // return Redirect::to('tag');
     }
 }
