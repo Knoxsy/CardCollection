@@ -10,10 +10,7 @@
 <h1>BROWSE PAGE</h1>
 <div>
   <h2>GENRE</h2>
-  @foreach($set as $set)
-    <!-- need to filter out duplicates pluck or unique possibly -->
-      <a href="browse/{{$set->genre}}.php">{{$set->genre}}</a> |
-  @endforeach
+
   <h2>YEAR</h2>
     <p>Need another
   <h2>BRAND</h2>

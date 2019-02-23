@@ -16,7 +16,8 @@ class CardController extends Controller
     {
       $data['card'] = Card::orderBy('card_number', 'asc')
         ->get();
-      return view('browse', $data);
+        //NOTE eventually change to browse to index
+      return view('browse.browse', $data);
     }
 
     /**
@@ -61,6 +62,8 @@ class CardController extends Controller
         $card->back_image = $request->input('back_image');
         $card->set_id = $request->input('set_id');
         $card->save();
+
+        return $card;
 
         // redirect
             // Session::flash('message', 'Successfully created card!');
@@ -118,13 +121,15 @@ class CardController extends Controller
   //         ->withInput(Input::except('password'));
   // } else {
       // store
-      $card = Card::find($id);
+
       $card->name = $request->input('name');
       $card->card_number = $request->input('card_number');
       $card->front_image = $request->input('front_image');
       $card->back_image = $request->input('back_image');
       $card->set_id = $request->input('set_id');
       $card->save();
+
+      return $card;
 
       // // redirect
       //     Session::flash('message', 'Successfully updated card!');
@@ -142,11 +147,10 @@ class CardController extends Controller
     public function destroy(Card $card)
     {
       // delete
-      $card = Card::find($id);
       $card->delete();
 
       // redirect
-      Session::flash('message', 'Successfully deleted the card!');
-      return Redirect::to('cards');
-    }
+    //   Session::flash('message', 'Successfully deleted the card!');
+    //   return Redirect::to('cards');
+    // }
 }
