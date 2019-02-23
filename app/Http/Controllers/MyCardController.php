@@ -14,10 +14,9 @@ class MyCardController extends Controller
      */
     public function index()
     {
-      $data['mycards'] = MyCard::orderBy('user_id', 'asc')
+      $data['items'] = MyCard::orderBy('card_id', 'asc')
         ->get();
       return view('resource.mycard.index', $data);
-      // return $mycard;
     }
 
     /**
@@ -43,9 +42,12 @@ class MyCardController extends Controller
         'user_id'  => 'required',
         'card_id' => 'required',
       );
-  //     $validator = Validator::make(Input::all(), $rules);
-  //
-  //     //process the login
+
+      //TODO  NEED TO WORK ON VALIDATION
+
+      // $validator = Validator::make(Input::all(), $rules);
+
+      //process the login
   //     if($validator->fails()) {
   //       return Redirect::to('mycards/create')
   //         ->withErrors($validator)
