@@ -17,7 +17,7 @@ class CardController extends Controller
       $data['card'] = Card::orderBy('card_number', 'asc')
         ->get();
         //NOTE eventually change to browse to index
-      return view('browse.browse', $data);
+      return view('Site.index', $data);
     }
 
     /**
@@ -144,13 +144,14 @@ class CardController extends Controller
      * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Card $card)
-    {
-      // delete
-      $card->delete();
-
-      // redirect
-    //   Session::flash('message', 'Successfully deleted the card!');
-    //   return Redirect::to('cards');
-    // }
+   //  public function destroy(Card $card)
+   //  {
+   //    // delete
+   //    $card->delete();
+   //
+   //    return 'Card deleted';
+   //    // redirect
+   //  //   Session::flash('message', 'Successfully deleted the card!');
+   //  //   return Redirect::to('cards');
+   // }
 }
