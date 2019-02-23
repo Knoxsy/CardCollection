@@ -15,9 +15,10 @@ Route::get('/', 'SiteController@home');
 Route::get('/register', 'SiteController@register');
 Route::get('/login', 'SiteController@login');
 Route::get('/loggedin_collection', 'SiteController@loggedin_collection');
-Route::get('/card', 'CardController@index');
-Route::get('/set', 'SetController@index');
-Route::get('/mycard', 'MyCardController@index');
-Route::get('/tag', 'TagController@index');
+
+Route::get('/cards', 'CardController@index');
+Route::get('/sets', 'SetController@index');
+Route::get('/mycards', 'MyCardController@index');
+Route::get('/tags', 'TagController@index');
 
 //Route::get('/browse', 'SetController@index');

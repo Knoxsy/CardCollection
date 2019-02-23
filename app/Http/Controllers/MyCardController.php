@@ -16,7 +16,7 @@ class MyCardController extends Controller
     {
       $data['mycard'] = MyCard::orderBy('card_id', 'asc')
         ->get();
-      return view('browse', $data);
+      return view('Site.mycard', $data);
     }
 
     /**

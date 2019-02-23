@@ -14,8 +14,9 @@ class SetController extends Controller
      */
     public function index()
     {
-      $data['items'] = Set::orderBy('genre', 'asc')->get();
-      return view('browse', $data);
+      $data['items'] = Set::with('cards')->get();
+
+      return view('resource.set.index', $data);
     }
 
     /**

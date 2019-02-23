@@ -14,10 +14,9 @@ class CardController extends Controller
      */
     public function index()
     {
-      $data['card'] = Card::orderBy('card_number', 'asc')
-        ->get();
-        //NOTE eventually change to browse to index
-      return view('Site.index', $data);
+      $data['items'] = Card::orderBy('card_number', 'asc')->get();
+
+      return view('resource.card.index', $data);
     }
 
     /**
