@@ -44,7 +44,8 @@ class CardController extends Controller
           'set_id' => 'required',
         );
 
-    //    NEED TO WORK ON VALIDATION
+    //  TODO  NEED TO WORK ON VALIDATION
+
     //    $validator = Validator::make(Input::all(), $rules);
     //
     //     //process the login
