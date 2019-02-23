@@ -18,6 +18,7 @@
     <div>Set Genre</div>
     <div>Sets:</div>
     <div>Cards:</div>
+</div>
 
 
 @endsection

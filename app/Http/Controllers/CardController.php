@@ -15,7 +15,6 @@ class CardController extends Controller
     public function index()
     {
       $data['items'] = Card::orderBy('card_number', 'asc')->get();
-
       return view('resource.card.index', $data);
     }
 
@@ -94,7 +93,7 @@ class CardController extends Controller
         $card = Card::find($id);
 
         // show the edit form and pass the card
-       return View::make('cards.edit')
+       return View::make('card.update')
            ->with('card', $card);
     }
 

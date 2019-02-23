@@ -14,9 +14,10 @@ class MyCardController extends Controller
      */
     public function index()
     {
-      $data['mycard'] = MyCard::orderBy('card_id', 'asc')
+      $data['mycards'] = MyCard::orderBy('user_id', 'asc')
         ->get();
-      return view('Site.mycard', $data);
+      return view('resource.mycard.index', $data);
+      // return $mycard;
     }
 
     /**
@@ -42,14 +43,14 @@ class MyCardController extends Controller
         'user_id'  => 'required',
         'card_id' => 'required',
       );
-      $validator = Validator::make(Input::all(), $rules);
-
-      //process the login
-      if($validator->fails()) {
-        return Redirect::to('mycards/create')
-          ->withErrors($validator)
-          ->withInput(Input::except('password'));
-  } else {
+  //     $validator = Validator::make(Input::all(), $rules);
+  //
+  //     //process the login
+  //     if($validator->fails()) {
+  //       return Redirect::to('mycards/create')
+  //         ->withErrors($validator)
+  //         ->withInput(Input::except('password'));
+  // } else {
       // store
       $mycard = new MyCard;
       $mycard->user_id = $request->input('user_id');
@@ -57,10 +58,11 @@ class MyCardController extends Controller
       $mycard->condition = $request->input('condition');
       $mycard->save();
 
-      // redirect
-          Session::flash('message', 'Successfully created mycard!');
-          return Redirect::to('mycard');
-      }
+      return $mycard;
+      // // redirect
+      //     Session::flash('message', 'Successfully created mycard!');
+      //     return Redirect::to('mycard');
+      // }
     }
 
     /**
@@ -87,7 +89,7 @@ class MyCardController extends Controller
       $mycard = MyCard::find($id);
 
       // show the edit form and pass the mycard
-     return View::make('mycards.edit')
+     return View::make('mycard.update')
          ->with('mycard', $mycard);
     }
 
@@ -104,25 +106,27 @@ class MyCardController extends Controller
         'user_id'  => 'required',
         'card_id' => 'required',
       );
-      $validator = Validator::make(Input::all(), $rules);
-
-      //process the login
-      if($validator->fails()) {
-        return Redirect::to('mycards/' . $id . '/edit')
-          ->withErrors($validator)
-          ->withInput(Input::except('password'));
-  } else {
+  //     $validator = Validator::make(Input::all(), $rules);
+  //
+  //     //process the login
+  //     if($validator->fails()) {
+  //       return Redirect::to('mycards/' . $id . '/edit')
+  //         ->withErrors($validator)
+  //         ->withInput(Input::except('password'));
+  // } else {
       // store
-      $mycard = MyCard::find($id);
+
       $mycard->user_id = $request->input('user_id');
       $mycard->card_id = $request->input('card_id');
       $mycard->condition = $request->input('condition');
       $mycard->save();
 
-      // redirect
-          Session::flash('message', 'Successfully updated mycard!');
-          return Redirect::to('mycards');
-      }
+      return $mycard;
+
+      // // redirect
+      //     Session::flash('message', 'Successfully updated mycard!');
+      //     return Redirect::to('mycards');
+      // }
     }
 
     /**
@@ -131,14 +135,14 @@ class MyCardController extends Controller
      * @param  \App\MyCard  $myCard
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MyCard $myCard)
+    public function destroy(MyCard $mycard)
     {
       // delete
-      $mycard = MyCard::find($id);
+      // $mycard = MyCard::find($id);
       $mycard->delete();
 
       // redirect
-      Session::flash('message', 'Successfully deleted the mycard!');
-      return Redirect::to('mycards');
+      // Session::flash('message', 'Successfully deleted the mycard!');
+      // return Redirect::to('mycards');
     }
 }

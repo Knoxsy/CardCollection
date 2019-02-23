@@ -12,6 +12,6 @@
   <a href="login">LOGIN</a>
   <a href="register">REGISTER</a>
   </br>
-  <a href="browse">BROWSE</a>
+  <a href="index">BROWSE</a>
   <a href="search">SEARCH</a>
 @endsection

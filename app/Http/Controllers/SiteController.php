@@ -7,16 +7,19 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function home() {
-      return view('home/home');
+      return view('site.home');
     }
     public function register() {
-      return view('home/register');
+      return view('site.register');
     }
     public function login() {
-      return view('home/login');
+      return view('site.login');
     }
     public function search() {
-      return view('browse/search');
+      return view('site.search');
+    }
+    public function index() {
+      return view('site.index');
     }
     public function collection() {
       return view('collection/collection');
