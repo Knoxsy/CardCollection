@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Set;
+
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -18,8 +20,20 @@ class SiteController extends Controller
     public function search() {
       return view('site.search');
     }
-    public function index() {
-      return view('site.index');
+    public function browse() {
+      $data['sets'] = Set::all();
+
+      $data['categories'] = [];
+
+      foreach($data['sets'] as $set){
+        if(!in_array($set->genre, $data['categories'])){
+          array_push($data['categories'], $set->genre);
+        }
+      }
+
+      \Log::debug($data['categories']);
+
+      return view('site.browse', $data);
     }
     public function collection() {
       return view('collection/collection');
