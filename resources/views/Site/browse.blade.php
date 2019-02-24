@@ -8,6 +8,7 @@
   present in the master template.
    --}}
 @section('content')
+
 <h1>BROWSE PAGE</h1>
 
 <div>
@@ -21,9 +22,18 @@
 
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
-    console.log(current_category);
 
-    $('#set_list').children('div').each(function(){
+
+    $('#year_list').children('div').each(function(){
+      console.log($(this).attr('class'));
+
+      if($(this).attr('class') == current_category){
+        $(this).slideDown();
+      }else{
+        $(this).slideUp();
+      }
+    });
+    $('#brand_list').children('div').each(function(){
       console.log($(this).attr('class'));
 
       if($(this).attr('class') == current_category){
@@ -45,7 +55,7 @@
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div id="set_list">
+    <div id="year_list" class="year">
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h2>{{$set->year}}</h2>
@@ -55,7 +65,7 @@
 
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
-    <div id="set_list">
+    <div id="brand_list" class="brand">
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h2>{{$set->brand}}</h2>

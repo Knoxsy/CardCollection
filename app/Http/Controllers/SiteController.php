@@ -31,8 +31,6 @@ class SiteController extends Controller
         }
       }
 
-      \Log::debug($data['categories']);
-
       return view('site.browse', $data);
     }
     public function collection() {
