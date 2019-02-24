@@ -117,13 +117,13 @@ class MyCardController extends Controller
   //         ->withInput(Input::except('password'));
   // } else {
       // store
+      
+      $myCard->user_id = $request->input('user_id');
+      $myCard->card_id = $request->input('card_id');
+      $myCard->condition = $request->input('condition');
+      $myCard->save();
 
-      $mycard->user_id = $request->input('user_id');
-      $mycard->card_id = $request->input('card_id');
-      $mycard->condition = $request->input('condition');
-      $mycard->save();
-
-      return $mycard;
+      return $myCard;
 
       // // redirect
       //     Session::flash('message', 'Successfully updated mycard!');

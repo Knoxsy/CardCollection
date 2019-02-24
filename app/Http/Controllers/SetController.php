@@ -116,7 +116,7 @@ class SetController extends Controller
         //         ->withInput(Input::except('password'));
         // } else {
             // store
-            $set->name       = $request->input('name');
+            $set->genre       = $request->input('genre');
             $set->year      = $request->input('year');
             $set->brand = $request->input('brand');
             $set->count = $request->input('count');
