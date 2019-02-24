@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\MyCard;
 use Illuminate\Http\Request;
 
@@ -102,7 +103,7 @@ class MyCardController extends Controller
      * @param  \App\MyCard  $myCard
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MyCard $myCard)
+    public function update(Request $request, MyCard $mycard)
     {
       $rules = array(
         'user_id'  => 'required',
@@ -117,13 +118,14 @@ class MyCardController extends Controller
   //         ->withInput(Input::except('password'));
   // } else {
       // store
-      
-      $myCard->user_id = $request->input('user_id');
-      $myCard->card_id = $request->input('card_id');
-      $myCard->condition = $request->input('condition');
-      $myCard->save();
+      $mycard->update($request->all());
+      // $mycard->user_id = $request->input('user_id');
+      // $mycard->card_id = $request->input('card_id');
+      // $mycard->condition = $request->input('condition');
+      // $mycard->save();
 
-      return $myCard;
+      return $mycard;
+
 
       // // redirect
       //     Session::flash('message', 'Successfully updated mycard!');
