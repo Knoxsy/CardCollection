@@ -15,9 +15,8 @@ class TagController extends Controller
     public function index()
     {
         //
-        $data['tags'] = Tag::all();
-        return View::make('resource.tag.index', $data)
-        ->with('tag', $tag);
+        $data['items'] = Tag::all();
+        return view('resource.tag.index', $data);
     }
 
     /**
@@ -28,7 +27,7 @@ class TagController extends Controller
     public function create()
     {
         //
-        return View::make('tag.create');
+
     }
 
     /**
@@ -71,9 +70,8 @@ class TagController extends Controller
     public function show(Tag $tag)
     {
         //
-        $tag = Tag::find($tag);
-        return View::make('tag.show')
-          ->with('tag', $tag);
+        $data['item'] = $tag;
+        return view('tag.show', $data);
     }
 
     /**
@@ -86,8 +84,8 @@ class TagController extends Controller
     {
         //
 
-        return View::make('tag.edit')
-          ->with('tag', $tag);
+        $data['item'] = $tag;
+        return view('tag.update', $data);
     }
 
     /**

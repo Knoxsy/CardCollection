@@ -4,9 +4,8 @@
     {{$item}}
   </pre>
   <li>
+  {{$item->id}}
   {{$item->name}}
-  {{$item->card_number}}
-  {{$item->set_id}}
   </li>
 @endforeach
 </ul>
