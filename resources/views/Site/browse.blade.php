@@ -20,6 +20,16 @@
 
 <script>
 
+//NOTE lines 25-31 need to hide the original call
+
+$('#year_list').children('div').each(function(){
+  $(this).slideUp();
+});
+
+$('#brand_list').children('div').each(function(){
+  $(this).hide();
+});
+
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
 
@@ -56,6 +66,7 @@
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
     <div id="year_list" class="year">
+
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h2>{{$set->year}}</h2>
@@ -65,7 +76,7 @@
 
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
-    <div id="brand_list" class="brand">
+    <div id="brand_list" class="brand" >
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h2>{{$set->brand}}</h2>
