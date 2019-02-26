@@ -12,9 +12,9 @@
 */
 
 Route::get('/', 'SiteController@home');
-Route::get('/Site/register', 'SiteController@register');
-Route::get('/Site/login', 'SiteController@login');
-Route::get('/Site/browse', 'SiteController@browse');
+Route::get('/register', 'SiteController@register');
+Route::get('/login', 'SiteController@login');
+Route::get('/browse', 'SiteController@browse');
 
 Route::get('/cards', 'CardController@index');
 Route::get('/sets', 'SetController@index');
