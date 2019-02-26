@@ -11,13 +11,9 @@ $factory->define(App\MyCard::class, function (Faker $faker) {
 
   return [
     'user_id' => User::inRandomOrder()->first()->id,
-
     'card_id' => Card::inRandomOrder()->first()->id,
-
     'condition' => function () {
-      $mycardcondition = [
-        'MT', 'NM', 'EX', 'VG', 'G'
-      ];
+      $mycardcondition = ['MT', 'NM', 'EX', 'VG', 'G'];
       return $mycardcondition[array_rand($mycardcondition)];
     }
   ];

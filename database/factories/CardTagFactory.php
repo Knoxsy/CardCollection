@@ -8,10 +8,8 @@ use Faker\Generator as Faker;
 
 $factory->define(App\CardTag::class, function (Faker $faker) {
 
-    return [
-      'card_id' => Card::inRandomOrder()->first()->id,
-
-      'tag_id' => Tag::inRandomOrder()->first()->id
-
-    ];
+  return [
+    'card_id' => Card::inRandomOrder()->first()->id,
+    'tag_id' => Tag::inRandomOrder()->first()->id
+  ];
 });
