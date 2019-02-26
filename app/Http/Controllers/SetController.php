@@ -7,44 +7,41 @@ use Illuminate\Http\Request;
 
 class SetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      $data['items'] = Set::with('cards')->get();
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    $data['items'] = Set::with('cards')->get();
+    return view('resource.set.index', $data);
+  }
 
-      return view('resource.set.index', $data);
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    return View::make('set.create');
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return View::make('set.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $rules = array(
-          'genre'  => 'required',
-          'year' => 'required',
-          'brand' => 'required',
-          'count' => 'required',
-        );
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $rules = array(
+      'genre'  => 'required',
+      'year' => 'required',
+      'brand' => 'required',
+      'count' => 'required',
+    );
 
     //     $validator = Validator::make(Input::all(), $rules);
     //
@@ -56,59 +53,56 @@ class SetController extends Controller
     // } else {
 
         // store
-        $set = new Set;
-        $set->genre = $request->input('genre');
-        $set->year  = $request->input('year');
-        $set->brand = $request->input('brand');
-        $set->count = $request->input('count');
-        $set->save();
+    $set = new Set;
+    $set->genre = $request->input('genre');
+    $set->year  = $request->input('year');
+    $set->brand = $request->input('brand');
+    $set->count = $request->input('count');
+    $set->save();
 
         // redirect
             // Session::flash('message', 'Successfully created set!');
             // return Redirect::to('set');
       //
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Set  $set
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Set $set)
-    {
-         $set = Set::find($set);
-         return View::make('set.show')
-            ->with('set', $set);
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\Set  $set
+   * @return \Illuminate\Http\Response
+   */
+  public function show(Set $set)
+  {
+    $set = Set::find($set);
+    return View::make('set.show')->with('set', $set);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Set  $set
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Set $set)
-    {
-        //
-        $set = Set::find($set);
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Set  $set
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(Set $set)
+  {
+    $set = Set::find($set);
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Set  $set
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Set $set)
-    {
-        //
-        $rules = array(
-            'genre'       => 'required',
-            'year'      => 'required|numeric',
-            'brand' => 'required'
-        );
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  \App\Set  $set
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, Set $set)
+  {
+    $rules = array(
+      'genre' => 'required',
+      'year' => 'required|numeric',
+      'brand' => 'required'
+    );
         // $validator = Validator::make(Input::all(), $rules);
         // if ($validator->fails()) {
         //     return Redirect::to('set/' . $id . '/edit')
@@ -116,30 +110,29 @@ class SetController extends Controller
         //         ->withInput(Input::except('password'));
         // } else {
             // store
-            $set->genre       = $request->input('genre');
-            $set->year      = $request->input('year');
-            $set->brand = $request->input('brand');
-            $set->count = $request->input('count');
-            $set->save();
+    $set->genre = $request->input('genre');
+    $set->year = $request->input('year');
+    $set->brand = $request->input('brand');
+    $set->count = $request->input('count');
+    $set->save();
 
             // Session::flash('message', 'Successfully updated nerd!');
             // return Redirect::to('set');
         // }
 
-    }
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Set  $set
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Set $set)
-    {
-        //
-        $set->delete();
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Set  $set
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy(Set $set)
+  {
+    $set->delete();
 
        //  Session::flash('message', 'Successfully deleted the set!');
        // return Redirect::to('set');
-    }
+  }
 }
