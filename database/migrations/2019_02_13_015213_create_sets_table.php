@@ -13,15 +13,14 @@ class CreateSetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('genre')->nullable(false);  // i.e.  Baseball, Gaming, Non-Sports, the type of card
-            $table->integer('year');
-            $table->string('brand')->nullable(false);  // i.e. Topps, Fleer, etc.  the manufacturer of the card
-            $table->integer('count');  //total # of cards in the set
-            $table->timestamps();
-
-        });
+      Schema::create('sets', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('genre')->nullable(false);  // i.e.  Baseball, Gaming, Non-Sports, the type of card
+        $table->integer('year');
+        $table->string('brand')->nullable(false);  // i.e. Topps, Fleer, etc.  the manufacturer of the card
+        $table->integer('count');  //total # of cards in the set
+        $table->timestamps();
+      });
     }
 
     /**
@@ -31,6 +30,6 @@ class CreateSetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sets');
+      Schema::dropIfExists('sets');
     }
 }

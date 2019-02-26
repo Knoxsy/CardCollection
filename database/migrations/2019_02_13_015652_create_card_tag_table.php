@@ -13,12 +13,12 @@ class CreateCardTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('card_tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('card_id')->nullable(false);
-            $table->integer('tag_id')->nullable(false);
-            $table->timestamps();
-        });
+      Schema::create('card_tags', function (Blueprint $table) {
+        $table->increments('id');
+        $table->integer('card_id')->nullable(false);
+        $table->integer('tag_id')->nullable(false);
+        $table->timestamps();
+      });
     }
 
     /**
