@@ -22,20 +22,24 @@
 
 //NOTE lines 25-31 need to hide the original call
 
-$('#year_list').children('div').each(function(){
-  $(this).slideUp();
-});
-
-$('#brand_list').children('div').each(function(){
-  $(this).hide();
-});
+// $('#year_list').hide();
+// $(this).next().show();
+//
+// $('#year_list').children('div').each(function(){
+//   $(this).slideUp();
+// });
+//
+// $('#brand_list').children('div').each(function(){
+//   $(this).hide();
+// });
 
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
 
-
+    //YEAR
     $('#year_list').children('div').each(function(){
       console.log($(this).attr('class'));
+
 
       if($(this).attr('class') == current_category){
         $(this).slideDown();
@@ -43,11 +47,13 @@ $('#brand_list').children('div').each(function(){
         $(this).slideUp();
       }
     });
+
+    //BRAND
     $('#brand_list').children('div').each(function(){
       console.log($(this).attr('class'));
 
       if($(this).attr('class') == current_category){
-        $(this).slideDown();
+        $(this).hslideDown();
       }else{
         $(this).slideUp();
       }
@@ -55,6 +61,8 @@ $('#brand_list').children('div').each(function(){
   })
 
 </script>
+
+<!-- BOOTSTRAP TABS -->
 
   <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar">
@@ -65,11 +73,11 @@ $('#brand_list').children('div').each(function(){
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div id="year_list" class="year">
+    <div id="year_list" class="year" type="hidden">
 
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
-        <h2>{{$set->year}}</h2>
+        <h5><a href="{{route('set.index', $set->id)}}">{{$set->year}}</h5>
       </div>
       @endforeach
     </div>
@@ -79,7 +87,7 @@ $('#brand_list').children('div').each(function(){
     <div id="brand_list" class="brand" >
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
-        <h2>{{$set->brand}}</h2>
+        <h5><a href="{{route('set.index', $set->id)}}"> {{$set->brand}}</a></h5>
       </div>
       @endforeach
     </div>
@@ -92,6 +100,6 @@ $('#brand_list').children('div').each(function(){
 </div>
 <!-- Running multiple functions on page gtting errors  -->
 
-This Nav Bar will be removed eventually
-@include('partials.collection_navbar')
+<!-- This Nav Bar will be removed eventually
+@include('partials.collection_navbar') -->
 @endsection
