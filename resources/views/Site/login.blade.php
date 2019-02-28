@@ -9,7 +9,8 @@
 @section('content')
   <h2>LOGIN PAGE</h2>
   <div>
-    <form action="" method="">
+    <!-- <form action="" method=""> -->
+    {!! Form::open(['method'=>'POST', 'action'=>'SiteController@login']) !!}
       <div>
         USERNAME:<input name="username" type="text" placeholder="ENTER USERNAME"></input>
         <br />
@@ -20,5 +21,6 @@
         <input type='submit'></input>
         <a href="profile">Profile Page</a>
       </div>
-    </form>
+      {!! Form::close() !!}
+    <!-- </form> -->
 @endsection
