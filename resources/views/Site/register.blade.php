@@ -10,7 +10,7 @@
   <h2>REGISTER PAGE</h2>
   <div>
     <p>Please fill out this form to register for this website.
-    <form action="" method="">
+    <form action="" method="post">
       <input name="username" type="text" placeholder="USERNAME"></input>
       <br />
       <input name="email" type="text" placeholder="E-MAIL"></input>

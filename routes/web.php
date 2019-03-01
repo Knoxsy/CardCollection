@@ -22,3 +22,7 @@ Route::get('/mycards', 'MyCardController@index');
 Route::get('/tags', 'TagController@index');
 
 //Route::get('/browse', 'SetController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
