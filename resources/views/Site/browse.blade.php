@@ -23,10 +23,10 @@
 //NOTE lines 25-31 need to hide the original call
 
 // $('#year_list').hide();
-// $(this).next().show();
 //
 // $('#year_list').children('div').each(function(){
 //   $(this).slideUp();
+// $(this).next().show();
 // });
 //
 // $('#brand_list').children('div').each(function(){
