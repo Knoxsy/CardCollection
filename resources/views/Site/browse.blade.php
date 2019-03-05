@@ -20,11 +20,8 @@
 
 <script>
 
-//NOTE lines 25-31 need to hide the original call
-
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
-    //var sortDirection = $(this).is('id') ? -1 : 1;
 
     //YEAR
     $('#year_list').show().children('div').each(function(){
@@ -35,7 +32,6 @@
         $(this).slideDown();
       }else{
         $(this).slideUp();
-
       }
     });
 
