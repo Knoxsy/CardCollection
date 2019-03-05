@@ -36,8 +36,9 @@
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
 
+
     //YEAR
-    $('#year_list').children('div').each(function(){
+    $('#year_list').show().children('div').each(function(){
       console.log($(this).attr('class'));
 
 
@@ -49,7 +50,7 @@
     });
 
     //BRAND
-    $('#brand_list').children('div').each(function(){
+    $('#brand_list').show().children('div').each(function(){
       console.log($(this).attr('class'));
 
       if($(this).attr('class') == current_category){
@@ -73,7 +74,7 @@
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div id="year_list" class="year" type="hidden">
+    <div id="year_list" class="year" type="hidden" style="display:none">
 
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
@@ -84,7 +85,7 @@
 
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
-    <div id="brand_list" class="brand" >
+    <div id="brand_list" class="brand" style="display:none">
       @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h5><a href="{{route('set.index', $set->id)}}"> {{$set->brand}}</a></h5>
