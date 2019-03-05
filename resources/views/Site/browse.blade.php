@@ -53,7 +53,7 @@
       console.log($(this).attr('class'));
 
       if($(this).attr('class') == current_category){
-        $(this).hslideDown();
+        $(this).slideDown();
       }else{
         $(this).slideUp();
       }
