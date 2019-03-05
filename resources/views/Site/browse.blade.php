@@ -36,12 +36,9 @@
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
 
-
     //YEAR
-    $('#year_list').show().children('div').each(function(){
+    $('#year_list').show().sort().children('div').each(function(){
       console.log($(this).attr('class'));
-
-
       if($(this).attr('class') == current_category){
         $(this).slideDown();
       }else{
@@ -52,9 +49,8 @@
     //BRAND
     $('#brand_list').show().children('div').each(function(){
       console.log($(this).attr('class'));
-
       if($(this).attr('class') == current_category){
-        $(this).hslideDown();
+        $(this).slideDown();
       }else{
         $(this).slideUp();
       }
