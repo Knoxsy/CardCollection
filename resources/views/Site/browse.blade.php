@@ -37,7 +37,7 @@
     var current_category = $(this).attr('id');
 
     //YEAR
-    $('#year_list').children('div').each(function(){
+    $('#year_list').show().children('div').each(function(){
       console.log($(this).attr('class'));
 
 
@@ -49,11 +49,11 @@
     });
 
     //BRAND
-    $('#brand_list').children('div').each(function(){
+    $('#brand_list').show().children('div').each(function(){
       console.log($(this).attr('class'));
 
       if($(this).attr('class') == current_category){
-        $(this).hslideDown();
+        $(this).slideDown();
       }else{
         $(this).slideUp();
       }
@@ -73,9 +73,9 @@
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div id="year_list" class="year" type="hidden">
+    <div id="year_list" class="year" type="hidden" style="display:none">
 
-      @foreach($sets as $set)
+      @foreach($sets->sortBy('year') as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h5><a href="{{route('set.show', $set->id)}}">{{$set->year}}</h5>
       </div>
@@ -84,8 +84,8 @@
 
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
-    <div id="brand_list" class="brand" >
-      @foreach($sets as $set)
+    <div id="brand_list" class="brand" style="display:none">
+      @foreach($sets->sortBy('brand') as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h5><a href="{{route('set.show', $set->id)}}"> {{$set->brand}}</a></h5>
       </div>
