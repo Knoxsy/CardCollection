@@ -20,14 +20,27 @@
 
 <script>
 
+//NOTE lines 25-31 need to hide the original call
+
+// $('#year_list').hide();
+//
+// $('#year_list').children('div').each(function(){
+//   $(this).slideUp();
+// $(this).next().show();
+// });
+//
+// $('#brand_list').children('div').each(function(){
+//   $(this).hide();
+// });
+
   $('.category_button').click(function(){
     var current_category = $(this).attr('id');
 
     //YEAR
-    $('#year_list').show().children('div').each(function(){
-      var year_list = $(this).attr('year');
-      var sortDirection = $(this).is('#year_list') ? -1 : 1;
+    $('#year_list').children('div').each(function(){
       console.log($(this).attr('class'));
+
+
       if($(this).attr('class') == current_category){
         $(this).slideDown();
       }else{
@@ -36,10 +49,11 @@
     });
 
     //BRAND
-    $('#brand_list').show().children('div').each(function(){
+    $('#brand_list').children('div').each(function(){
       console.log($(this).attr('class'));
+
       if($(this).attr('class') == current_category){
-        $(this).slideDown();
+        $(this).hslideDown();
       }else{
         $(this).slideUp();
       }
@@ -59,22 +73,22 @@
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div id="year_list" class="year" type="hidden" style="display:none">
-      @foreach($sets->sortBy('year') as $set)
+    <div id="year_list" class="year" type="hidden">
+
+      @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
-        <h5><a href="{{route('set.index', $set->id)}}">{{$set->year}}</h5>
+        <h5><a href="{{route('set.show', $set->id)}}">{{$set->year}}</h5>
       </div>
       @endforeach
     </div>
 
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
-    <div id="brand_list" class="brand" style="display:none">
-      @foreach($sets->sortBy('brand') as $set)
+    <div id="brand_list" class="brand" >
+      @foreach($sets as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
-        <h5><a href="{{route('set.index', $set->id)}}"> {{$set->brand}}</a></h5>
+        <h5><a href="{{route('set.show', $set->id)}}"> {{$set->brand}}</a></h5>
       </div>
-
       @endforeach
     </div>
 

@@ -17,7 +17,8 @@ Route::get('/login', 'SiteController@login');
 Route::get('/browse', 'SiteController@browse');
 
 Route::get('/cards', 'CardController@index');
-Route::get('/sets', 'SetController@index');
+// Route::get('/sets', 'SetController@index');
+Route::get('/sets', 'SetController@show');
 Route::get('/mycards', 'MyCardController@index');
 Route::get('/tags', 'TagController@index');
 

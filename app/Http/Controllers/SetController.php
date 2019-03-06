@@ -74,8 +74,8 @@ class SetController extends Controller
    */
   public function show(Set $set)
   {
-    $set = Set::find($set);
-    return View::make('set.show')->with('set', $set);
+    $data['item'] = $set;
+    return view('resource.set.item', $data);
   }
 
   /**
