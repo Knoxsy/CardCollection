@@ -75,7 +75,7 @@
 
     <div id="year_list" class="year" type="hidden" style="display:none">
 
-      @foreach($sets->sortBy('year') as $set)
+      @foreach($sets->sortBy('year')->unique('year')->values()->all() as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h5><a href="{{route('set.show', $set->id)}}">{{$set->year}}</h5>
       </div>
@@ -85,7 +85,7 @@
   </div>
   <div class="mdl-tabs__panel" id="lannisters-panel">
     <div id="brand_list" class="brand" style="display:none">
-      @foreach($sets->sortBy('brand') as $set)
+      @foreach($sets->sortBy('brand')->unique('brand')->values()->all() as $set)
       <div id="{{$set->id}}" class="{{$set->genre}}">
         <h5><a href="{{route('set.show', $set->id)}}"> {{$set->brand}}</a></h5>
       </div>
