@@ -36,7 +36,7 @@ End with an example of getting some data out of the system or using it for a lit
 ## Built With
 
 * [Laravel](https://laravel.com/) - The web framework used
-* [Bootstrap](https://getbootstrap.com/) - Front end styling library
+* [Material Design Lite](https://getmdl.io/) - Front end styling library
 * [MySQL](https://www.mysql.com/) - Database management
 
 ## Authors
@@ -44,5 +44,13 @@ End with an example of getting some data out of the system or using it for a lit
 * **Jeremy Cornell**
 * **Sharon Fuller**
 * **Jamie Guay**
+
+## Trouble Shooting
+### If you need to re-clone
+
+* Clone the repository from GitHub.
+* Run "composer install" in the command line.
+* Run "php artisan Migrate:refresh --seed" in command line.
+
 
 
