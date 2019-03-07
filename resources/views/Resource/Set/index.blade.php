@@ -3,7 +3,7 @@
 @section('title', 'Cardboard Gems - Set View Page')
 
 @section('content')
-  <h2>ALL SET VIEW PAGE</h2>
+  <h3>ALL SET VIEW PAGE</h3>
   <ul>
   @foreach($items as $item)
     <a href="/CardCollection/public/set/{{$item->id}}">

@@ -1,5 +1,5 @@
 
-  <h2>ALL CARD VIEW PAGE</h2>
+  <h3>ALL CARD VIEW PAGE</h3>
   <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" border>
     <thead>
       <tr>
