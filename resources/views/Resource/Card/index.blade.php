@@ -1,12 +1,24 @@
-<ul>
-@foreach($items as $item)
-  <pre>
-    {{$item}}
-  </pre>
-  <li>
-  {{$item->name}}
-  {{$item->card_number}}
-  {{$item->set_id}}
-  </li>
-@endforeach
-</ul>
+
+  <h2>ALL CARD VIEW PAGE</h2>
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" border>
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Card Number</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($items as $item)
+        <tr>
+          <td>{{$item->set_id}}-{{$item->card_number}}</td>
+          <td>
+            <a href="/CardCollection/public/card/{{$item->id}}">{{$item->name}}</a>
+          </td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+
+  <ul>
+
+  </ul>

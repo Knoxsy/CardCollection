@@ -1,17 +1,12 @@
 @extends('master/master')
 
-@section('title', 'Site Name - Home Page')
+@section('title', 'Cardboard Gems - Home Page')
 
-{{--
-  here we define a section that corresponds with the yield
-  present in the master template.
-   --}}
 @section('content')
-  <h2>HOME PAGE</h2>
-  <p>INTRO PIC</p>
+  <div>
+  <h3>HOME PAGE</h3>
+  <a href="browse">BROWSE</a>
   <a href="login">LOGIN</a>
   <a href="register">REGISTER</a>
-  </br>
-  <a href="browse">BROWSE</a>
-  <a href="search">SEARCH</a>
+</div>
 @endsection

@@ -10,19 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+// Route::get('/register', 'SiteController@register');
+// Route::get('/login', 'SiteController@login');
+//
+//
+// Auth::routes();
+//
+// Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/', 'SiteController@home');
-Route::get('/register', 'SiteController@register');
-Route::get('/login', 'SiteController@login');
 Route::get('/browse', 'SiteController@browse');
+Route::get('/contact', 'SiteController@contact');
 
-Route::get('/cards', 'CardController@index');
-Route::get('/sets', 'SetController@index');
-Route::get('/mycards', 'MyCardController@index');
-Route::get('/tags', 'TagController@index');
-
-//Route::get('/browse', 'SetController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('card', 'CardController');
+Route::resource('tag', 'TagController');
+Route::resource('mycard', 'MyCardController');
+Route::resource('set', 'SetController');

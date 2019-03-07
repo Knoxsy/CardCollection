@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Set;
+use App\Post;
 use Illuminate\Http\Request;
 
 class SetController extends Controller
@@ -14,8 +15,9 @@ class SetController extends Controller
    */
   public function index()
   {
+    // return Set::with('cards')->get();
     $data['items'] = Set::with('cards')->get();
-    return view('resource.set.index', $data);
+    return view('site.browse', $data);
   }
 
   /**
@@ -72,10 +74,13 @@ class SetController extends Controller
    * @param  \App\Set  $set
    * @return \Illuminate\Http\Response
    */
-  public function show(Set $set)
+  public function show($id)
   {
-    $set = Set::find($set);
-    return View::make('set.show')->with('set', $set);
+    // return Set::find($id);
+    // $set = Set::find($set);
+    // return View::make('set.show')->with('set', $set);
+    $set = Set::find($id);
+    return view('resource.set.item')->with('set', $set);
   }
 
   /**
