@@ -2,8 +2,6 @@
 
 @section('title', 'Cardboard Gems - Set View Page')
 
-
-
 @section('content')
   <h1>
   {{$set->genre}}:
