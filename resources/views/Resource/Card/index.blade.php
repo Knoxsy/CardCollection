@@ -7,6 +7,7 @@
         <th>Name</th>
       </tr>
     </thead>
+    //TODO need to paginate the page.
     <tbody>
       @foreach($items as $item)
         <tr>
