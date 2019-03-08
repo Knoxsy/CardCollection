@@ -42,11 +42,11 @@
       <div class="mdl-layout__drawer mdl-color--blue-grey-900">
         <span class="mdl-layout-title mdl-color-text--white">Title</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link mdl-color-text--white" href="">Home</a>
-          <a class="mdl-navigation__link mdl-color-text--white" href="">Cards</a>
-          <a class="mdl-navigation__link mdl-color-text--white" href="">Browse Collections</a>
-          <a class="mdl-navigation__link mdl-color-text--white" href="">My Collections</a>
+          <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
+           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
+           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/set">Set View</a>
+           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/card">Card View</a>
+           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
 
         </nav>
     </div>
-
