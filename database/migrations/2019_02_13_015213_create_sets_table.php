@@ -16,8 +16,9 @@ class CreateSetsTable extends Migration
       Schema::create('sets', function (Blueprint $table) {
         $table->increments('id');
         $table->string('genre')->nullable(false);  // i.e.  Baseball, Gaming, Non-Sports, the type of card
-        $table->integer('year');
+        $table->integer('year')->nullable(false);
         $table->string('brand')->nullable(false);  // i.e. Topps, Fleer, etc.  the manufacturer of the card
+        // $table->string('type');
         $table->integer('count');  //total # of cards in the set
         $table->timestamps();
       });

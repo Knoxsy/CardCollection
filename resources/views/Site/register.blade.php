@@ -7,7 +7,7 @@
   present in the master template.
    --}}
 @section('content')
-  <h2>REGISTER PAGE</h2>
+  <h3>REGISTER PAGE</h3>
   <div>
     <p>Please fill out this form to register for this website.
     <form action="" method="post">

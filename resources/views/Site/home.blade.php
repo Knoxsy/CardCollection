@@ -1,12 +1,9 @@
 @extends('master/master')
 
-@section('title', 'Site Name - Home Page')
+@section('title', 'Cardboard Gems - Home Page')
 
-{{--
-  here we define a section that corresponds with the yield
-  present in the master template.
-   --}}
 @section('content')
+
   <main class="mdl-layout__content">
     <div class="page-content">
 
@@ -40,5 +37,6 @@
   <div class="footer">
     <p>Contact Us</p>
   </div>
+
 </div>
 @endsection

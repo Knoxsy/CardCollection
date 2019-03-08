@@ -7,7 +7,7 @@
   present in the master template.
    --}}
 @section('content')
-  <h2>LOGIN PAGE</h2>
+  <h3>LOGIN PAGE</h3>
   <div>
     <!-- <form action="" method=""> -->
     {!! Form::open(['method'=>'POST', 'action'=>'SiteController@login']) !!}

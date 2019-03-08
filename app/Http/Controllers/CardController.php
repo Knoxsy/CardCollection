@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use View;
 use App\Card;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CardController extends Controller
    */
   public function index()
   {
-    $data['items'] = Card::orderBy('card_number', 'asc')->get();
+    $data['items'] = Card::orderBy('set_id', 'asc')->orderBy('card_number', 'asc')->get();
     return view('resource.card.index', $data);
   }
 
@@ -69,17 +70,24 @@ class CardController extends Controller
       //}
   }
 
-  /**
-   * Display the specified resource.
+
+
+
+  /**  SHOW METHOD - Display the specified resource.
    *
    * @param  \App\Card  $card
    * @return \Illuminate\Http\Response
    */
-  public function show(Card $card)
+  public function show($id)
   {
-    $card = Card::find($card);
-    return View::make('card.show')->with('card', $card);
+    // return Card::find($id);
+    $card = Card::find($id);
+    return view('resource.card.item')->with('card', $card);
   }
+
+
+
+
 
     /**
      * Show the form for editing the specified resource.
