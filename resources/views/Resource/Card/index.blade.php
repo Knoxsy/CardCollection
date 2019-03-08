@@ -19,7 +19,3 @@
       @endforeach
     </tbody>
   </table>
-
-  <ul>
-
-  </ul>

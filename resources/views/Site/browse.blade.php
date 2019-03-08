@@ -65,7 +65,7 @@
       <div id="year_list" class="year" type="hidden" style="display:none">
         @foreach($sets->sortBy('year')->unique('year')->values()->all() as $set)
           <div id="{{$set->id}}" class="{{$set->genre}}">
-            <h6> {{$set->year}}</h6>
+            <h6>{{$set->year}}</h6>
             <li>
               <a href="{{route('set.show', $set->id)}}">  {{$set->year}} {{$set->brand}}</a>
             </li>
@@ -78,7 +78,7 @@
       <div id="brand_list" class="brand" style="display:none">
         @foreach($sets->sortBy('brand')->unique('brand')->values()->all() as $set)
           <div id="{{$set->id}}" class="{{$set->genre}}">
-            <h6> {{$set->brand}}</h6>
+            <h6>{{$set->brand}}</h6>
             <li>
               <a href="{{route('set.show', $set->id)}}">{{$set->year}} {{$set->brand}}</a>
             </li>

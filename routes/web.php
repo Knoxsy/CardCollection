@@ -24,10 +24,13 @@ Route::get('/', 'SiteController@home');
 Route::get('/browse', 'SiteController@browse');
 Route::get('/contact', 'SiteController@contact');
 
-Route::get('/cards', 'CardController@index');
-Route::get('/sets', 'SetController@show');
-Route::get('/mycards', 'MyCardController@index');
-Route::get('/tags', 'TagController@index');
+Route::get('/card', 'CardController@index');
+Route::get('/card/{card}', 'CardController@show');
+Route::get('/set', 'SetController@index');
+Route::get('/set/{set}', 'SetController@show');
+
+// Route::get('/mycard', 'MyCardController@index');
+// Route::get('/tag', 'TagController@index');
 
 
 Auth::routes();
