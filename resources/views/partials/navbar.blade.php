@@ -44,8 +44,6 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
-           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/resource/views/Resource/Set/item">Set View</a>
-           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/card">Card View</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
 
         </nav>
