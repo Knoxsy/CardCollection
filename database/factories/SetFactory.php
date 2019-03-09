@@ -23,7 +23,7 @@ $factory->define(App\Set::class, function (Faker $faker) {
     //     'Garbage Pail Kids', 'Star Wars', 'Goonies'
     //   ];
     //   return $set_type[array_rand($set_type)];
-    // }
+    // },
     'count' => 800
   ];
 });
