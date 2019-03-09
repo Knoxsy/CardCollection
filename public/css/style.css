@@ -35,3 +35,9 @@ body {
   color: white;
   text-align: center;
 }
+
+.logInType {
+  color: red;
+  font-family: fantasy;
+  font-size: 40px;
+}
