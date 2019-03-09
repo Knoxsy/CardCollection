@@ -126,4 +126,22 @@ body {
   background: #263238;
   opacity: 0.9;
 }
+
+.noUnderline {
+  text-decoration: none;
+}
+
+.toTheLeft {
+  float: left;
+  width: 60%;
+}
+
+.toTheRight {
+  width: 40%;
+  float: left;
+}
+
+h4 {
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
 }
