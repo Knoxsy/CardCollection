@@ -3,7 +3,7 @@
       <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
         <div class="mdl-layout__header-row mdl-color--blue-grey-900">
           <!-- Title -->
-          <span class="mdl-layout-title">Card Collector</span>
+          <span class="mdl-layout-title">Cardboard Gems</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
 
@@ -40,7 +40,7 @@
         </div>
       </header>
       <div class="mdl-layout__drawer mdl-color--blue-grey-900">
-        <span class="mdl-layout-title mdl-color-text--white">Title</span>
+        <span class="mdl-layout-title mdl-color-text--white">Cardboard Gems</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>

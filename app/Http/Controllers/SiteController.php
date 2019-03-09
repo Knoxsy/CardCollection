@@ -37,16 +37,4 @@ class SiteController extends Controller
     sort($data['brands']);
     return view('site.browse', $data);
   }
-  public function collection() {
-    return view('collection/collection');
-  }
-  public function set() {
-    return view('collection/set');
-  }
-  public function card() {
-    return view('collection/card');
-  }
-  public function profile() {
-    return view('profile/profile');
-  }
 }
