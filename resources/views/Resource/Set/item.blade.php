@@ -1,26 +1,32 @@
 @extends('master/master')
 
-@section('title', 'Cardboard Gems - Set View Page')
+@section('title', 'Cardboard Gems')
 
 @section('content')
-  <h1>
-  {{$set->genre}}:
-</h1>
-  <h2>
-  {{$set->year}}
-  {{$set->brand}}
-</h2><br />
-Count: {{$set->count}}
 
-<ul>
+<div>
+  <h4>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->genre}}</h4><br />
+  <span>Count: {{$set->count}}</span>
+</div>
 
-<li>
+<table width="350px" border>
+  <thead>
+    <tr>
+      <th width="50px">Have</th>
+      <th width="50px">Card #</th>
+      <th width="250px">Name</th>
+    </tr>
+  </thead>
 
-<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-  <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-  <span class="mdl-checkbox__label">{{$set->cards}}</span>
-</label>
-</li>
-</ul>
+  <tbody>
+    @foreach($cards as $card)
+    <tr>
+      <td><input type="checkbox"></td>
+      <td><a href="{{route('card.show', $card->id)}}">{{$card->card_number}}</a></td>
+      <td><a href="{{route('card.show', $card->id)}}">{{$card->name}}</a></td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
 
 @endsection

@@ -7,8 +7,19 @@
   Developers:
   <ul>
     <li>Jeremy Cornell</li>
+    <ul>
+      <li>jeremy.cornell77@gmail.com</li>
+    </ul>
     <li>Sharon Fuller</li>
-    <li>Jamie Guay</li>
+    <ul>
+      <li>--E-Mail Address--</li>
+    </ul>
+    <li>Jamie Guay</li><ul>
+      <li>--E-Mail Address--</li>
+    </ul>
     <li>Sydney Knox</li>
+    <ul>
+      <li>--E-Mail Address--</li>
+    </ul>
   </ul>
 @endsection
