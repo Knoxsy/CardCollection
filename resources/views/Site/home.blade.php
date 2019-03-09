@@ -7,7 +7,6 @@
   <main class="mdl-layout__content">
     <div class="page-content">
 
-      <a href="browse">BROWSE</a>
 
       <div class="demo-card-square mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title mdl-card--expand">
@@ -20,11 +19,11 @@
 
         <div class="butts1">
 
-
+          <a href="browse">
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
               Browse Collections
             </button>
-
+          </a>
 
         </div>
       </div>
@@ -32,7 +31,7 @@
   </main>
   </br>
 
-  <a href="browse">BROWSE</a>
+
 
   <div class="footer">
     <p>Contact Us</p>
