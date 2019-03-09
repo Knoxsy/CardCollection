@@ -6,6 +6,81 @@
 
 <h3>BROWSE PAGE</h3>
 
+
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<main class="mdl-layout__content">
+
+<div class="mdl-grid">
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Baseball Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image1 mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Basketball Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image2 mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Football Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image3 mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Misc. Sports</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image4 mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Gaming Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="demo-card-image5 mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">Other Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
 <div>
   @foreach($categories as $category)
   <button class="category_button" id="{{$category}}">{{$category}}</button>

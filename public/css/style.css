@@ -35,3 +35,95 @@ body {
   color: white;
   text-align: center;
 }
+
+.demo-card-image.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('basetile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+.demo-card-image__filename {
+  margin: auto;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+
+.demo-card-image1.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('basketballTile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image1 > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+
+.demo-card-image2.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('footballTile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image2 > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+
+.demo-card-image3.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('sportscardTile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image3 > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+
+.demo-card-image4.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('gamingcardsTile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image4 > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+
+.demo-card-image5.mdl-card {
+  width: 205px;
+  height: 332px;
+  background: url('otherTile.jpg') center / cover;
+  border-radius: 25px;
+}
+
+.demo-card-image5 > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: #263238;
+  opacity: 0.9;
+}
+}
