@@ -3,15 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 class Set extends Model
 {
     public function cards(){
-      $setCardNumber = $this->hasMany('App\Card')->select(array('card_number'));
-      return $setCardNumber;
-      $setName = $this->hasMany('App\Card')->select(array('name'));
-      return $setName;
+
+      return $this->hasMany('App\Card');
     }  //Set can have many Cards
+    //$set->Set::find(1)
 
     public function myCards(){
       return $this->hasManyThrough('App\MyCard', 'App\Card');

@@ -74,12 +74,16 @@ class SetController extends Controller
    * @param  \App\Set  $set
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show(Set $set)
   {
     // $set = Set::find($set);
     // return View::make('set.show')->with('set', $set);
-    $set = Set::find($id);
-    return view('resource.set.item')->with('set', $set);
+    // $set = Set::find($id)->select('name', 'card_number')->get();
+
+    $data['set'] = $set;
+    $data['cards'] = $set->cards()->select('name', 'card_number')->get();
+
+    return view('resource.set.item', $data);
   }
 
   /**
