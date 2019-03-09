@@ -8,7 +8,18 @@ class Set extends Model
 {
     public function cards(){
       return $this->hasMany('App\Card');
-    }
+    }  //Set can have many Cards
 
-    //hasManyThrough
+    public function myCards(){
+      return $this->hasManyThrough('App\MyCard', 'App\Card');
+    }  //Set can have many MyCards
+
+    public function users(){
+      return $this->morphMany('App\User');
+    }  //Set can have many Users
+
+
+
+    //No relation to tag since tags only apply to Cards or MyCards
+
 }

@@ -13,16 +13,18 @@ class CreateMyCardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('my_cards', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('card_id');
-            $table->string('condition'); //the condition that the card is in
-            $table->timestamps();
-        });
+      Schema::create('my_cards', function (Blueprint $table) {
+        $table->increments('id');
+        $table->unsignedInteger('user_id');
+        $table->unsignedInteger('card_id');
+        $table->string('condition');
+        $table->timestamps();
+      });
 
-        Schema::table('my_cards', function ($table) {
-          $table->foreign('card_id')->references('id')->on('cards');
-        });
+      Schema::table('my_cards', function ($table) {
+        $table->foreign('user_id')->references('id')->on('users');
+        $table->foreign('card_id')->references('id')->on('cards');
+      });
     }
 
     /**
@@ -32,6 +34,6 @@ class CreateMyCardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('my_cards');
+      Schema::dropIfExists('my_cards');
     }
 }

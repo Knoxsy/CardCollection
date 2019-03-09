@@ -7,79 +7,123 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    $data['items'] = Tag::all();
+    return view('resource.tag.index', $data);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    return view ('tag.create');
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $rules = array(
+      'name'       => 'required',
+    );
+        // $validator = Validator::make(Input::all(), $rules);
         //
-    }
+        // // process the login
+        // if ($validator->fails()) {
+        //     return Redirect::to('nerds/create')
+        //         ->withErrors($validator)
+        //         ->withInput(Input::except('password'));
+        // } else {
+            // store
+    $tag = new Tag;
+    $tag->name = $request->input('name');
+    $tag->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tag $tag)
-    {
-        //
-    }
+            // redirect
+            // Session::flash('message', 'Successfully created tag!');
+            // return Redirect::to('tag');
+        // }
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tag $tag)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\Tag  $tag
+   * @return \Illuminate\Http\Response
+   */
+  public function show(Tag $tag)
+  {
+    $data['item'] = $tag;
+    return view('tag.show', $data);
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Tag $tag)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Tag  $tag
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(Tag $tag)
+  {
+    $data['item'] = $tag;
+    return view('tag.update', $data);
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Tag $tag)
-    {
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  \App\Tag  $tag
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, Tag $tag)
+  {
+    $rules = array(
+      'name' => 'required',
+    );
+        // $validator = Validator::make(Input::all(), $rules);
         //
-    }
+        // // process the login
+        // if ($validator->fails()) {
+        //     return Redirect::to('tag/' . $id . '/edit')
+        //         ->withErrors($validator)
+        //         ->withInput(Input::except('password'));
+        // } else {
+            // store
+    $tag->name = $request->input('name');
+    $tag->save();
+
+            // redirect
+          // Session::flash('message', 'Successfully updated tag!');
+          // return Redirect::to('tag');
+      // }
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Tag  $tag
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy(Tag $tag)
+  {
+    $tag->delete();
+
+      // redirect
+      // Session::flash('message', 'Successfully deleted the tag!');
+      // return Redirect::to('tag');
+  }
 }
