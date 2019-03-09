@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Set extends Model
 {
     public function cards(){
-      return $this->hasMany('App\Card');
+      $setCardNumber = $this->hasMany('App\Card')->select(array('card_number'));
+      return $setCardNumber;
+      $setName = $this->hasMany('App\Card')->select(array('name'));
+      return $setName;
     }  //Set can have many Cards
 
     public function myCards(){
@@ -23,3 +26,4 @@ class Set extends Model
     //No relation to tag since tags only apply to Cards or MyCards
 
 }
+// \(^_^)/ <(YAAAAY!)

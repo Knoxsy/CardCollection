@@ -13,7 +13,7 @@
         <tr>
           <td>{{$item->set_id}}-{{$item->card_number}}</td>
           <td>
-            <a href="/CardCollection/public/card/{{$item->id}}">{{$item->name}}</a>
+            <a href="{{route('card.show', $item->id)}}">{{$item->name}}</a>
           </td>
         </tr>
       @endforeach

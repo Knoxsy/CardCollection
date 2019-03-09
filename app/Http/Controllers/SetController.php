@@ -76,7 +76,6 @@ class SetController extends Controller
    */
   public function show($id)
   {
-    // return Set::find($id);
     // $set = Set::find($set);
     // return View::make('set.show')->with('set', $set);
     $set = Set::find($id);

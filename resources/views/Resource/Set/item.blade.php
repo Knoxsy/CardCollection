@@ -21,6 +21,7 @@ Count: {{$set->count}}
   <span class="mdl-checkbox__label">{{$set->cards}}</span>
 </label>
 </li>
+
 </ul>
 
 @endsection
