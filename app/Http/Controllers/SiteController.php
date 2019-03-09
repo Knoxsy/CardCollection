@@ -37,4 +37,7 @@ class SiteController extends Controller
     sort($data['brands']);
     return view('site.browse', $data);
   }
+  public function contact() {
+    return view('site.contact');
+  }
 }

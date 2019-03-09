@@ -22,7 +22,7 @@
     @foreach($cards as $card)
     <tr>
       <td><input type="checkbox"></td>
-      <td>{{$card->card_number}}</td>
+      <td><a href="">{{$card->card_number}}</a></td>
       <td>{{$card->name}}</td>
     </tr>
     @endforeach
