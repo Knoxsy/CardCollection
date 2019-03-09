@@ -22,8 +22,8 @@
     @foreach($cards as $card)
     <tr>
       <td><input type="checkbox"></td>
-      <td><a href="">{{$card->card_number}}</a></td>
-      <td><a href="">{{$card->name}}</a></td>
+      <td><a href="{{route('card.show', $card->id)}}">{{$card->card_number}}</a></td>
+      <td><a href="{{route('card.show', $card->id)}}">{{$card->name}}</a></td>
     </tr>
     @endforeach
   </tbody>
