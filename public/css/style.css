@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }
 
 .allContent {
   padding: 30px;
