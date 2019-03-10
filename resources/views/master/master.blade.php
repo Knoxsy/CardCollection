@@ -21,7 +21,9 @@
   <body>
     <div class="container">
       @include('partials.navbar')
-      @yield('content')
+      <div class="allContent">
+        @yield('content')
+      </div>
     </div>
   </body>
 </html>
