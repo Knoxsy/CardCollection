@@ -15,7 +15,7 @@
       <li>--E-Mail Address--</li>
     </ul>
     <li>Jamie Guay</li><ul>
-      <li>--E-Mail Address--</li>
+      <li>mebeme22@hotmail.com</li>
     </ul>
     <li>Sydney Knox</li>
     <ul>

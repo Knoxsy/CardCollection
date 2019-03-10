@@ -6,7 +6,7 @@
                 <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                            <label for="email" class="">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="SecondType">{{ __('E-Mail Address') }}</label>
 
                             <div>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -18,7 +18,7 @@
                                 @endif
 
                         <div>
-                            <label for="password">{{ __('Password') }}</label>
+                            <label for="password" class="SecondType">{{ __('Password') }}</label>
 
                             <div>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -37,11 +37,11 @@
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
                                     {{ __('Login') }}
                                 </button>
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="mdl-button mdl-js-button mdl-button--raised" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

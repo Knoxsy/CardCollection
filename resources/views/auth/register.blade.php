@@ -13,7 +13,7 @@
                         @csrf
 
                         <div>
-                            <label for="name" class="">{{ __('Name') }}</label>
+                            <label for="name" class="SecondType">{{ __('Name') }}</label>
 
                             <div>
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div>
-                            <label for="email" class="">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="SecondType">{{ __('E-Mail Address') }}</label>
 
                             <div>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -40,8 +40,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row>
-                            <label for="password" class="">{{ __('Password') }}</label>
+                        <div class="form-group row">
+                            <label for="password" class="SecondType">{{ __('Password') }}</label>
 
                             <div>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -55,7 +55,7 @@
                         </div>
 
                         <div>
-                            <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="SecondType">{{ __('Confirm Password') }}</label>
 
                             <div>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -64,7 +64,7 @@
 
                         <div>
                             <div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
                                     {{ __('Register') }}
                                 </button>
                             </div>

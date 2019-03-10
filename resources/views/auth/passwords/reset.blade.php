@@ -13,16 +13,16 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            <label for="password" class="new">{{ __('Password') }}</label>
+                            <label for="password" class="SecondType">{{ __('Password') }}</label>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                            <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
-                                <input id="password-confirm" type="password" class="" name="password_confirmation" required>
-                                <button type="submit" class="btn btn-primary">
+                            <label for="password-confirm" class="SecondType">{{ __('Confirm Password') }}</label>
+                                <input id="password-confirm" type="password" class="SecondType" name="password_confirmation" required>
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
                                     {{ __('Reset Password') }}
                                 </button>
                     </form>
