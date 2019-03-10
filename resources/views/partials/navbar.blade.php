@@ -24,7 +24,7 @@
           @else
           <ul>
             <div>
-              <p style="color: red; font-family: fantasy; font-size: 20px">{{ Auth::user()->name }}
+              <p class="logIn"> {{ Auth::user()->name }}
                   <a href="{{ route('logout') }}">
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

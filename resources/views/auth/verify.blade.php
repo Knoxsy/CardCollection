@@ -1,7 +1,7 @@
 @extends('master/master')
 
 @section('content')
-<div class="container" style="opacity: 0.5;">
+<div class="demo-card-square2 mdl-card mdl-shadow--2dp">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

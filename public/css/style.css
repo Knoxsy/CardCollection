@@ -38,9 +38,25 @@ body {
   color: white;
   text-align: center;
 }
+/* styling for login box */
+.demo-card-square2 {
+  text-align: center;
+  margin-left: 500px;
+  justify-content: center;
+  width: 500px;
+  height: 275px;
+  opacity: 0.5;
+  border-radius: 15px;
+  box-shadow: 5px 10px;
+}
 
-.demo-card-square.mdl-card2 {
-  width: 400px;
-  height: 561px;
-  margin: auto;
-  margin-top: 10px;
+.logIn {
+  color: red;
+  font-family: cursive;
+  font-size: 15px;
+}
+
+.LoginFont {
+  font-weight: bold;
+  font-size: 25px;
+}
