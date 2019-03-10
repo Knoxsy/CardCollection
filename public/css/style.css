@@ -180,11 +180,13 @@ h4 {
  border-radius: 15px;
  box-shadow: 5px 10px;
 }
+
 .logIn {
  color: red;
  font-family: cursive;
  font-size: 15px;
 }
+
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
