@@ -3,14 +3,14 @@
       <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
         <div class="mdl-layout__header-row mdl-color--blue-grey-900">
           <!-- Title -->
-          <span class="mdl-layout-title">Cardboard Gems</span>
+          <span class="mdl-layout-title headerFont">Cardboard Gems</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
 
           @guest
 
               <a href="{{ route('register') }}">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2 font">
                   {{ __('Register') }}
                 </button>
               </a>
