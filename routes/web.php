@@ -25,7 +25,7 @@ Route::get('/browse', 'SiteController@browse');
 Route::get('/contact', 'SiteController@contact');
 
 Route::get('/card', 'CardController@index');
-Route::get('/card/{card}', 'CardController@show');
+Route::get('/card/{card}', 'CardController@show')->name("showcard");
 Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show')->name("showset");
 
