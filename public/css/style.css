@@ -211,18 +211,18 @@ h4 {
 /* styling for login box */
 .demo-card-square2 {
  text-align: center;
- margin-left: 500px;
+ margin: auto;
  justify-content: center;
- width: 500px;
- height: 275px;
- opacity: 0.5;
+ width: 550px;
+ height: 400px;
+ opacity: .7;
  border-radius: 15px;
  box-shadow: 5px 10px;
 }
 
 .logIn {
- color: red;
- font-family: cursive;
+ color: #B07F67;
+ font-family: Graduate;
  font-size: 15px;
 }
 
@@ -230,6 +230,7 @@ h4 {
  font-weight: bold;
  font-size: 25px;
 }
+
 
 th, td {
   text-align: center;
@@ -264,4 +265,14 @@ span {
 
 .setCount {
   margin-left: 450px;
+
+.SecondType {
+  font-weight: bold;
+  font-size: px;
+}
+.badge {
+  font-style: italic;
+  font-size: 6px;
+
+
 }
