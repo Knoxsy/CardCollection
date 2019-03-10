@@ -195,20 +195,3 @@ h4 {
  font-weight: bold;
  font-size: 25px;
 }
-
-/* CARD PAGE STYLING */
-.div.add {
-  position: relative;
-  float: left;
-  border-style: solid;
-}
-
-.div.remove {
-  position: relative;
-  float: left;
-}
-
-.div.have {
-  position: relative;
-  float: left;
-}
