@@ -166,7 +166,7 @@
                   @foreach($sets->where('year', $year) as $set)
                     <div id="{{$set->id}}" class="{{$set->genre}}">
                       <li>
-                        <a href="{{route('set.show', $set->id)}}">  {{$set->year}} {{$set->brand}}</a>
+                        <a href="{{route('showset', $set->id)}}">  {{$set->year}} {{$set->brand}}</a>
                       </li>
                     </div>
                   @endforeach
@@ -181,7 +181,7 @@
                 @foreach($sets->where('brand', $brand) as $set)
                   <div id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
-                      <a href="{{route('set.show', $set->id)}}">{{$set->year}} {{$set->brand}}</a>
+                      <a href="{{route('showset', $set->id)}}">{{$set->year}} {{$set->brand}}</a>
                     </li>
                   </div>
                 @endforeach

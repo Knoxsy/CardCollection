@@ -26,7 +26,7 @@
     <tr>
       <!-- <td class=" mdl-js-data-table mdl-data-table--selectable "></td> -->
       <td style="center"><a href="{{route('card.show', $card->id)}}" >{{$card->card_number}}</a></td>
-      <td><a href="{{route('card.show', $card->id)}}">{{$card->name}}</a></td>
+      <td><a href="{{route('showcard', $card->id)}}">{{$card->name}}</a></td>
     </tr>
     @endforeach
   </tbody>
