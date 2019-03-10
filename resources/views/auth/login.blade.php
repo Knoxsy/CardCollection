@@ -1,6 +1,7 @@
 @extends('master/master')
 
 @section('content')
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div class="demo-card-square2 mdl-card mdl-shadow--2dp">
                 <div class="LoginFont">{{ __('LOGIN') }}</div>
                 <br>
