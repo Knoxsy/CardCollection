@@ -7,7 +7,7 @@
 
 <div>
   <h4>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->genre}}</h4><br />
-  <span>Count: {{$set->count}}</span>
+  <span class="setCount">Count: {{$set->count}}</span>
 </div>
 
 <!-- <table width="350px" border> -->

@@ -199,11 +199,13 @@ h4 {
 
 th, td {
   text-align: center;
-  background-color: white;
+  background-color: #f4ecdb;
   border-style: solid;
   font-family: 'Graduate', cursive;
   font-size: 15px;
   border-width: .5px;
+  padding: 5px;
+  margin-right: 5px;
 }
 
 table {
@@ -223,5 +225,9 @@ thead {
 span {
   font-family: 'Graduate', cursive;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
+}
+
+.setCount {
+  margin-left: 450px;
 }
