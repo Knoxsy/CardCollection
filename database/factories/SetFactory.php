@@ -7,7 +7,7 @@ $factory->define(App\Set::class, function (Faker $faker) {
   return [
     'genre' => function () {
       $set_genre = [
-        'Baseball', 'Football', 'Basketball', 'Misc. Sports', 'Gaming', 'Non-Sports'
+        'Baseball', 'Football', 'Basketball', 'Misc', 'Gaming', 'Non-Sports'
       ];
       return $set_genre[array_rand($set_genre)];
     },

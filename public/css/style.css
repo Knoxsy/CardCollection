@@ -151,6 +151,10 @@ body {
   width: 40%;
   float: left;
 }
+a {
+  text-decoration-color: blue;
+  color: blue;
+}
 
 h4 {
   text-align: center;
