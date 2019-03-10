@@ -61,6 +61,6 @@
           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
-           <!-- <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/login">Login</a> -->
+           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/profile">My Collection</a>
         </nav>
     </div>

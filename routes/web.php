@@ -23,13 +23,13 @@
 Route::get('/', 'SiteController@home');
 Route::get('/browse', 'SiteController@browse');
 Route::get('/contact', 'SiteController@contact');
+Route::get('/profile', 'SiteController@profile');
 
 Route::get('/card', 'CardController@index');
 Route::get('/card/{card}', 'CardController@show');
 Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show');
 
-// Route::get('/mycard', 'MyCardController@index');
 // Route::get('/tag', 'TagController@index');
 
 

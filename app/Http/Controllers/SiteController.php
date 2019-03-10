@@ -40,4 +40,8 @@ class SiteController extends Controller
   public function contact() {
     return view('site.contact');
   }
+
+  public function profile() {
+    return view('site.profile');
+  }
 }
