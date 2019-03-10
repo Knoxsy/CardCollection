@@ -174,9 +174,9 @@ h4 {
  text-align: center;
  margin: auto;
  justify-content: center;
- width: 500px;
- height: 275px;
- opacity: 0.5;
+ width: 550px;
+ height: 400px;
+ opacity: .7;
  border-radius: 15px;
  box-shadow: 5px 10px;
 }
@@ -191,5 +191,10 @@ h4 {
 }
 .SecondType {
   font-weight: bold;
-  font-size: 16px;
+  font-size: px;
+}
+.badge {
+  font-style: italic;
+  font-size: 6px;
+
 }

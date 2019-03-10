@@ -11,9 +11,10 @@
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
                         <div class="form-group row">
+                            <br>
                             <label for="email" class="SecondType">{{ __('E-Mail Address') }}</label>
                             <div>
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" size="35" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -22,8 +23,9 @@
                                 @endif
                             </div>
                         </div>
+                          <br>
                             <div>
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
