@@ -151,6 +151,7 @@ body {
   width: 40%;
   float: left;
 }
+
 a {
   text-decoration-color: blue;
   color: blue;
@@ -194,4 +195,33 @@ h4 {
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
+}
+
+th, td {
+  text-align: center;
+  background-color: white;
+  border-style: solid;
+  font-family: 'Graduate', cursive;
+  font-size: 15px;
+  border-width: .5px;
+}
+
+table {
+  border: black;
+  border-style: solid black;
+}
+
+thead {
+  text: bolder;
+  font-size: 20px;
+}
+
+.haveOnSet {
+  text-align: left;
+}
+
+span {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 12px;
 }
