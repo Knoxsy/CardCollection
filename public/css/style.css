@@ -163,6 +163,10 @@ body {
   float: left;
 }
 
+.inTheCenter {
+  float:none;
+}
+
 a {
   text-decoration-color: blue;
   color: blue;
@@ -275,4 +279,13 @@ span {
   font-size: 6px;
 
 
+}
+
+.myCollectionBaseball {
+  background-color: #f4ecdb !important;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+  z-index: -1;
+  position:absolute;
 }
