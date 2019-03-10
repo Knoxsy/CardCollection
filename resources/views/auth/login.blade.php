@@ -6,7 +6,7 @@
                 <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="">{{ __('E-Mail Address') }}</label>
 
                             <div>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>

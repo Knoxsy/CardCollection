@@ -172,7 +172,7 @@ h4 {
 /* styling for login box */
 .demo-card-square2 {
  text-align: center;
- margin-left: 500px;
+ margin: auto;
  justify-content: center;
  width: 500px;
  height: 275px;
@@ -181,8 +181,8 @@ h4 {
  box-shadow: 5px 10px;
 }
 .logIn {
- color: red;
- font-family: cursive;
+ color: #B07F67;
+ font-family: Graduate;
  font-size: 15px;
 }
 .LoginFont {
