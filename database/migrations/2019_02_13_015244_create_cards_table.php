@@ -18,7 +18,7 @@ class CreateCardsTable extends Migration
         $table->unsignedInteger('set_id');
         $table->string('name');
         $table->integer('card_number');
-        // $table->string('card_number_append');
+        $table->string('card_number_append')->nullable();
         $table->string('front_image')->nullable();
         $table->string('back_image')->nullable();
         $table->timestamps();
