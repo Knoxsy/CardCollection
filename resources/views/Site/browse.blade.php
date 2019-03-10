@@ -52,7 +52,7 @@
       </div>
 
       <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-cell mdl-cell--4-col grow">
           <a href="#Base" class="category_button noUnderline" id="Misc">
             <div class="demo-card-image3 mdl-card mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand"></div>
