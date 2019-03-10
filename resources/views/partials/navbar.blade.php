@@ -8,20 +8,8 @@
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
 
-          @guest
+          @auth
 
-              <a href="{{ route('register') }}">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2 font">
-                  {{ __('Register') }}
-                </button>
-              </a>
-              <a href="{{ route('login') }}">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
-                  {{ __('Login') }}
-                </button>
-              </a>
-
-          @else
           <ul>
             <div>
               <p class="logIn"> {{ Auth::user()->name }}
@@ -38,7 +26,22 @@
               </p>
             </div>
           </ul>
-          @endguest
+
+          @else
+
+          <a href="{{ route('register') }}">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2 font">
+              {{ __('Register') }}
+            </button>
+          </a>
+          <a href="{{ route('login') }}">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
+              {{ __('Login') }}
+            </button>
+          </a>
+
+
+          @endauth
 
 
           <!-- Navigation. We hide it in small screens. -->
