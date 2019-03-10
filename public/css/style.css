@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
 
+.allContent {
+  padding: 30px;
+} /* padding for all content on website*/
+
 .butts1 {
   margin-left: 25%;
   margin-bottom: 5px;
@@ -24,8 +28,12 @@ body {
 .demo-card-square.mdl-card {
   width: 400px;
   height: 561px;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 10px;
+}
+
+.mdl-layout__content{
+  display: block !important;
 }
 
 .demo-card-square > .mdl-card__title {
@@ -148,7 +156,7 @@ body {
 }
 
 .toTheRight {
-  width: 40%;
+  width: 39%;
   float: left;
 }
 
@@ -167,6 +175,29 @@ h4 {
   font-size: 23px;
   color: #313131;
   text-align: center;
+}
+
+.font {
+  font-family: 'Graduate', cursive;
+}
+
+.dataBlock {
+  padding-right: 30px;
+  border: 2px solid black;
+  padding: 15px;
+  background: white;
+  border-radius: 10%;
+  min-height: 320px;
+  font-family: 'Graduate', cursive;
+} /*data on the browse page*/
+
+.dataBlockFont {
+  font-family: 'Graduate', cursive;
+  font-size: 20px;
+}
+
+.dataBlockPadding{
+  padding: 20px;
 }
 
 /* styling for login box */
