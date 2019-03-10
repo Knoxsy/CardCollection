@@ -58,12 +58,11 @@
         </div>
         </div>
       </header>
-      <div class="mdl-layout__drawer mdl-color--blue-grey-900">
-        <span class="mdl-layout-title mdl-color-text--white">Cardboard Gems</span>
+      <div class="mdl-layout__drawer mdl-color--blue-grey-900 font">
+        <span class="mdl-layout-title mdl-color-text--white font">Cardboard Gems</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
-           <!-- <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/login">Login</a> -->
         </nav>
     </div>

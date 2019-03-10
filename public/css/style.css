@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }
+
+.allContent {
+  padding: 30px;
+} /* padding for all content on website*/
 
 .butts1 {
   margin-left: 25%;
@@ -21,11 +27,16 @@ body {
   background-image: url('Turf.jpg');
 }
 
+
 .demo-card-square.mdl-card {
   width: 400px;
   height: 561px;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 10px;
+}
+
+.mdl-layout__content{
+  display: block !important;
 }
 
 .demo-card-square > .mdl-card__title {
@@ -148,9 +159,10 @@ body {
 }
 
 .toTheRight {
-  width: 40%;
+  width: 39%;
   float: left;
 }
+
 a {
   text-decoration-color: blue;
   color: blue;
@@ -171,6 +183,29 @@ h4 {
   font-size: 23px;
   color: #313131;
   text-align: center;
+}
+
+.font {
+  font-family: 'Graduate', cursive;
+}
+
+.dataBlock {
+  padding-right: 30px;
+  border: 2px solid black;
+  padding: 15px;
+  background: white;
+  border-radius: 10%;
+  min-height: 320px;
+  font-family: 'Graduate', cursive;
+} /*data on the browse page*/
+
+.dataBlockFont {
+  font-family: 'Graduate', cursive;
+  font-size: 20px;
+}
+
+.dataBlockPadding{
+  padding: 20px;
 }
 
 /* styling for login box */
@@ -194,4 +229,39 @@ h4 {
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
+}
+
+th, td {
+  text-align: center;
+  background-color: #f4ecdb;
+  border-style: solid;
+  font-family: 'Graduate', cursive;
+  font-size: 15px;
+  border-width: .5px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+table {
+  border: black;
+  border-style: solid black;
+}
+
+thead {
+  text: bolder;
+  font-size: 20px;
+}
+
+.haveOnSet {
+  text-align: left;
+}
+
+span {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 13px;
+}
+
+.setCount {
+  margin-left: 450px;
 }

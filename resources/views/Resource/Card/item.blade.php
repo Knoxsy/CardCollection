@@ -53,6 +53,24 @@
 
   <script>
 
+    $('.previous_button').click(function(){
+      // 1) need to get array of cards specific to one set
+      // 2) the button needs to link to the card prior to the current Page
+    });
+
+    $('.next_button').click(function(){
+      // 1) need to get array of cards specific to one set
+      // 2) the button needs to link to the card next to the current Page
+    });
+
+    $('.add_button').click(function(){
+      // needs to add this card to mycards in the DB
+    });
+
+    $('.remove_button').click(function(){
+      //needs to remove this card from mycards in th DB
+    });
+
   </script>
 
 @endsection
