@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('master/master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="demo-card-square2 mdl-card mdl-shadow--2dp">
+    <br>
+        <br>
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="LoginFont">{{ __('Register') }}</div>
+                <br>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

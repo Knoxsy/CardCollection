@@ -1,4 +1,5 @@
 
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
         <div class="mdl-layout__header-row mdl-color--blue-grey-900">
@@ -21,7 +22,22 @@
               </a>
 
           @else
-            <p>Welcome back, {{Auth::user()->name}}!</p>
+          <ul>
+            <div>
+              <p class="logIn"> {{ Auth::user()->name }}
+                  <a href="{{ route('logout') }}">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2" onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                    </button>
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </p>
+            </div>
+          </ul>
           @endguest
 
 
@@ -45,6 +61,6 @@
           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
            <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
-
+           <!-- <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/login">Login</a> -->
         </nav>
     </div>
