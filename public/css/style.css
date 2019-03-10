@@ -38,3 +38,9 @@ body {
   color: white;
   text-align: center;
 }
+
+.demo-card-square.mdl-card2 {
+  width: 400px;
+  height: 561px;
+  margin: auto;
+  margin-top: 10px;
