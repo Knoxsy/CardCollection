@@ -297,3 +297,21 @@ thead {
 .haveOnSet {
   text-align: left;
 }
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  width: 45%;
+  border-left: none;
+  padding-left: 50px;
+  height: 300px;
+  font-family: 'Graduate', cursive;
+  display: none;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
