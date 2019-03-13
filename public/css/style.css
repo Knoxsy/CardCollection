@@ -280,6 +280,8 @@ thead {
   float: left;
 }
 
+.card {}
+
 .card:hover + .showcard {
   display: block;
 }
@@ -289,7 +291,7 @@ thead {
   background-color: #f4ecdb;
   padding-left: 30px;
   float: right;
-
+  display: none;
 }
 
 .haveOnSet {
