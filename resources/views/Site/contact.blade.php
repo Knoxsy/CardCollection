@@ -3,6 +3,7 @@
 @section('title', 'Cardboard Gems - Contact Page')
 
 @section('content')
+<div class="dataBlock">
   <h3>CONTACT PAGE</h3>
   Developers:
   <ul>
@@ -22,4 +23,5 @@
       <li>--E-Mail Address--</li>
     </ul>
   </ul>
+</div>
 @endsection
