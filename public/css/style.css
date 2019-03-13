@@ -314,12 +314,8 @@ thead {
 }
 
 
-/* Clear floats after the tab */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+.setCount {
+  margin-left: 450px;
 
 .SecondType {
   font-weight: bold;
@@ -339,4 +335,11 @@ thead {
   font-size: 10px;
   z-index: -1;
   position:absolute;
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
 }
