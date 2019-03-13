@@ -173,6 +173,11 @@ h4 {
   font-family: 'Graduate', cursive;
 }
 
+h3 {
+  text-align: center;
+  font-family: 'Graduate', cursive;
+}
+
 .headerFont {
   font-family: 'Graduate', cursive;
   font-size: 40px;
@@ -231,6 +236,24 @@ h4 {
  font-size: 25px;
 }
 
+
+/* STYLING FOR SINGLE SET */
+
+.set_header {
+  width: 100%;
+
+}
+
+span {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 13px;
+}
+
+.setCount {
+  margin-left: 450px;
+}
+
 th, td {
   text-align: center;
   background-color: #f4ecdb;
@@ -252,16 +275,23 @@ thead {
   font-size: 20px;
 }
 
+.checklist {
+  width: 50%;
+  float: left;
+}
+
+.card:hover + .showcard {
+  display: block;
+}
+
+.showcard {
+  width: 40%;
+  background-color: #f4ecdb;
+  padding-left: 30px;
+  float: right;
+
+}
+
 .haveOnSet {
   text-align: left;
-}
-
-span {
-  font-family: 'Graduate', cursive;
-  text-align: center;
-  font-size: 13px;
-}
-
-.setCount {
-  margin-left: 450px;
 }
