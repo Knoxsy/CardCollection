@@ -35,7 +35,7 @@
             </button>
           </a>
           <a href="{{ route('login') }}">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2 font">
               {{ __('Login') }}
             </button>
           </a>
@@ -51,7 +51,7 @@
                  for="fixed-header-drawer-exp">
             <i class="material-icons">search</i>
           </label>
-          <div class="mdl-textfield__expandable-holder">
+          <div class="mdl-textfield__expandable-holder mdl-color--amber-50">
             <input class="mdl-textfield__input" type="text" name="sample"
                    id="fixed-header-drawer-exp">
           </div>
@@ -59,11 +59,11 @@
         </div>
       </header>
       <div class="mdl-layout__drawer mdl-color--blue-grey-900 font">
-        <span class="mdl-layout-title mdl-color-text--white font">Cardboard Gems</span>
+        <span class="mdl-layout-title mdl-color-text--amber-50 font">Cardboard Gems</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/">Home</a>
-           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/browse">Browse</a>
-           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/contact">Contact</a>
-           <a class="mdl-navigation__link mdl-color-text--white" href="/CardCollection/public/profile">My Collection</a>
+          <a class="mdl-navigation__link mdl-color-text--amber-50" href="/CardCollection/public/">Home</a>
+           <a class="mdl-navigation__link mdl-color-text--amber-50" href="/CardCollection/public/browse">Browse</a>
+           <a class="mdl-navigation__link mdl-color-text--amber-50" href="/CardCollection/public/contact">Contact</a>
+           <a class="mdl-navigation__link mdl-color-text--amber-50" href="/CardCollection/public/profile">My Collection</a>
         </nav>
     </div>
