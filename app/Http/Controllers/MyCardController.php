@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\MyCard;
 use Illuminate\Http\Request;
 
@@ -42,28 +43,14 @@ class MyCardController extends Controller
       'card_id' => 'required',
     );
 
-      //TODO  NEED TO WORK ON VALIDATION
-
-      // $validator = Validator::make(Input::all(), $rules);
-
-      //process the login
-  //     if($validator->fails()) {
-  //       return Redirect::to('mycards/create')
-  //         ->withErrors($validator)
-  //         ->withInput(Input::except('password'));
-  // } else {
-      // store
     $mycard = new MyCard;
+    $mycard['user_id'] = Auth::user()->id;
     $mycard->user_id = $request->input('user_id');
     $mycard->card_id = $request->input('card_id');
     $mycard->condition = $request->input('condition');
     $mycard->save();
 
     return $mycard;
-      // // redirect
-      //     Session::flash('message', 'Successfully created mycard!');
-      //     return Redirect::to('mycard');
-      // }
   }
 
     /**
