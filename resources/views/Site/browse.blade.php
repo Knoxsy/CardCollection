@@ -90,7 +90,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="toTheRight">
@@ -166,7 +165,7 @@
                   @foreach($sets->where('year', $year) as $set)
                     <div id="{{$set->id}}" class="{{$set->genre}}">
                       <li>
-                        <a href="{{route('showset', $set->id)}}">  {{$set->year}} {{$set->brand}}</a>
+                        <a href="{{route('showset', $set->id)}}">{{$set->year}} {{$set->brand}} {{$set->type}}</a>
                       </li>
                     </div>
                   @endforeach
@@ -175,13 +174,13 @@
             </div>
           </div>
           <div class="mdl-tabs__panel dataBlockFont" id="lannisters-panel">
-            <div id="brand_list" class="brand" style="display:none">
+            <div id="brand_list" class="brand dataBlockFont" type ="hidden" style="display:none">
               @foreach($brands as $brand)
                 <h6 class="dataBlockFont">{{$brand}}</h6>
                 @foreach($sets->where('brand', $brand) as $set)
                   <div id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
-                      <a href="{{route('showset', $set->id)}}">{{$set->year}} {{$set->brand}}</a>
+                      <a href="{{route('showset', $set->id)}}">{{$set->year}} {{$set->brand}} {{$set->type}}</a>
                     </li>
                   </div>
                 @endforeach

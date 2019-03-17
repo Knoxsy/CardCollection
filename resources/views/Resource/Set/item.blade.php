@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="set_header">
-  <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->genre}}</h3><br />
+  <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
   <span class="setCount">Count: {{$set->count}}</span>
 </div>
 

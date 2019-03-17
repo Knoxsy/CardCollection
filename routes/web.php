@@ -35,4 +35,4 @@ Route::get('/set/{set}', 'SetController@show')->name("showset");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'ProfileController@index');

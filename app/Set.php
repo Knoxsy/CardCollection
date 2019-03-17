@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Collection;
 class Set extends Model
 {
     public function cards(){
-
       return $this->hasMany('App\Card');
     }  //Set can have many Cards
     //$set->Set::find(1)

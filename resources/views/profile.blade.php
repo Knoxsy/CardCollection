@@ -3,7 +3,7 @@
 @section('content')
 <div class="demo-card-square2 mdl-card mdl-shadow--2dp">
 
-                <div class="LoginFont">Welcome!!!</div>
+                <div >Welcome, {{ Auth::user()->name }}!!!</div>
 
                 <div>
                     @if (session('status'))
