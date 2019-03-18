@@ -304,17 +304,13 @@ h5 {
 }
 
 
+/*  MISC OR UNUSED OR CAN'T FIND */
 /*
-
-
-
 
 .butts3 {
   margin-right: 600px;
   margin-left: 600px;
 }
-
-
 
 .contactBlock {
   width: 800px;
@@ -343,55 +339,19 @@ h5 {
   float:none;
 }
 
-
-
-
 .logIn {
  color: #B07F67;
  font-family: Graduate;
  font-size: 15px;
 }
 
-
-*/
-
-/* STYLING FOR SINGLE SET */
-/*
-
-
-span {
-  font-family: 'Graduate', cursive;
-  text-align: center;
-  font-size: 13px;
-}
-
-
-
-
-
-
-
-
-
-.card {}
-
-
-
 .haveOnSet {
   text-align: left;
 }
-*/
-/* Style the tab content */
-/*
-
-
-
 
 .badge {
   font-style: italic;
   font-size: 6px;
-
-
 }
 
 .myCollectionBaseball {
@@ -401,23 +361,6 @@ span {
   font-size: 10px;
   z-index: -1;
   position:absolute;
-*/
-/* Clear floats after the tab */
-/*
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-
 }
 
-.contactBlock {
-  padding-right: 30px;
-  border: 2px solid black;
-  padding: 15px;
-  background: #f4ecdb;
-  border-radius: 10%;
-  min-height: 320px;
-  font-family: 'Graduate', cursive;
-}
 */
