@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\MyCard;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\MyCard;
 use Illuminate\Http\Request;
 
 class MyCardController extends Controller
@@ -16,7 +16,7 @@ class MyCardController extends Controller
    */
   public function index()
   {
-    $data['items'] = MyCard::orderBy('card_id', 'asc')->get();
+    $data['items'] = MyCard::with('card', 'user')->orderBy('card_id', 'asc')->get();
     return view('resource.mycard.index', $data);
   }
 

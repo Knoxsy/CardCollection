@@ -15,18 +15,34 @@
   <div class="checklist">
     <table width="550px" align="center">
       <thead>
+
+        @auth
         <th width="50px">Have<br />
           <input type="checkbox" id="select_all"/>
         </th>
+        @else
+        <th width="50px">Have<br />
+          <input type="checkbox" id="select_all" disabled/>
+        </th>
+        @endauth
+
         <th width="150px">Card #</th>
         <th width="350px">Name</th>
       </thead>
       <tbody>
         @foreach($cards as $card)
         <tr>
+
+          @auth
           <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-            <input class="checkbox" type="checkbox" id="check[]"/>
+            <input class="checkbox" type="checkbox" />
           </td>
+          @else
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            <input class="checkbox" type="checkbox" disabled/>
+          </td>
+          @endauth
+
           <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
             {{$card->card_number}}
           </td>
@@ -47,6 +63,7 @@
   @endforeach
   <div class="clearfix"></div>
 
+
 <script>
   //Hover - Show Card Function
   function openCard(evt, id) {
@@ -63,7 +80,7 @@
     evt.currentTarget.className += " active";
   }
 
-  //Select all checkboxes function
+  // Select all checkboxes function
   var select_all = document.getElementById("select_all"); //select all checkbox
   var checkboxes = document.getElementsByClassName("checkbox"); //checkbox items
 
@@ -85,6 +102,23 @@
 		   }
 	  });
   }
+
+  // //Change TableRow when checkbox is clicked
+  // $(document).ready(function() {
+  //   $('tr').click(function() {
+  //     var inp = $(this).find('.check');
+  //     var tr = $(this).closest('tr');
+  //     inp.prop('checked', !inp.is(':checked'))
+  //
+  //     tr.toggleClass('isChecked', inp.is(':checked'));
+  //   });
+  //
+  //   // do nothing when clicking on checkbox, but bubble up to tr
+  //   $('.check').click(function(e) {
+  //     e.preventDefault();
+  //   });
+  // });
+
 </script>
 
 @endsection

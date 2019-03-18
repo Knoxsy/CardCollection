@@ -283,7 +283,7 @@ span {
   margin-left: 450px;
 }
 
-th, td {
+th, td, tr {
   text-align: center;
   background-color: #f4ecdb;
   border-style: solid;
@@ -377,4 +377,21 @@ thead {
   border-radius: 10%;
   min-height: 320px;
   font-family: 'Graduate', cursive;
+}
+
+.isChecked {
+  background-color: grey;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  background-color: #fafafa;
+}
+/* click-through element */
+.check {
+  pointer-events: none;
 }

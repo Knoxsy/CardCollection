@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\MyCard;
 
 class ProfileController extends Controller
 {
@@ -24,8 +25,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // $user_id = auth()->user('id');
-        // $user = User::find('$user_id');
-        return view('/profile');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('/profile')->with('mycards', $user->mycards);
     }
+
 }

@@ -37,8 +37,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function myCards(){
-      return $this->hasMany('App/MyCard');
+    public function mycards(){
+      return $this->hasMany('App\MyCard');
     }
+
+    public function sets(){
+      return $this->morphMany('App\Set');
+    }  //Card can have many Users
+
+    public function cards(){
+      return $this->morphMany('App\Card');
+    }  //Card can have many Users
 
 }

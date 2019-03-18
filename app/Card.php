@@ -10,7 +10,7 @@ class Card extends Model
       return $this->belongsTo('App\Set');
     }   //Card belongs to One Set
 
-    public function myCards(){
+    public function mycards(){
       return $this->hasMany('App\MyCard');
     }  //Card can have many MyCards
 
