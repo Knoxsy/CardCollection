@@ -292,14 +292,31 @@ h5 {
   font-family: 'Graduate', cursive;
 }
 
-.card:hover + .showcard {
-  display: block;
-}
-
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+/* STYLING FOR THE PROFILE PAGE - SITE.PROFILE.BLADE.PHP */
+
+.collection_stats {
+  float: left;
+  width: 34%;
+  border: solid;
+}
+
+.showsets {
+  float: left;
+  width: 65%;
+  border: solid;
+  background-color: #F4ECDB;
+  display: none;
+}
+
+hr {
+  height: 2px;
+  background: #000000;
 
 }
 
