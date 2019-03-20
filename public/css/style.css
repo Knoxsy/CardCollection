@@ -320,15 +320,7 @@ hr {
 
 }
 
-
-/*  MISC OR UNUSED OR CAN'T FIND */
-/*
-
-.butts3 {
-  margin-right: 600px;
-  margin-left: 600px;
-}
-
+/* STYLING FOR THE CONTACT PAGE - SITE.CONTACT.BLADE.PHP */
 .contactBlock {
   width: 800px;
   height: 200px;
@@ -350,6 +342,14 @@ hr {
   font-size: 40px;
   text-align: center;
   padding-bottom: 20px;
+}
+
+/*  MISC OR UNUSED OR CAN'T FIND */
+/*
+
+.butts3 {
+  margin-right: 600px;
+  margin-left: 600px;
 }
 
 .inTheCenter {
