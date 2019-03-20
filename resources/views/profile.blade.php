@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
+<h1>HELLO</h1>
   <div>
     <h5>{{ Auth::user()->name }}, welcome to your collection!</h5>
   </div>
@@ -84,8 +84,14 @@
   </div>
 
   <div class="clearfix"></div>
+  @foreach ($mycards as $mycard)
+  <div>
+    {{$mycard->set}}
+  </div>
+  @endforeach
 
 <script>
+console.log('MY CARDS', {{$set}});
 //HOVER - SHOW CARD FUNCTION
 function openCard(evt, id) {
   var i, showsets, tablinks;
@@ -113,8 +119,5 @@ function openCard(evt, id) {
 
   </div> -->
 
-
-
-{{$mycards}}
 
 @endsection

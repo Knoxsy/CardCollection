@@ -23,8 +23,13 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+  public function index()
     {
+      // return Set::with('cards')->get();
+      $data['mycards'] = MyCard::with('user')->get();
+    //   return view('site.browse', $data);
+    // }
+    // {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         return view('/profile')->with('mycards', $user->mycards);

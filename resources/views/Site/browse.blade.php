@@ -140,6 +140,19 @@
             $(this).slideUp();
           }
         });
+        var relevant_children = brand_heading.children(`.${current_category}:visible`)
+
+        console.log('Which year?', year_heading);
+        console.log('How many are visible?', relevant_children.length);
+
+        if(relevant_children.length == 0) {
+          console.log('EMPTY BRAND', brand_heading);
+          brand_heading.hide();
+        }else{
+          brand_heading.show();
+        }
+        console.groupEnd();
+      });
       });
 
 
