@@ -51,11 +51,11 @@
   //SHOW MY CARDS FOR THIS SET IF LOGGED IN
   $(document).ready(function() {
     var i;
-    var myCardUserId = {{$set->mycards->user_id}};
-    var myCardCardId = {{$set->mycards->card_id}};
-    var setCards = {{$set->cards->card_id}};
+    var myCardUserId = {{$set->mycards}};
+    var myCardCardId = {{$set->mycards}};
+    var setCards = {{$set->cards}};
     var checkboxes = document.getElementsByClassName("checkbox");
-    for (i = 0; i < userCards.length; i++) {
+    for (i = 0; i < myCardCardId.length; i++) {
       if (Auth::user()->id == myCardUserId
       &&
       setCards == myCardCardId) {
@@ -121,6 +121,6 @@
   });
 </script>
 
-  {{$set->mycards}}
+  {{$user->user_name}}
 
 @endsection

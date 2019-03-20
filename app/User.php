@@ -42,11 +42,11 @@ class User extends Authenticatable
     }
 
     public function sets(){
-      return $this->morphMany('App\Set');
+      return $this->hasManyThrough('App\Set', 'App\Card');
     }  //Card can have many Users
 
     public function cards(){
-      return $this->morphMany('App\Card');
+      return $this->hasManyThrough('App\Card', 'App\MyCard');
     }  //Card can have many Users
 
 }

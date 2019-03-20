@@ -16,7 +16,7 @@ class Set extends Model
     }  //Set can have many MyCards
 
     public function users(){
-      return $this->morphMany('App\User');
+      return $this->belongsTo('App\User');
     }  //Set can have many Users
 
 }
