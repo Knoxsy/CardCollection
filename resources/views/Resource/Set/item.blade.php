@@ -48,23 +48,23 @@
 <div class="clearfix"></div>
 
 <script>
-  // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
-  // $(document).ready(function() {
-  //   console.log = $(document).ready
-  //   var i;
-  //   var userCards = {{$set->mycards}};
-  //   var setCards = {{$set->cards}};
-  //   var checkboxes = document.getElementsByClassName("checkbox");
-  //   for (i = 0; i < userCards.length; i++) {
-  //     if (Auth::id == userCards->user_id
-  //     &&
-  //     setCards->card_id == mycard->card_id) {
-  //       this.checked = true;
-  //     } else {
-  //       this.checked = false;
-  //     }
-  //   }
-  // }
+  //SHOW MY CARDS FOR THIS SET IF LOGGED IN
+  $(document).ready(function() {
+    var i;
+    var myCardUserId = {{$set->mycards->user_id}};
+    var myCardCardId = {{$set->mycards->card_id}};
+    var setCards = {{$set->cards->card_id}};
+    var checkboxes = document.getElementsByClassName("checkbox");
+    for (i = 0; i < userCards.length; i++) {
+      if (Auth::user()->id == myCardUserId
+      &&
+      setCards == myCardCardId) {
+        this.checked = true;
+      } else {
+        this.checked = false;
+      }
+    }
+  }
 
   //HOVER - SHOW CARD FUNCTION
   function openCard(evt, id) {
