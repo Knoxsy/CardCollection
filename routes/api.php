@@ -21,3 +21,5 @@ Route::resource('card', 'CardController');
 Route::resource('tag', 'TagController');
 Route::resource('mycard', 'MyCardController');
 Route::resource('set', 'SetController');
+
+Gate::resource('mycard', 'MyCardController');

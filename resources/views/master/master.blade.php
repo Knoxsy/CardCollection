@@ -19,11 +19,11 @@
       <title>Cardboard Gems</title>
   </head>
   <body>
+
+    @include('partials.navbar')
     <div class="container">
-      @include('partials.navbar')
-      <div class="allContent">
-        @yield('content')
-      </div>
+      @yield('content')
     </div>
+
   </body>
 </html>
