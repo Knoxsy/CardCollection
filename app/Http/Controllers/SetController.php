@@ -84,7 +84,10 @@ class SetController extends Controller
     $data['user'] = $user;
     $data['set'] = $set; //This shows only the set info
     $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
-    $data['mycards'] = $user->mycards()->get(); //Shows all mycards for auth even not in the set
+    // $data['mycards'] = $user->mycards()
+    //   ->join()
+    //   ->where('set_id', $set->id)
+    //   ->get(); // get all of the users mycards where the set_id = $set->id
     return view('resource.set.item', $data);
   }
 
