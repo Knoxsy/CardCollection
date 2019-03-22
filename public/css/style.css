@@ -238,6 +238,7 @@ h3 {
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
+ font-family: Graduate;
 }
 
 
@@ -252,6 +253,7 @@ span {
   font-family: 'Graduate', cursive;
   text-align: center;
   font-size: 13px;
+  color:red;
 }
 
 .setCount {
@@ -316,11 +318,21 @@ thead {
 
 .setCount {
   margin-left: 450px;
+}
 
 .SecondType {
   font-weight: bold;
-  font-size: px;
+  font-size: 15px;
+  font-family: Graduate;
 }
+
+.ThirdType {
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Graduate;
+
+}
+
 .badge {
   font-style: italic;
   font-size: 6px;
@@ -342,4 +354,15 @@ thead {
   clear: both;
   display: table;
 
+}
+.Session2 {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 13px;
+  color:red;
+  }
+
+.flash1 {
+  font-family: Graduate;
+  font-size: 83px;
 }

@@ -4,9 +4,8 @@
 <div class="demo-card-square2 mdl-card mdl-shadow--2dp">
                 <div class="LoginFont">{{ __('Reset Password') }}</div>
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                      <br>
+                        <span>{{ session('status') }}</span>
                     @endif
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
@@ -17,7 +16,9 @@
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" size="35" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
+                                    <span role="alert">
+                                      <br>
+                                      <br>
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif

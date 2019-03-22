@@ -21,6 +21,7 @@
   <body>
     <div class="container">
       @include('partials.navbar')
+      @include('partials.flash')
       <div class="allContent">
         @yield('content')
       </div>
