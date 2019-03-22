@@ -19,6 +19,8 @@
       <title>Cardboard Gems</title>
   </head>
   <body>
+
+    @include('partials.navbar')
     <div class="container">
       @include('partials.navbar')
       @include('partials.flash')
@@ -26,5 +28,6 @@
         @yield('content')
       </div>
     </div>
+
   </body>
 </html>

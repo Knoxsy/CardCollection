@@ -30,9 +30,11 @@ Route::get('/card/{card}', 'CardController@show')->name("showcard");
 Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show')->name("showset");
 
+Route::get('/mycards', 'MyCardController@index');
+
 // Route::get('/tag', 'TagController@index');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'ProfileController@index');

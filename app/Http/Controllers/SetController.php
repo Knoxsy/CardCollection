@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Set;
+use App\MyCard;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -81,7 +82,8 @@ class SetController extends Controller
     // $set = Set::find($id)->select('name', 'card_number')->get();
 
     $data['set'] = $set;
-    $data['cards'] = $set->cards()->select('id', 'name', 'card_number')->orderBy('card_number')->get();;
+    $data['cards'] = $set->cards()->orderBy('card_number')->get();
+    $data['mycards'] = MyCard::with('card')->orderBy('card_id', 'asc')->get();
 
     return view('resource.set.item', $data);
   }

@@ -63,26 +63,44 @@
                             <br>
                         </div>
 
-                        <div>
-                            <label for="password-confirm" class="SecondType">{{ __('Confirm Password') }}</label>
+    <div class="form-group row">
+      <label for="password" class="SecondType">{{ __('Password') }}</label>
+      <div>
+        <input id="password" type="password" class="form-control{{ $errors->has('password')
+        ? ' is-invalid'
+        : '' }}" name="password" size ="35" required />
 
-                            <div>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" size ="35" required>
-                            </div>
-                        </div>
+        @if ($errors->has('password'))
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $errors->first('password') }}</strong>
+        </span>
+        @endif
 
-                        <div>
-                            <div>
-                                <br>
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+      </div>
+      <br>
     </div>
+
+    <div>
+      <label for="password-confirm" class="SecondType">
+        {{ __('Confirm Password') }}
+      </label>
+      <div>
+        <input id="password-confirm" type="password" class="form-control"
+        name="password_confirmation" size ="35" required />
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <br>
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised
+        mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900
+        butts4">
+          {{ __('Register') }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
+
 @endsection

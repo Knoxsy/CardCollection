@@ -1,0 +1,21 @@
+
+var ftGUID_3487963="3918D724B10D6E";
+var ftConfID_3487963="8598794";
+var ftParams_3487963="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fpagead%2Fads%3Fclient%3Dca-pub-2387250451295121%26output%3Dhtml%26h%3D60%26slotname%3D4010879247%26adk%3D285790237%26adf%3D3422719541%26w%3D468%26lmt%3D1552773114%26rafmt%3D12%26guci%3D2.2.0.0.2.2.0.0%26format%3D468x60%26url%3Dhttps%253A%252F%252Fwww.tradingcarddb.com%252FViewCard.cfm%252Fsid%252F134%252Fcid%252F36271%253FPageIndex%253D1%26flash%3D0%26wgl%3D1%26adsid%3DAGt39rTBFitUGkwQiKci9Fij55dPJt2DWPM58if9Kz0SS_kiwwzitynDdED8TRpWgq4I88k218MzEulAyq_Emvg%26dt%3D1552773114818%26bpp%3D30%26bdt%3D1649%26fdt%3D31%26idt%3D-M%26shv%3Dr20190313%26cbv%3Dr20190131%26saldr%3Daa%26abxe%3D1%26prev_fmts%3D0x0%252C728x90%252C468x60%26nras%3D1%26correlator%3D2533689038065%26frm%3D20%26pv%3D1%26ga_vid%3D1592269320.1544305879%26ga_sid%3D1552768016%26ga_hid%3D1117313842%26ga_fc%3D1%26iag%3D0%26icsg%3D10804013954%26dssz%3D29%26mdo%3D0%26mso%3D0%26u_tz%3D-360%26u_his%3D50%26u_java%3D0%26u_h%3D800%26u_w%3D1280%26u_ah%3D697%26u_aw%3D1280%26u_cd%3D24%26u_nplug%3D3&cachebuster=812897.0941455163";
+var ftKeyword_3487963="";
+var ftCustom_3487963="";
+var ftSection_3487963="";
+var ftSegment_3487963="u30,tg1,utu,v6j,v50,wqx,wk8,wlk,w2c";
+var ftSegmentList_3487963=[{s:'u30'},{s:'tg1'},{s:'utu'},{s:'v6j'},{s:'v50'},{s:'wqx'},{m:'c12678_page',s:'wk8'},{s:'wlk',t:40650000},{s:'w2c'}];
+var ftRuleMatch_3487963="0";
+var ftTimestamp_3487963="1552773122";
+var ftImp3487963 = {};
+ftImp3487963.privacy = "x";
+ftImp3487963.guidAge = "174";
+ftImp3487963.impID = "CA952EE5-384C-EF86-1C02-22BFB608DA02";
+ftImp3487963.duid = "FT:3918D724B10D6E";
+
+ftImp3487963.ft_tpplid = "";
+ftImp3487963.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/348/3487963/2185939/js/j-3487963-2185939.js" id="ftscript_m3487963" name="ftscript_m3487963"></scr'+'ipt>');
