@@ -59,7 +59,7 @@ class SiteController extends Controller
       }
       return view('profile', $data);
     } else {
-      return redirect('login')->with('error', 'Unauthorized Page');
+      return redirect('login')->with( 'auth','Unauthorized Page. You must login to view collections');
     }
   }
 }

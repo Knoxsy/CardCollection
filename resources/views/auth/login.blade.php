@@ -1,6 +1,12 @@
 @extends('master/master')
 
 @section('content')
+@if (session('auth'))
+    <div class="unauthorized user" style="background-color:red">
+        <b>{{ session('auth') }}</b>
+    </div>
+@endif
+
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div class="demo-card-square2 mdl-card mdl-shadow--2dp">
     <div class="LoginFont">{{ __('LOGIN') }}</div>
