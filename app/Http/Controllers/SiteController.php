@@ -2,6 +2,9 @@
 namespace App\Http\Controllers;
 use App\Set;
 use App\MyCard;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -43,22 +46,20 @@ class SiteController extends Controller
   }
 
   public function profile() {
-    $data['mycards'] = MyCard::with('user')->all();
-    $data['cards'] = [];
-    $data['sets'] = [];
-    foreach($data['mycards'] as $mycard) {
-      if(!in_array($mycard->card_id, $data['cards'])){
-        array_push($data['cards'], $mycard->card_id);
+    if (Auth::check()){
+      $user = Auth::user();
+      $data['mycards'] = $user->mycards();
+      $data['cards'] = $user->cards();
+      $data['sets'] = array();
+      foreach ($user->cards() as $card){
+        $set = $card->set();
+        if(!in_array($card, $data['cards'])){
+          array_push($data['sets'], $mycard->card_id);
+        }
       }
-    foreach($data['sets'] as $set) {
-      if(!in_array($mycard->set, $data['sets'])){
-        array_push($data['sets'], $mycard->set);
-      }
-      sort($data['cards']);
-      sort($data['sets']);
-
-      }
+      return view('profile', $data);
+    } else {
+      return redirect('login')->with('error', 'Unauthorized Page');
     }
-    return view('/profile', $data);
   }
 }

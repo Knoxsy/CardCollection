@@ -133,6 +133,9 @@
 
         //BRAND
         $('#brand_list').show().children('div').each(function(){
+          var brand_heading = $(this);
+
+          brand_heading.show().children('div').each(function(){
           console.log($(this).attr('class'));
           if($(this).attr('class') == current_category){
             $(this).slideDown();
@@ -153,7 +156,7 @@
         }
         console.groupEnd();
       });
-      });
+    });
 
 
       </script>

@@ -36,5 +36,3 @@ Route::get('/mycards', 'MyCardController@index');
 
 
 Auth::routes();
-
-Route::get('/profile', 'ProfileController@index');
