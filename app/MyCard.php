@@ -17,4 +17,8 @@ class MyCard extends Model
       return $this->belongsTo('App\User');
     }   //MyCard belongs to only one User
 
+    public function set(){
+      return $this->hasOneThrough('App\Set', 'App\MyCard');
+    }   //MyCard belongs to only one User
+
 }

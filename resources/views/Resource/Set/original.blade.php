@@ -40,7 +40,7 @@
 @foreach ($cards as $card)
 <div id="{{$card->id}}" class="tabcontent">
   <div class="card_container">
-    <img src="{{$card->front_image}}" height="350" width="250" />
+    <img src="{{ asset('images/cards/'.$card->id) }}" height="350" width="250" />
   </div>
   <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
 </div>
@@ -48,30 +48,38 @@
 <div class="clearfix"></div>
 
 <script>
-  //SHOW MY CARDS FOR THIS SET IF LOGGED IN
-  // function hasCards() {
-  //   var i, userCards;
-  //   if (Auth::id == myCards->user_id && card->card_id == mycard->id) {
-  //     for (i = 0; i < userCards.length; i++) {
-  //
-  //     }
-  //   }
-  // }
+  // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
+  $(document).ready(function() {
+    var i;
+    var myCardUserId = {{$set->mycards}};
+    var myCardCardId = {{$set->mycards}};
+    var setCards = {{$set->cards}};
+    var checkboxes = document.getElementsByClassName("checkbox");
+    for (i = 0; i < myCardCardId.length; i++) {
+      if (Auth::user()->id == myCardUserId
+      &&
+      setCards == myCardCardId) {
+        this.checked = true;
+      } else {
+        this.checked = false;
+      }
+    }
+  }
 
   //HOVER - SHOW CARD FUNCTION
-  function openCard(evt, id) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace("active", "");
-    }
-    document.getElementById(id).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+  // function openCard(evt, id) {
+  //   var i, tabcontent, tablinks;
+  //   tabcontent = document.getElementsByClassName("tabcontent");
+  //   for (i = 0; i < tabcontent.length; i++) {
+  //     tabcontent[i].style.display = "none";
+  //   }
+  //   tablinks = document.getElementsByClassName("tablinks");
+  //   for (i = 0; i < tablinks.length; i++) {
+  //     tablinks[i].className = tablinks[i].className.replace("active", "");
+  //   }
+  //   document.getElementById(id).style.display = "block";
+  //   evt.currentTarget.className += " active";
+  // }
 
   // SELECT ALL CHECKBOXES FUNCTION
   var select_all = document.getElementById("select_all"); //select all checkbox
@@ -112,5 +120,6 @@
     });
   });
 </script>
+
 
 @endsection

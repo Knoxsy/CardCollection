@@ -78,15 +78,13 @@ class SetController extends Controller
    */
   public function show(Set $set)
   {
-    // $set = Set::find($set);
-    // return View::make('set.show')->with('set', $set);
-    // $set = Set::find($id)->select('name', 'card_number')->get();
 
-    $data['set'] = $set;
-    $data['cards'] = $set->cards()->orderBy('card_number')->get();
-    $data['items'] = MyCard::with('card', 'user')->get();
-    $data['user'] = User::with('mycards')->first();
-
+    $user_id = auth()->user()->id;
+    $user = User::find($user_id);
+    $data['user'] = $user;
+    $data['set'] = $set; //This shows only the set info
+    $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
+    $data['mycards'] = $user->mycards()->get(); //Shows all mycards for auth even not in the set
     return view('resource.set.item', $data);
   }
 

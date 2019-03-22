@@ -12,11 +12,15 @@ class Set extends Model
     }  //Set can have many Cards
 
     public function mycards(){
+      /*
+        Here, use the currently logged in user (Auth::user()), and retrieve
+        all of the myCards they
+      */
       return $this->hasManyThrough('App\MyCard', 'App\Card');
     }  //Set can have many MyCards
 
     public function users(){
-      return $this->belongsTo('App\User');
+      return $this->morphMany('App\User');
     }  //Set can have many Users
 
 }
