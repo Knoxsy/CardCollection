@@ -199,11 +199,21 @@ h3 {
   font-size: 20px;
 }
 
-.dataBlockPadding{
+.dataBlockPadding {
   padding: 20px;
 }
 
 /* STYLING FOR REGISTER/LOGIN PAGES ~ AUTH.REGISTER/LOGIN.BLADE.PHP */
+
+.unauthorizedUser {
+height: 30px;
+padding-top: 10px;
+font-size: 20px;
+background-color: red;
+text-align: center;
+overflow: visible;
+margin-bottom: 20px;
+}
 
 .demo-card-square2 {
   margin: auto;
