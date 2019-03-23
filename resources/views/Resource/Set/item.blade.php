@@ -53,7 +53,7 @@
   <h5>#{{$card->card_number}}{{$card->card_number_append}}&nbsp{{$card->name}}</h5>
 </div>
 </div>
-
+@endforeach
   <div class="clearfix"></div>
 
 
