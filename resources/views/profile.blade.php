@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div>
-    <h5>{{ Auth::user()->name }}, welcome to your collection!</h5>
+    <!-- <h5>{{ Auth::user()->name }}, welcome to your collection!</h5> -->
       <!-- @if($errors->any())
       <h4>{{$errors->first()}}</h4>
       @endif -->
