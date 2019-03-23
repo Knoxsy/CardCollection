@@ -32,7 +32,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request)
     {
     if (Auth::check() ) {
-      session()->flash ('message', '<b>Nice!</b> You are now logged in');
+      session()->flash ('message', 'You are now logged in');
       session()->flash('type', 'success');
         return redirect('/profile');
     }
