@@ -9,52 +9,48 @@
   <span class="setCount">Total Cards: {{$set->count}}</span>
 </div>
 
-<div class="checklist">
-  <table>
-    <thead>
-      <th width="50px">Have<br />
-        @auth
-        <input type="checkbox" id="select_all"/>
-        @else
-        <input type="checkbox" id="select_all" disabled/>
-        @endauth
-      </th>
-      <th width="150px">Card #</th>
-      <th width="350px">Name</th>
-    </thead>
+<div class="containment">
+  <div class="checklist">
+    <table>
+      <thead>
+        <th width="50px">Have<br />
+          <input type="checkbox" id="select_all"/>
+        </th>
+        <th width="150px">Card #</th>
+        <th width="350px">Name</th>
+      </thead>
 
-    <tbody>
-      @foreach($cards as $card)
-      <tr>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          @auth
-          <input type="checkbox" class="check checkbox" id="select_all" />
-          @else
-          <input type="checkbox" id="select_all" disabled/>
-          @endauth
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->card_number}}{{$card->card_number_append}}
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->name}}
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
-
-@foreach ($cards as $card)
-<div id="{{$card->id}}" class="tabcontent">
-  <div class="card_container">
-    <img src="{{ asset('images/sets/'.$set->year.' '.$set->brand.' '.$set->type.'/'.$card->card_number.''.$card->card_number_append.'.jpg') }}" height="350" width="250" />
+      <tbody>
+        @foreach($cards as $card)
+        <tr>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            <input type="checkbox" class="check checkbox" id="select_all" />
+          </td>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            {{$card->card_number}}
+          </td>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            {{$card->name}}
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
   </div>
-  <h5>#{{$card->card_number}}{{$card->card_number_append}}&nbsp{{$card->name}}</h5>
+
+  <div class="backgroundForCard">
+    @foreach ($cards as $card)
+    <div id="{{$card->id}}" class="tabcontent">
+      <div class="card_container">
+        <img src="{{$card->front_image}}" class="theCard" height="350" width="250" />
+        <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
+      </div>
+    </div>
+    @endforeach
+  </div>
 </div>
-</div>
-@endforeach
-  <div class="clearfix"></div>
+
+<div class="clearfix"></div>
 
 
 <!-- <form id="addform" action="add_mycard.php" method="post">
