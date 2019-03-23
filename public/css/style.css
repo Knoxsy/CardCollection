@@ -211,7 +211,7 @@ h3 {
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
- font-family: Graduate;
+ font-family: Graduate; */
 }
 
 .SecondType {
@@ -369,11 +369,11 @@ hr {
   padding-bottom: 20px;
 }
 
-.flash_fadeout{
-  color: yellow;
-  background-color:red;
+.logIn1 {
+ color: black;
+ font-family: Graduate;
+ font-size: 180px;
 }
-
 /*  MISC OR UNUSED OR CAN'T FIND */
 /*
 
@@ -385,13 +385,9 @@ hr {
 .inTheCenter {
   float:none;
 }
+*/
 
-.logIn {
- color: #B07F67;
- font-family: Graduate;
- font-size: 15px;
-}
-
+/*
 .haveOnSet {
   text-align: left;
 }

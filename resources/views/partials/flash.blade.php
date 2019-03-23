@@ -1,7 +1,7 @@
 <style>
 .flash_fadeout{
-  color: yellow;
-  background-color:red;
+  color: #282E03;
+  background-color:#95B067;
   font-size: 20px;
   text-align: center;
 }
@@ -14,7 +14,7 @@
 <script>
   $('.flash_fadeout').fadeIn(500,function(){
     window.setTimeout(function(){
-      $('.flash_fadeout').fadeOut(1000, function(){
+      $('.flash_fadeout').fadeOut(1500, function(){
         // $('.flash_fadeout').remove();
       })
     }, 1000);

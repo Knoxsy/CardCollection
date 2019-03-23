@@ -11,7 +11,7 @@
       @auth
       <ul>
         <div>
-          <p class="logIn">
+          <p class="logIn1">
           {{ Auth::user()->name }}
             <a href="{{ route('logout') }}">
               <button class="mdl-button mdl-js-button mdl-button--raised
