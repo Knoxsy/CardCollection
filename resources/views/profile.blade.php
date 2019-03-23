@@ -10,7 +10,6 @@
       @endif -->
 
   </div>
-<h1>HELLO</h1>
 @foreach($cards as $card)
 {{$card}}
 @endforeach
