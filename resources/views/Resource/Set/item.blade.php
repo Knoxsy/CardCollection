@@ -10,6 +10,7 @@
 </div>
 
 <div class="checklist">
+  <form id="addcards">
   <table>
     <thead>
       @auth
@@ -32,7 +33,7 @@
               if($mycard->card_id == $card->id){
                 echo "<tr>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                    <input type='checkbox' class='check checkbox' id='select_all' checked/>
+                    <input type='checkbox' class='check checkbox' name='select[]' value='.$card->id.' checked/>
                   </td>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
                     $card->card_number$card->card_number_append
@@ -48,7 +49,7 @@
             if (!$matched) {
               echo "<tr>
                 <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                  <input type='checkbox' class='check checkbox' id='select_all' />
+                  <input type='checkbox' class='check checkbox' name='check[]' />
                 </td>
                 <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
                   $card->card_number$card->card_number_append
@@ -78,6 +79,7 @@
       </tbody>
     @endauth
   </table>
+</form>
 </div>
 
 @foreach ($cards as $card)
@@ -89,6 +91,7 @@
 </div>
 @endforeach
 <div class="clearfix"></div>
+
 
 <script>
 
@@ -106,6 +109,36 @@ function openCard(evt, id) {
   document.getElementById(id).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+  // //CLICKING ON THE CHECKBOX ADDS CLICKED CARDS TO THE DATABASE
+  // $('input:checkbox').click( function() {
+  //   clicked = $(this).attr('checked');
+  //   $userid = $_POST['userid'];
+  //   $cardid = $_POST['cardid'];
+  //   if (clicked) {
+  //     $.ajax({
+  //       data: {
+  //
+  //       },
+  //       type: "POST",
+  //       url: "add_mycard.php",
+  //       success: function(data){
+  //         alert("Cards added to your collection.");
+  //       }
+  //     }
+  //   } else {
+  //     $.ajax({
+  //       data: {
+  //       },
+  //       type: "POST",
+  //       url: "remove_mycard.php",
+  //       success: function(data){
+  //         alert("Cards removed from your collection.");
+  //       }
+  //     });
+  //   }
+  // }
+
 
 // SELECT ALL CHECKBOXES FUNCTION
 var select_all = document.getElementById("select_all"); //select all checkbox
@@ -142,6 +175,7 @@ $(document).ready(function() {
     e.preventDefault();
   });
 });
+
 
 </script>
 
