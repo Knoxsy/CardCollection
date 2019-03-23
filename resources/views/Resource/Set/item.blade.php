@@ -6,43 +6,64 @@
 
 <div class="set_header">
   <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
-  <span class="setCount">Total Cards: {{$set->count}}</span>
+  <span class="setCount">Count: {{$set->count}}</span>
 </div>
 
 <div class="checklist">
   <table>
     <thead>
+      @auth
       <th width="50px">Have<br />
-        @auth
         <input type="checkbox" id="select_all"/>
-        @else
-        <input type="checkbox" id="select_all" disabled/>
-        @endauth
       </th>
-      <th width="150px">Card #</th>
-      <th width="350px">Name</th>
-    </thead>
+      @else
 
-    <tbody>
-      @foreach($cards as $card)
-      <tr>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          @auth
-          <input type="checkbox" class="check checkbox" id="select_all" />
-          @else
-          <input type="checkbox" id="select_all" disabled/>
-          @endauth
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->card_number}}{{$card->card_number_append}}
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->name}}
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
+      @endauth
+    </th>
+    <th width="150px">Card #</th>
+    <th width="350px">Name</th>
+  </thead>
+
+  <tbody>
+    @php
+    foreach($cards as $card){
+      foreach($mycards as $mycard){
+        $matched = false;
+        if($mycard->card_id == $card->id){
+          echo "<tr>
+            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+              <input type='checkbox' class='check checkbox' id='select_all' checked/>
+            </td>
+            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+              $card->card_number$card->card_number_append
+            </td>
+            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+              $card->name
+            </td>
+          </tr>";
+          $matched = true;
+          break;
+        }
+      }
+
+      if (!$matched) {
+        echo "<tr>
+          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+            <input type='checkbox' class='check checkbox' id='select_all' />
+          </td>
+          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+            $card->card_number$card->card_number_append
+          </td>
+          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+            $card->name
+          </td>
+        </tr>";
+      }
+
+    }
+    @endphp
+  </tbody>
+</table>
 </div>
 
 @foreach ($cards as $card)
@@ -55,104 +76,72 @@
 @endforeach
 <div class="clearfix"></div>
 
-<!-- <form id="addform" action="add_mycard.php" method="post">
-  User ID:<input type="text" id="user_id" /><br />
-  Card ID:<input type="text" id="card_id" /><br />
-  <button id="submit">SUBMIT</button>
-</form> -->
-
 <script>
-  // //ADDING MYCARDS TO THE DATABASE
-  // $("#addform").click(function() {
-  //   var user_id=$("#user_id").val();
-  //   var card_id=$("#card_id").val();
-  //
-  //   event.preventDefault();
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "add_mycard.php"
-  //     data: {
-  //       user_id:user_id,
-  //       card_id:card_id
-  //     },
-  //     success: function(data) {
-  //       alert( "Cards added to your Collection." )
-  //     },
-  //   });
-  // });
+// // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
+// $(document).ready(function() {
+//   console.log = $(document).ready
+//   var i;
+//   var checkboxes = document.getElementsByClassName("checkbox");
+//   for (i = 0; i < userCards.length; i++) {
+//     if (setCards == mycard) {
+//       this.checked = true;
+//     } else {
+//       this.checked = false;
+//     }
+//   }
+// }
 
-  // // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
-  // $(document).ready(function() {
-  //   var i;
-  //   var myCardUserId = {{$set->mycards}};
-  //   var myCardCardId = {{$set->mycards}};
-  //   var setCards = {{$set->cards}};
-  //   var checkboxes = document.getElementsByClassName("checkbox");
-  //   for (i = 0; i < myCardCardId.length; i++) {
-  //     if (Auth::user()->id == myCardUserId
-  //     &&
-  //     setCards == myCardCardId) {
-  //       this.checked = true;
-  //     } else {
-  //       this.checked = false;
-  //     }
-  //   }
-  // }
-
-  // HOVER - SHOW CARD FUNCTION
-  function openCard(evt, id) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace("active", "");
-    }
-    document.getElementById(id).style.display = "block";
-    evt.currentTarget.className += " active";
+//HOVER - SHOW CARD FUNCTION
+function openCard(evt, id) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-
-  // SELECT ALL CHECKBOXES FUNCTION
-  var select_all = document.getElementById("select_all"); //select all checkbox
-  var checkboxes = document.getElementsByClassName("checkbox"); //checkbox items
-
-  select_all.addEventListener("change", function(e){
-    for (i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = select_all.checked;
-    }
-  });
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].addEventListener('change', function(e){ //".checkbox" change
-      //uncheck "select all", if one of the listed checkbox item is unchecked
-      if(this.checked == false){
-        select_all.checked = false;
-      }
-      //check "select all" if all checkbox items are checked
-      if(document.querySelectorAll('.checkbox:checked').length == checkboxes.length){
-        select_all.checked = true;
-      }
-    });
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("active", "");
   }
+  document.getElementById(id).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
-  // ROW CHANGE ON CHECKBOX CLICK FUNCTION
-  $(document).ready(function() {
-    $('tr').click(function() {
-      var inp = $(this).find('.check');
-      var tr = $(this).closest('tr');
-      inp.prop('checked', !inp.is(':checked'))
+// SELECT ALL CHECKBOXES FUNCTION
+var select_all = document.getElementById("select_all"); //select all checkbox
+var checkboxes = document.getElementsByClassName("checkbox"); //checkbox items
+select_all.addEventListener("change", function(e){
+  for (i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = select_all.checked;
+  }
+});
 
-      tr.toggleClass('isChecked', inp.is(':checked'));
-    });
+for (var i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].addEventListener('change', function(e){ //".checkbox" change
+  //uncheck "select all", if one of the listed checkbox item is unchecked
+  if(this.checked == false){
+    select_all.checked = false;
+  }
+  //check "select all" if all checkbox items are checked
+  if(document.querySelectorAll('.checkbox:checked').length == checkboxes.length){
+    select_all.checked = true;
+  }
+});
+}
 
-    // do nothing when clicking on checkbox, but bubble up to tr
-    $('.check').click(function(e) {
-      e.preventDefault();
-    });
+// ROW CHANGE ON CHECKBOX CLICK FUNCTION
+$(document).ready(function() {
+  $('tr').click(function() {
+    var inp = $(this).find('.check');
+    var tr = $(this).closest('tr');
+    inp.prop('checked', !inp.is(':checked'))
+    tr.toggleClass('isChecked', inp.is(':checked'));
   });
+  // do nothing when clicking on checkbox, but bubble up to tr
+  $('.check').click(function(e) {
+    e.preventDefault();
+  });
+});
+
 </script>
-
 
 @endsection
