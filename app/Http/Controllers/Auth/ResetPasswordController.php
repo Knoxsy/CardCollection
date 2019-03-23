@@ -25,7 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-     session()->flash ('message', '<b>Nice!</b> Password has been reset');
+     session()->flash ('message', 'Password has been reset');
      session()->flash('type', 'success');
     protected $redirectTo = '/profile';
 
