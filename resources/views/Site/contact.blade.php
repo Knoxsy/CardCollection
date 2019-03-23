@@ -5,8 +5,8 @@
 @section('content')
 <div class="contactBlock">
   <h3 class="contactBlockFont">Contact Us</h3>
-  cardboardgems@awebsiteprobably.com
-  
+  cardboardgems@mail.com
+
 </div>
 
 @endsection

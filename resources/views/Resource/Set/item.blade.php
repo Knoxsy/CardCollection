@@ -6,59 +6,90 @@
 
 <div class="set_header">
   <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
-  <span class="setCount">Count: {{$set->count}}</span>
+  <span class="setCount">Total Cards: {{$set->count}}</span>
 </div>
 
-<div class="checklist">
-  <table>
-    <thead>
-      <th width="50px">Have<br />
-        <input type="checkbox" id="select_all"/>
-      </th>
-      <th width="150px">Card #</th>
-      <th width="350px">Name</th>
-    </thead>
+<div class="containment">
+  <div class="checklist">
+    <table>
+      <thead>
+        <th width="50px">Have<br />
+          <input type="checkbox" id="select_all"/>
+        </th>
+        <th width="150px">Card #</th>
+        <th width="350px">Name</th>
+      </thead>
 
-    <tbody>
-      @foreach($cards as $card)
-      <tr>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          <input type="checkbox" class="check checkbox" id="select_all" />
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->card_number}}
-        </td>
-        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-          {{$card->name}}
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
-
-@foreach ($cards as $card)
-<div id="{{$card->id}}" class="tabcontent">
-  <div class="card_container">
-    <img src="{{$card->front_image}}" height="350" width="250" />
+      <tbody>
+        @foreach($cards as $card)
+        <tr>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            <input type="checkbox" class="check checkbox" id="select_all" />
+          </td>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            {{$card->card_number}}
+          </td>
+          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+            {{$card->name}}
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
   </div>
-  <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
+
+  <div class="backgroundForCard">
+    @foreach ($cards as $card)
+    <div id="{{$card->id}}" class="tabcontent">
+      <div class="card_container">
+        <img src="{{$card->front_image}}" class="theCard" height="350" width="250" />
+        <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
+      </div>
+    </div>
+    @endforeach
+  </div>
 </div>
-@endforeach
+
 <div class="clearfix"></div>
 
+
+<!-- <form id="addform" action="add_mycard.php" method="post">
+  User ID:<input type="text" id="user_id" /><br />
+  Card ID:<input type="text" id="card_id" /><br />
+  <button id="submit">SUBMIT</button>
+</form> -->
+
 <script>
-  // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
+  // //ADDING MYCARDS TO THE DATABASE
+  // $("#addform").click(function() {
+  //   var user_id=$("#user_id").val();
+  //   var card_id=$("#card_id").val();
+  //
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "add_mycard.php"
+  //     data: {
+  //       user_id:user_id,
+  //       card_id:card_id
+  //     },
+  //     success: function(data) {
+  //       alert( "Cards added to your Collection." )
+  //     },
+  //   });
+  // });
+
+  // // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
   // $(document).ready(function() {
-  //   console.log = $(document).ready
   //   var i;
-  //   var userCards = {{$set->mycards}};
+  //   var myCardUserId = {{$set->mycards}};
+  //   var myCardCardId = {{$set->mycards}};
   //   var setCards = {{$set->cards}};
   //   var checkboxes = document.getElementsByClassName("checkbox");
-  //   for (i = 0; i < userCards.length; i++) {
-  //     if (Auth::id == userCards->user_id
+  //   for (i = 0; i < myCardCardId.length; i++) {
+  //     if (Auth::user()->id == myCardUserId
   //     &&
-  //     setCards->card_id == mycard->card_id) {
+  //     setCards == myCardCardId) {
   //       this.checked = true;
   //     } else {
   //       this.checked = false;
@@ -66,7 +97,7 @@
   //   }
   // }
 
-  //HOVER - SHOW CARD FUNCTION
+  // HOVER - SHOW CARD FUNCTION
   function openCard(evt, id) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -121,6 +152,5 @@
   });
 </script>
 
-  {{$set->mycards}}
 
 @endsection

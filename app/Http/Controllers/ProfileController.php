@@ -21,13 +21,18 @@ class ProfileController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     // * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-        return view('/profile')->with('mycards', $user->mycards);
-    }
-
-}
+//   public function index()
+//     {
+//       // return Set::with('cards')->get();
+//       $data['mycards'] = MyCard::with('user_id')->get();
+//     //   return view('site.browse', $data);
+//     // }
+//     // {
+//         $user_id = auth()->user()->id;
+//         $user = User::find($user_id);
+//         return view('/profile')->with('mycards', $user->mycards);
+//     }
+//
+ }

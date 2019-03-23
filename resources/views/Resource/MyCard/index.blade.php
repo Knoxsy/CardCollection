@@ -1,8 +1,8 @@
-<pre>
+<!-- <pre>
   {{$items}}
-</pre>
+</pre> -->
 
-<!-- <ul>
+<ul>
 @foreach($items as $item)
 
   <li>
@@ -10,4 +10,4 @@
   {{$item->card->set->genre}}
   </li>
 @endforeach
-</ul> -->
+</ul>

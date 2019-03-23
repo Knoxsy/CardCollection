@@ -33,6 +33,7 @@ body {
   height: 561px;
   margin: 0 auto;
   margin-top: 10px;
+  background-color: #F4ECDB;
 }
 
 .demo-card-square > .mdl-card__title {
@@ -58,6 +59,14 @@ body {
 .butts2 {
   margin-right: 10px;
   font-family: 'Graduate', cursive;
+}
+
+.mdl-layout__header .mdl-layout__drawer-button i {
+  color: #f4ecdb;
+}
+
+.material-icons {
+  color: #f4ecdb;
 }
 
 /* STYLING FOR BROWSE PAGE ~ SITE.BROWSE.BLADE.PHP */
@@ -231,8 +240,14 @@ h3 {
   width: 100%;
 }
 
+.containment {
+  display: block;
+  margin-left: 15%;
+}
+
 .setCount {
-  margin-left: 450px;
+  margin-left: 15%;
+  font-size: 20px;
 }
 
 
@@ -286,14 +301,20 @@ thead {
 
 .tabcontent {
   float: left;
-  width: 45%;
+  width: 40%;
   display: none;
+  margin-right: 10%;
 }
 
 .card_container {
-  left: 27%;
   position: relative;
-  margin: 0 auto;
+  margin-left: 25%;
+  width: 250px;
+}
+
+.theCard {
+    border: 2px solid black;
+    border-radius: 2%;
 }
 
 h5 {
@@ -301,11 +322,17 @@ h5 {
   font-family: 'Graduate', cursive;
 }
 
-.clearfix::after {
+/* .backgroundForCard {
+  height: 400px;
+  width: 300px;
+} */
+
+/* .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
+
 
 /* STYLING FOR THE PROFILE PAGE - SITE.PROFILE.BLADE.PHP */
 
@@ -387,7 +414,12 @@ hr {
 }
 */
 
-/*
+.logIn {
+ color: #A1AE45;
+ font-family: Graduate;
+ font-size: 15px;
+}
+
 .haveOnSet {
   text-align: left;
 }

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -42,11 +43,16 @@ class User extends Authenticatable
     }
 
     public function sets(){
-      return $this->morphMany('App\Set');
-    }  //Card can have many Users
+      return $this->hasManyThrough('App\Set', 'App\Card');
+    }
 
     public function cards(){
-      return $this->morphMany('App\Card');
-    }  //Card can have many Users
+      return $this->hasManyThrough('App\Card', 'App\MyCard');
+    }
+
+    public function getId(){
+
+    return $this->id;
+    }
 
 }

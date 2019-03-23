@@ -7,6 +7,11 @@
   present in the master template.
    --}}
 @section('content')
+@if (session('error'))
+    <div class="alert alert-success ">
+        {{ session('error') }}
+    </div>
+@endif
   <h3>LOGIN PAGE</h3>
   <div>
     <!-- <form action="" method=""> -->
