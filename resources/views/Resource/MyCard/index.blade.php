@@ -1,9 +1,13 @@
+<!-- <pre>
+  {{$items}}
+</pre> -->
+
 <ul>
 @foreach($items as $item)
 
   <li>
-  {{$item->user_id}}
-  {{$item->card_id}}
+  {{$item->user->name}}
+  {{$item->card->set->genre}}
   </li>
 @endforeach
 </ul>

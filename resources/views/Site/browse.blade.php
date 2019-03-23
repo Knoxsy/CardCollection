@@ -3,11 +3,11 @@
 @section('title', 'Site Name - Browse Page')
 
 @section('content')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}" />
 
 <main class="mdl-layout__content">
 
-  <h4>Browse Collections</h4>
+  <h3>Browse Collections</h3>
 
   <div class="toTheLeft">
     <div class="mdl-grid">
@@ -90,7 +90,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="toTheRight">
@@ -134,14 +133,34 @@
 
         //BRAND
         $('#brand_list').show().children('div').each(function(){
+          console.group();
+
+          var brand_heading = $(this);
+
+          brand_heading.show().children('div').each(function(){
           console.log($(this).attr('class'));
+
           if($(this).attr('class') == current_category){
             $(this).slideDown();
           }else{
             $(this).slideUp();
           }
         });
+        
+        var relevant_children = brand_heading.children(`.${current_category}:visible`)
+
+        console.log('Which year?', year_heading);
+        console.log('How many are visible?', relevant_children.length);
+
+        if(relevant_children.length == 0) {
+          console.log('EMPTY BRAND', brand_heading);
+          brand_heading.hide();
+        }else{
+          brand_heading.show();
+        }
+        console.groupEnd();
       });
+    });
 
 
       </script>
@@ -157,16 +176,17 @@
           </div>
 
           <div class="mdl-tabs__panel is-active" id="starks-panel">
-            <div id="year_list" class="year dataBlockFont" type="hidden" style="display:none">
+            <div id="year_list" class="year dataBlockFont" type="hidden"
+            style="display:none">
               @foreach($years as $year)
-                <!-- Here, we actually will need to at least assign an idea to the year h6 -->
-                <!-- I think a div would also be justified -->
-                <div id="year_{{$year}}"> <!-- we want to hide() this div if empty-->
+                <div id="year_{{$year}}">
                   <h6 class="dataBlockFont">{{$year}}</h6>
                   @foreach($sets->where('year', $year) as $set)
                     <div id="{{$set->id}}" class="{{$set->genre}}">
                       <li>
-                        <a href="{{route('showset', $set->id)}}">  {{$set->year}} {{$set->brand}}</a>
+                        <a href="{{route('showset', $set->id)}}">
+                          {{$set->year}} {{$set->brand}} {{$set->type}}
+                        </a>
                       </li>
                     </div>
                   @endforeach
@@ -175,13 +195,16 @@
             </div>
           </div>
           <div class="mdl-tabs__panel dataBlockFont" id="lannisters-panel">
-            <div id="brand_list" class="brand" style="display:none">
+            <div id="brand_list" class="brand dataBlockFont" type ="hidden"
+            style="display:none">
               @foreach($brands as $brand)
                 <h6 class="dataBlockFont">{{$brand}}</h6>
                 @foreach($sets->where('brand', $brand) as $set)
                   <div id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
-                      <a href="{{route('showset', $set->id)}}">{{$set->year}} {{$set->brand}}</a>
+                      <a href="{{route('showset', $set->id)}}">
+                        {{$set->year}} {{$set->brand}} {{$set->type}}
+                      </a>
                     </li>
                   </div>
                 @endforeach

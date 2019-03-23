@@ -25,14 +25,15 @@ Route::get('/browse', 'SiteController@browse');
 Route::get('/contact', 'SiteController@contact');
 Route::get('/profile', 'SiteController@profile');
 
+Route::get('/login', 'LoginController@login');
 Route::get('/card', 'CardController@index');
 Route::get('/card/{card}', 'CardController@show')->name("showcard");
 Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show')->name("showset");
 
+Route::get('/mycards', 'MyCardController@index');
+
 // Route::get('/tag', 'TagController@index');
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -36,4 +36,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function mycards(){
+      return $this->hasMany('App\MyCard');
+    }
+
+    public function sets(){
+      return $this->hasManyThrough('App\Set', 'App\Card');
+    }
+
+    public function cards(){
+      return $this->hasManyThrough('App\Card', 'App\MyCard');
+    }
+
+    public function getId(){
+      return $this->id;
+    }
+
 }

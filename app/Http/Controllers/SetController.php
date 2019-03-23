@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use App\Set;
+use App\MyCard;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 class SetController extends Controller
@@ -76,13 +79,20 @@ class SetController extends Controller
    */
   public function show(Set $set)
   {
-    // $set = Set::find($set);
-    // return View::make('set.show')->with('set', $set);
-    // $set = Set::find($id)->select('name', 'card_number')->get();
-
-    $data['set'] = $set;
-    $data['cards'] = $set->cards()->select('id', 'name', 'card_number')->orderBy('card_number')->get();
-
+    if (Auth::check()){
+      $user_id = auth()->user()->id;
+      $user = User::find($user_id);
+      $data['user'] = $user;
+      $data['set'] = $set; //This shows only the set info
+      $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
+    } else {
+      $data['set'] = $set; //This shows only the set info
+      $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
+    }
+    // $data['mycards'] = $user->mycards()
+    //   ->join()
+    //   ->where('set_id', $set->id)
+    //   ->get(); // get all of the users mycards where the set_id = $set->id
     return view('resource.set.item', $data);
   }
 
