@@ -86,16 +86,19 @@ Basketball count: {{$sets->where('genre','Basketball')->count()}}
   <div class="showsets" id="baseball">
     <h5>Baseball Sets</h5>
     <hr />
-    @foreach($sets->where('genre','Baseball') as $set)
-    {{$set->year}} {{$set->brand}}
+      @foreach($sets->where('genre','Baseball') as $set)
+      <a href = "{{route('showset', $set->id)}}">
+    {{$set->year}} {{$set->brand}}</a>
     @endforeach
 
-    Hover over the Genre and get the lists of sets to show in this div
   </div>
   <div class="showsets" id="basketball">
     <h5>Basketball Sets</h5>
+    @foreach($sets->where('genre','Basketball') as $set)
+    {{$set->year}} {{$set->brand}}
+    @endforeach
     <hr />
-    Hover over the Genre and get the lists of sets to show in this div
+
   </div>
   <div class="showsets" id="football">
     <h5>Football Sets</h5>
@@ -103,7 +106,7 @@ Basketball count: {{$sets->where('genre','Basketball')->count()}}
     @foreach($sets->where('genre','Basketball') as $set)
     {{$set->year}} {{$set->brand}}
     @endforeach
-    Hover over the Genre and get the lists of sets to show in this div
+
   </div>
   <div class="showsets" id="miscsports">
     <h5>Misc. Sports Sets</h5>
@@ -111,7 +114,7 @@ Basketball count: {{$sets->where('genre','Basketball')->count()}}
     @foreach($sets->where('genre','Misc') as $set)
     {{$set->year}} {{$set->brand}}
     @endforeach
-    Hover over the Genre and get the lists of sets to show in this div
+
   </div>
   <div class="showsets" id="nonsports">
     <h5>Non-Sports Sets</h5>
@@ -119,7 +122,7 @@ Basketball count: {{$sets->where('genre','Basketball')->count()}}
     @foreach($sets->where('genre','Non-Sports') as $set)
     {{$set->year}} {{$set->brand}}
     @endforeach
-    Hover over the Genre and get the lists of sets to show in this div
+
   </div>
   <div class="showsets" id="gaming">
     <h5>Gaming Sets</h5>
@@ -127,7 +130,7 @@ Basketball count: {{$sets->where('genre','Basketball')->count()}}
     @foreach($sets->where('genre','Gaming') as $set)
     {{$set->year}} {{$set->brand}}
     @endforeach
-    Hover over the Genre and get the lists of sets to show in this div
+
   </div>
 
   <div class="clearfix"></div>
