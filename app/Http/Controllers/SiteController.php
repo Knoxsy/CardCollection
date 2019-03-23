@@ -4,6 +4,7 @@ use App\Set;
 use App\MyCard;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -48,14 +49,23 @@ class SiteController extends Controller
   public function profile() {
     if (Auth::check()){
       $user = Auth::user();
-      $data['mycards'] = $user->mycards();
-      $data['cards'] = $user->cards();
+      $data['mycards'] = $user->mycards;
+
+      // QUERY FOR RETRIEVING USER CARDS!
+      //SELECT * FROM cards INNER JOIN my_cards ON cards.id = my_cards.card_id WHERE my_cards.user_id = 1;
+      $data['cards'] = DB::table('cards')->join('my_cards', 'cards.id', '=', 'my_cards.card_id')->where('my_cards.user_id','=',$user->id)->get();
+
+      $data['sets'] = DB::table(
+        'mycards')->join('cards', 'my_cards.card_id', '=', 'cards.id')->join('sets', 'sets.id', '=', 'cards.set_id')->where('my_cards.user_id', '=', $user->id)->get();
+
+      // SELECT * FROM my_cards INNER JOIN cards ON my_cards.card_id = cards.id INNER JOIN sets ON sets.id = cards.set_id WHERE my_cards.user_id = 1;
+
       $data['sets'] = array();
-      foreach ($user->cards() as $card){
-        $set = $card->set();
-        if(!in_array($card, $data['cards'])){
-          array_push($data['sets'], $mycard->card_id);
-        }
+      foreach ($data['cards'] as $card){
+        // $set = $card->set();
+        // if(!in_array($card, $data['cards'])){
+          // array_push($data['sets'], $mycard->card_id);
+        // }
       }
       return view('profile', $data);
     } else {

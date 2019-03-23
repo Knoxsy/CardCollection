@@ -11,9 +11,24 @@
 
   </div>
 <h1>HELLO</h1>
-@foreach($cards as $card)
-{{$card}}
+
+
+<pre>
+mycards count: {{$mycards->count()}}
+sets count: {{count($sets)}}
+
+
+@foreach($mycards as $mycard)
+  mycard: {{$mycard->condition}}
 @endforeach
+@foreach($cards as $card)
+  CARD: {{$card->name}}
+@endforeach
+
+
+</pre>
+
+
   <div class="collection_stats">
     <table>
       <thead>

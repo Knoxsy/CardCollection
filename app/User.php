@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -46,13 +45,12 @@ class User extends Authenticatable
       return $this->hasManyThrough('App\Set', 'App\Card', 'App\MyCard');
     }  //Card can have many Users
 
-    public function cards(){
-      return $this->hasManyThrough('App\Card', 'App\MyCard');
+    public function cards(){ // NOT FUNCTIONAL!
+      return $this->hasManyThrough('App\Card', 'App\MyCard', 'id', 'id', 'id', 'id');
     }  //Card can have many Users
 
     public function getId(){
-
-    return $this->id;
+      return $this->id;
     }
 
 }
