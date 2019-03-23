@@ -19,51 +19,65 @@
       @else
 
       @endauth
-    </th>
-    <th width="150px">Card #</th>
-    <th width="350px">Name</th>
-  </thead>
+      <th width="150px">Card #</th>
+      <th width="350px">Name</th>
+    </thead>
 
-  <tbody>
-    @php
-    foreach($cards as $card){
-      foreach($mycards as $mycard){
-        $matched = false;
-        if($mycard->card_id == $card->id){
-          echo "<tr>
-            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-              <input type='checkbox' class='check checkbox' id='select_all' checked/>
-            </td>
-            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-              $card->card_number$card->card_number_append
-            </td>
-            <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-              $card->name
-            </td>
-          </tr>";
-          $matched = true;
-          break;
-        }
-      }
-
-      if (!$matched) {
-        echo "<tr>
-          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-            <input type='checkbox' class='check checkbox' id='select_all' />
-          </td>
-          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-            $card->card_number$card->card_number_append
-          </td>
-          <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-            $card->name
-          </td>
-        </tr>";
-      }
-
-    }
-    @endphp
-  </tbody>
-</table>
+    @auth
+      <tbody>
+        @php
+          foreach($cards as $card){
+            foreach($mycards as $mycard){
+              $matched = false;
+              if($mycard->card_id == $card->id){
+                echo "<tr>
+                  <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                    <input type='checkbox' class='check checkbox' id='select_all' checked/>
+                  </td>
+                  <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                    $card->card_number$card->card_number_append
+                  </td>
+                  <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                    $card->name
+                  </td>
+                </tr>";
+                $matched = true;
+                break;
+              }
+            }
+            if (!$matched) {
+              echo "<tr>
+                <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                  <input type='checkbox' class='check checkbox' id='select_all' />
+                </td>
+                <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                  $card->card_number$card->card_number_append
+                </td>
+                <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                  $card->name
+                </td>
+              </tr>";
+            }
+          }
+        @endphp
+      </tbody>
+    @else
+      <tbody>
+        @php
+          foreach($cards as $card){
+            echo "<tr>
+              <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                $card->card_number$card->card_number_append
+              </td>
+              <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                $card->name
+              </td>
+            </tr>";
+          }
+        @endphp
+      </tbody>
+    @endauth
+  </table>
 </div>
 
 @foreach ($cards as $card)
@@ -77,19 +91,6 @@
 <div class="clearfix"></div>
 
 <script>
-// // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
-// $(document).ready(function() {
-//   console.log = $(document).ready
-//   var i;
-//   var checkboxes = document.getElementsByClassName("checkbox");
-//   for (i = 0; i < userCards.length; i++) {
-//     if (setCards == mycard) {
-//       this.checked = true;
-//     } else {
-//       this.checked = false;
-//     }
-//   }
-// }
 
 //HOVER - SHOW CARD FUNCTION
 function openCard(evt, id) {
