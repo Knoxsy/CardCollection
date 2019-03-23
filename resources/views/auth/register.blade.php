@@ -63,7 +63,7 @@
                             <br>
                         </div>
 
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <label for="password" class="SecondType">{{ __('Password') }}</label>
       <div>
         <input id="password" type="password" class="form-control{{ $errors->has('password')
@@ -78,7 +78,7 @@
 
       </div>
       <br>
-    </div>
+    </div> -->
 
     <div>
       <label for="password-confirm" class="SecondType">
