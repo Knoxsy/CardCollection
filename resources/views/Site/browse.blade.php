@@ -133,16 +133,20 @@
 
         //BRAND
         $('#brand_list').show().children('div').each(function(){
+          console.group();
+
           var brand_heading = $(this);
 
           brand_heading.show().children('div').each(function(){
           console.log($(this).attr('class'));
+
           if($(this).attr('class') == current_category){
             $(this).slideDown();
           }else{
             $(this).slideUp();
           }
         });
+        
         var relevant_children = brand_heading.children(`.${current_category}:visible`)
 
         console.log('Which year?', year_heading);

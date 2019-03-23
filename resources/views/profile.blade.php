@@ -8,8 +8,12 @@
       <!-- @if($errors->any())
       <h4>{{$errors->first()}}</h4>
       @endif -->
-  </div>
 
+  </div>
+<h1>HELLO</h1>
+@foreach($cards as $card)
+{{$card}}
+@endforeach
   <div class="collection_stats">
     <table>
       <thead>
