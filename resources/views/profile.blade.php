@@ -1,12 +1,19 @@
 @extends('master/master')
 
 @section('content')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div>
     <h5>{{ Auth::user()->name }}, welcome to your collection!</h5>
-  </div>
+      <!-- @if($errors->any())
+      <h4>{{$errors->first()}}</h4>
+      @endif -->
 
+  </div>
+<h1>HELLO</h1>
+@foreach($cards as $card)
+{{$card}}
+@endforeach
   <div class="collection_stats">
     <table>
       <thead>
@@ -84,9 +91,15 @@
   </div>
 
   <div class="clearfix"></div>
+  @foreach($sets as $set)
+  <div id={"{$set->id}}"  class="{{$set}}">
+    <h1>HIIIIIIII</h1>
+    {{$set->count()}}
+    console.log({{$set}})
+  </div>
+  @endforeach
 
 <script>
-//HOVER - SHOW CARD FUNCTION
 function openCard(evt, id) {
   var i, showsets, tablinks;
   showsets = document.getElementsByClassName("showsets");
@@ -113,8 +126,5 @@ function openCard(evt, id) {
 
   </div> -->
 
-
-
-{{$mycards}}
 
 @endsection
