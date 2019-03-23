@@ -55,7 +55,32 @@
 @endforeach
 <div class="clearfix"></div>
 
+<!-- <form id="addform" action="add_mycard.php" method="post">
+  User ID:<input type="text" id="user_id" /><br />
+  Card ID:<input type="text" id="card_id" /><br />
+  <button id="submit">SUBMIT</button>
+</form> -->
+
 <script>
+  // //ADDING MYCARDS TO THE DATABASE
+  // $("#addform").click(function() {
+  //   var user_id=$("#user_id").val();
+  //   var card_id=$("#card_id").val();
+  //
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "add_mycard.php"
+  //     data: {
+  //       user_id:user_id,
+  //       card_id:card_id
+  //     },
+  //     success: function(data) {
+  //       alert( "Cards added to your Collection." )
+  //     },
+  //   });
+  // });
+
   // // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
   // $(document).ready(function() {
   //   var i;
