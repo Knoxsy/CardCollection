@@ -43,12 +43,12 @@ class User extends Authenticatable
     }
 
     public function sets(){
-      return $this->hasManyThrough('App\Set', 'App\Card', 'App\MyCard');
-    }  //Card can have many Users
+      return $this->hasManyThrough('App\Set', 'App\Card');
+    }
 
     public function cards(){
       return $this->hasManyThrough('App\Card', 'App\MyCard');
-    }  //Card can have many Users
+    }
 
     public function getId(){
 

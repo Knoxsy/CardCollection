@@ -6,75 +6,102 @@
 
 <div class="set_header">
   <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
-
+  <span class="setCount">Total Cards: {{$set->count}}</span>
 </div>
 
-<span class="setCount">Count: {{$set->count}}</span>
+<div class="checklist">
+  <table>
+    <thead>
+      <th width="50px">Have<br />
+        @auth
+        <input type="checkbox" id="select_all"/>
+        @else
+        <input type="checkbox" id="select_all" disabled/>
+        @endauth
+      </th>
+      <th width="150px">Card #</th>
+      <th width="350px">Name</th>
+    </thead>
 
-<div class="containment">
-  <div class="checklist">
-    <table>
-      <thead>
-        <th width="50px">Have<br />
-          <input type="checkbox" id="select_all"/>
-        </th>
-        <th width="150px">Card #</th>
-        <th width="350px">Name</th>
-      </thead>
+    <tbody>
+      @foreach($cards as $card)
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+          @auth
+          <input type="checkbox" class="check checkbox" id="select_all" />
+          @else
+          <input type="checkbox" id="select_all" disabled/>
+          @endauth
+        </td>
+        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+          {{$card->card_number}}{{$card->card_number_append}}
+        </td>
+        <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
+          {{$card->name}}
+        </td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
 
-      <tbody>
-        @foreach($cards as $card)
-        <tr>
-          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-            <input type="checkbox" class="check checkbox" id="select_all" />
-          </td>
-          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-            {{$card->card_number}}
-          </td>
-          <td class="tablinks" onmouseover="openCard(event, '{{$card->id}}')">
-            {{$card->name}}
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
+@foreach ($cards as $card)
+<div id="{{$card->id}}" class="tabcontent">
+  <div class="card_container">
+    <img src="{{ asset('images/sets/'.$set->year.' '.$set->brand.' '.$set->type.'/'.$card->card_number.''.$card->card_number_append.'.jpg') }}" height="350" width="250" />
   </div>
-
-<div class="backgroundForCard">
-  @foreach ($cards as $card)
-  <div id="{{$card->id}}" class="tabcontent">
-    <div class="card_container">
-      <img src="{{$card->front_image}}" class="theCard" height="350" width="250" />
-      <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
-    </div>
-  </div>
-  @endforeach
+  <h5>#{{$card->card_number}}{{$card->card_number_append}}&nbsp{{$card->name}}</h5>
 </div>
 </div>
 
   <div class="clearfix"></div>
 
 
-<script>
-  //SHOW MY CARDS FOR THIS SET IF LOGGED IN
-  $(document).ready(function() {
-    var i;
-    var myCardUserId = {{$set->mycards}};
-    var myCardCardId = {{$set->mycards}};
-    var setCards = {{$set->cards}};
-    var checkboxes = document.getElementsByClassName("checkbox");
-    for (i = 0; i < myCardCardId.length; i++) {
-      if (Auth::user()->id == myCardUserId
-      &&
-      setCards == myCardCardId) {
-        this.checked = true;
-      } else {
-        this.checked = false;
-      }
-    }
-  }
+<!-- <form id="addform" action="add_mycard.php" method="post">
+  User ID:<input type="text" id="user_id" /><br />
+  Card ID:<input type="text" id="card_id" /><br />
+  <button id="submit">SUBMIT</button>
+</form> -->
 
-  //HOVER - SHOW CARD FUNCTION
+<script>
+  // //ADDING MYCARDS TO THE DATABASE
+  // $("#addform").click(function() {
+  //   var user_id=$("#user_id").val();
+  //   var card_id=$("#card_id").val();
+  //
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "add_mycard.php"
+  //     data: {
+  //       user_id:user_id,
+  //       card_id:card_id
+  //     },
+  //     success: function(data) {
+  //       alert( "Cards added to your Collection." )
+  //     },
+  //   });
+  // });
+
+  // // //SHOW MY CARDS FOR THIS SET IF LOGGED IN
+  // $(document).ready(function() {
+  //   var i;
+  //   var myCardUserId = {{$set->mycards}};
+  //   var myCardCardId = {{$set->mycards}};
+  //   var setCards = {{$set->cards}};
+  //   var checkboxes = document.getElementsByClassName("checkbox");
+  //   for (i = 0; i < myCardCardId.length; i++) {
+  //     if (Auth::user()->id == myCardUserId
+  //     &&
+  //     setCards == myCardCardId) {
+  //       this.checked = true;
+  //     } else {
+  //       this.checked = false;
+  //     }
+  //   }
+  // }
+
+  // HOVER - SHOW CARD FUNCTION
   function openCard(evt, id) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -129,6 +156,5 @@
   });
 </script>
 
-  {{$user->user_name}}
 
 @endsection
