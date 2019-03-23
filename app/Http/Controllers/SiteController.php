@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use App\Set;
+use App\MyCard;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -42,6 +46,20 @@ class SiteController extends Controller
   }
 
   public function profile() {
-    return view('site.profile');
+    if (Auth::check()){
+      $user = Auth::user();
+      $data['mycards'] = $user->mycards();
+      $data['cards'] = $user->cards();
+      $data['sets'] = array();
+      foreach ($user->cards() as $card){
+        $set = $card->set();
+        if(!in_array($card, $data['cards'])){
+          array_push($data['sets'], $mycard->card_id);
+        }
+      }
+      return view('profile', $data);
+    } else {
+      return redirect('login')->with( 'auth','Unauthorized Page! You Must login to view collections.');
+    }
   }
 }

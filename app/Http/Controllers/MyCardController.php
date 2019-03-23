@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\MyCard;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 
 class MyCardController extends Controller
@@ -39,13 +40,13 @@ class MyCardController extends Controller
   public function store(Request $request)
   {
     $rules = array(
-      'user_id' => 'required',
+      'user' => 'required',
       'card_id' => 'required',
     );
 
     $mycard = new MyCard;
-    $mycard['user_id'] = Auth::user()->id;
-    $mycard->user_id = $request->input('user_id');
+    $mycard['user'] = Auth::user()->id;
+    $mycard->user_id = $request->input('user');
     $mycard->card_id = $request->input('card_id');
     $mycard->condition = $request->input('condition');
     $mycard->save();
