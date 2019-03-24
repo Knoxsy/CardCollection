@@ -200,7 +200,7 @@
               @foreach($brands as $brand)
                 <h6 class="dataBlockFont">{{$brand}}</h6>
                 @foreach($sets->where('brand', $brand) as $set)
-                  <div id="{{$set->id}}" class="{{$set->genre}}">
+                  <div class="linkPadding" id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
                       <a href="{{route('showset', $set->id)}}">
                         {{$set->year}} {{$set->brand}}

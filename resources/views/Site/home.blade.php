@@ -23,7 +23,7 @@
           <div class="butts1">
             <a href="browse">
               <button class="mdl-button mdl-js-button mdl-button--raised
-              mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900
+              mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 mdl-color-text--amber-50
               butts2">
                 Browse Collections
               </button>

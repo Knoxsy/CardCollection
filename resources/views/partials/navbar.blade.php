@@ -15,7 +15,7 @@
           {{ Auth::user()->name }}
             <a href="{{ route('logout') }}">
               <button class="mdl-button mdl-js-button mdl-button--raised
-              mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 butts2"
+              mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900 mdl-color-text--amber-50 butts2"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               {{ __('Logout') }}
@@ -35,14 +35,14 @@
       <a href="{{ route('register') }}">
         <button class="mdl-button mdl-js-button mdl-button--raised
         mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900
-        butts2 font">
+        butts2 mdl-color-text--amber-50 font">
         {{ __('Register') }}
         </button>
       </a>
       <a href="{{ route('login') }}">
         <button class="mdl-button mdl-js-button mdl-button--raised
         mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900
-        butts2 font">
+        butts2 mdl-color-text--amber-50 font">
         {{ __('Login') }}
         </button>
       </a>
