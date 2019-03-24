@@ -58,6 +58,7 @@
     </div>
   </div>
 
+
   <div class="mdl-card__actions mdl-card--border">
     <div class="buttsProfile">
       <a href="browse">
@@ -72,75 +73,133 @@
 </div>
 
 <div class="profileRight">
-  <div class="showsets noUnderline" id="baseball">
-    <h5>Baseball Sets</h5>
-    <hr />
-    @foreach($sets->where('genre','Baseball') as $set)
-    <div class="textPadding" id="{{$set->set_id}}" class="{{$set->genre}}">
-      <li>
-        <a href="{{route('showset', $set->set_id)}}">
-          {{$set->year}} {{$set->brand}}
-        </a>
-      </li>
-    </div>
-    @endforeach
-  </div>
+<div class="showsets" id="baseball">
+  <h5>Baseball Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Baseball') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
 
-  <div class="showsets" id="basketball">
-    <h5>Basketball Sets</h5>
-    <hr />
-    @foreach($sets->where('genre','Basketball') as $set)
-    <div class="textPadding" id="{{$set->set_id}}" class="{{$set->genre}}">
-      <li>
-        <a href="{{route('showset', $set->set_id)}}">
-          {{$set->year}} {{$set->brand}}
-        </a>
-      </li>
-    </div>
-    @endforeach
-  </div>
+<div class="showsets" id="basketball">
+  <h5>Basketball Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Basketball') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
 
-  <div class="showsets" id="football">
-    <h5>Football Sets</h5>
-    <hr />
-    @foreach($sets->where('genre','Basketball') as $set)
-    <div class="textPadding" id="{{$set->id}}" class="{{$set->genre}}">
-      <li>
-        <a href="{{route('showset', $set->set_id)}}">
-          {{$set->year}} {{$set->brand}}
-        </a>
-      </li>
-    </div>
-    @endforeach
-  </div>
+<div class="showsets" id="football">
+  <h5>Football Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Football') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
 
-  <div class="showsets" id="miscsports">
-    <h5>Misc. Sports Sets</h5>
-    <hr />
-    @foreach($sets->where('genre','Misc') as $set)
-    <div class="textPadding" id="{{$set->id}}" class="{{$set->genre}}">
-      <li>
-        <a href="{{route('showset', $set->set_id)}}">
-          {{$set->year}} {{$set->brand}}
-        </a>
-      </li>
-    </div>
-    @endforeach
-  </div>
+<div class="showsets" id="miscsports">
+  <h5>Misc. Sports Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Misc') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
 
-  <div class="showsets" id="nonsports">
-    <h5>Non-Sports Sets</h5>
-    <hr />
-    @foreach($sets->where('genre','Non-Sports') as $set)
-    <div class="textPadding" id="{{$set->id}}" class="{{$set->genre}}">
-      <li>
-        <a href="{{route('showset', $set->set_id)}}">
-          {{$set->year}} {{$set->brand}}
-        </a>
-      </li>
-    </div>
-    @endforeach
-  </div>
+<div class="showsets" id="nonsports">
+  <h5>Non-Sports Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Non-Sports') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
+
+<div class="showsets" id="gaming">
+  <h5>Gaming Sets</h5>
+  <hr />
+  @php
+  $set_name = array();
+  foreach($sets->where('genre','Gaming') as $set){
+    if(!in_array($set->year.$set->brand, $set_name)){
+      $set_name[]= $set->year.$set->brand;
+      echo '
+        <div id="{{$set->set_id}}" class="{{$set->genre}}">
+          <li>
+            <a href="'.route('showset', $set->set_id).'">
+              ' . $set->year .' ' . $set->brand . '
+            </a>
+          </li>
+        </div>';
+    }
+  };
+  @endphp
+</div>
+</div>
+>>>>>>> smf_cleanup
 
   <div class="showsets" id="gaming">
     <h5>Gaming Sets</h5>
