@@ -146,7 +146,7 @@
             $(this).slideUp();
           }
         });
-        
+
         var relevant_children = brand_heading.children(`.${current_category}:visible`)
 
         console.log('Which year?', year_heading);
@@ -166,7 +166,7 @@
       </script>
 
 
-      <!-- BOOTSTRAP TABS -->
+      <!-- MDL TABS -->
         <div class="dataBlockPadding">
         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" id="main_area">
           <div class="mdl-tabs__tab-bar">
@@ -185,7 +185,7 @@
                     <div id="{{$set->id}}" class="{{$set->genre}}">
                       <li>
                         <a href="{{route('showset', $set->id)}}">
-                          {{$set->year}} {{$set->brand}} {{$set->type}}
+                          {{$set->year}} {{$set->brand}}
                         </a>
                       </li>
                     </div>
@@ -203,7 +203,7 @@
                   <div id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
                       <a href="{{route('showset', $set->id)}}">
-                        {{$set->year}} {{$set->brand}} {{$set->type}}
+                        {{$set->year}} {{$set->brand}}
                       </a>
                     </li>
                   </div>

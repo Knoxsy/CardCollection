@@ -7,12 +7,8 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 <div>
   <h5>{{ Auth::user()->name }}, welcome to your collection!</h5>
-  <!-- @if($errors->any())
-  <h4>{{$errors->first()}}</h4>
-  @endif -->
-
 </div>
-
+<div>
 <div class="collection_stats">
   <table>
     <thead>
@@ -59,6 +55,18 @@
   </table>
 </div>
 
+<div class="mdl-card__actions mdl-card--border">
+  <div class="butts1">
+    <a href="browse">
+      <button class="mdl-button mdl-js-button mdl-button--raised
+      mdl-js-ripple-effect mdl-button--colored mdl-color--light-green-900
+      butts2">
+        Add Cards To Your Collection
+      </button>
+    </a>
+  </div>
+</div>
+</div>
 <div class="showsets" id="baseball">
   <h5>Baseball Sets</h5>
   <hr />
@@ -142,7 +150,6 @@
   </div>
   @endforeach
 </div>
-
 </div>
 
 <div class="clearfix"></div>
@@ -164,16 +171,5 @@ function openCard(evt, id) {
 }
 
 </script>
-<!--
-<div>
-@if (session('status'))
-<div class="alert alert-success" role="alert">
-{{ session('status') }}
-</div>
-@endif
-
-
-</div> -->
-
 
 @endsection
