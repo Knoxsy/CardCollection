@@ -42,7 +42,7 @@ body {
   transform: rotate(-15deg);
   float: left;
   position: relative;
-  left: 45%;
+  left: 418px;
 }
 
 .demo-card-square2 > .mdl-card__title2 {
@@ -61,7 +61,7 @@ body {
   transform: rotate(15deg);
   float: left;
   position: relative;
-  right: 25%;
+  right: 180px;
 }
 
 .demo-card-square3 > .mdl-card__title3 {
