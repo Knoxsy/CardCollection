@@ -1,17 +1,17 @@
 
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
-    <div class="mdl-layout__header-row mdl-color--blue-grey-900">
-      <!-- Title -->
-      <span class="mdl-layout-title headerFont">Cardboard Gems</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
+      <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
+        <div class="mdl-layout__header-row mdl-color--blue-grey-900">
+          <!-- Title -->
+          <span  style="color:white" class="mdl-layout-title headerFont">Cardboard Gems</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
 
       @auth
       <ul>
         <div>
-          <p class="logIn">
+          <p class="logIn1">
           {{ Auth::user()->name }}
             <a href="{{ route('logout') }}">
               <button class="mdl-button mdl-js-button mdl-button--raised
@@ -50,6 +50,7 @@
       @endauth
 
       <!-- Navigation. We hide it in small screens. -->
+
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
       mdl-textfield--floating-label mdl-textfield--align-right">
         <label class="mdl-button mdl-js-button mdl-button--icon"
@@ -57,10 +58,13 @@
           <i class="material-icons">search</i>
         </label>
         <div class="mdl-textfield__expandable-holder mdl-color--amber-50">
-          <input class="mdl-textfield__input" type="text" name="sample"
-            id="fixed-header-drawer-exp" />
+          <form action="{{ route('search') }}">
+            <input class="mdl-textfield__input" type="text" style="color:black" name="sample" id="fixed-header-drawer-exp" />
+            <Input type="submit" />
+          </form>
         </div>
       </div>
+    </a>
     </div>
   </header>
 

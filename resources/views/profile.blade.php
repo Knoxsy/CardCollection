@@ -57,6 +57,7 @@
       </table>
     </div>
   </div>
+<<<<<<< HEAD
 
   <div class="mdl-card__actions mdl-card--border">
     <div class="buttsProfile">
@@ -68,6 +69,54 @@
         </button>
       </a>
     </div>
+=======
+@foreach($cards as $card)
+{{$card}}
+@endforeach
+  <div class="collection_stats">
+    <table>
+      <thead>
+        <th>Genre</th>
+        <th>Cards</th>
+        <th>Comp. Sets</th>
+      </thead>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'baseball')">Baseball Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'baseball')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'baseball')"></td>
+      </tr>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'basketball')">Basketball Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'basketball')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'basketball')"></td>
+      </tr>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'football')">Football Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'football')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'football')"></td>
+      </tr>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'miscsports')">Misc. Sports Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'miscsports')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'miscsports')"></td>
+      </tr>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'nonsports')">Non-Sports Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'nonsports')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'nonsports')"></td>
+      </tr>
+      <tr>
+        <td class="tablinks" onmouseover="openCard(event, 'gaming')">Gaming Cards</td>
+        <td class="tablinks" onmouseover="openCard(event, 'gaming')"></td>
+        <td class="tablinks" onmouseover="openCard(event, 'gaming')"></td>
+      </tr>
+      <tr>
+        <td>Total Collection</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+>>>>>>> newauth
   </div>
 </div>
 

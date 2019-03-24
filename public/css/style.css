@@ -273,6 +273,7 @@ margin-bottom: 20px;
 .LoginFont {
  font-weight: bold;
  font-size: 25px;
+ font-family: Graduate; */
 }
 
 .SecondType {
@@ -302,9 +303,17 @@ margin-bottom: 20px;
   font-size: 20px;
 }
 
+
+span {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 13px;
+  color:red;
+
 .checklist {
   width: 50%;
   float: left;
+
 }
 
 .isChecked {
@@ -365,6 +374,7 @@ h5 {
   text-align: center;
   font-family: 'Graduate', cursive;
 }
+
 
 /* .backgroundForCard {
   height: 400px;
@@ -433,6 +443,22 @@ hr {
   height: 2px;
   background: #000000;
 
+
+.setCount {
+  margin-left: 450px;
+}
+
+.SecondType {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Graduate;
+}
+
+.ThirdType {
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Graduate;
+
 }
 
 .greeting {
@@ -467,6 +493,11 @@ hr {
   padding-bottom: 20px;
 }
 
+.logIn1 {
+ color: black;
+ font-family: Graduate;
+ font-size: 180px;
+}
 /*  MISC OR UNUSED OR CAN'T FIND */
 /*
 
@@ -478,9 +509,10 @@ hr {
 .inTheCenter {
   float:none;
 }
+*/
 
 .logIn {
- color: #B07F67;
+ color: #A1AE45;
  font-family: Graduate;
  font-size: 15px;
 }
@@ -488,6 +520,7 @@ hr {
 .haveOnSet {
   text-align: left;
 }
+
 
 .badge {
   font-style: italic;
@@ -502,5 +535,9 @@ hr {
   z-index: -1;
   position:absolute;
 }
-
-*/
+.Session2 {
+  font-family: 'Graduate', cursive;
+  text-align: center;
+  font-size: 13px;
+  color:red;
+  }
