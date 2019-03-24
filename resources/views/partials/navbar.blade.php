@@ -4,7 +4,7 @@
       <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
         <div class="mdl-layout__header-row mdl-color--blue-grey-900">
           <!-- Title -->
-          <span  style="color:white" class="mdl-layout-title headerFont">Cardboard Gems</span>
+          <span  style="color:white" class="mdl-layout-title headerFont mdl-color-text--amber-50">Cardboard Gems</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
 
