@@ -4,41 +4,14 @@
 
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div>
-    <h5>{{ Auth::user()->name }}, welcome to your collection!</h5>
+    <h5 class="greeting">Welcome to your collection, {{ Auth::user()->name }}!</h5>
       <!-- @if($errors->any())
       <h4>{{$errors->first()}}</h4>
       @endif -->
 
   </div>
-<h1>HELLO</h1>
-
-
-<pre>
-mycards count: {{$mycards->count()}}
-
-
-<!-- @foreach($sets as $set)
-@endforeach -->
-
-@foreach($mycards as $mycard)
-  mycard: {{$mycard->condition}}
-@endforeach
-@foreach($cards as $card)
-  CARD: {{$card->name}}
-@endforeach
-
-@foreach($sets->where('genre', 'Basketball') as $basketball)
-  SET: {{$basketball->set_id}}
-      {{$basketball->genre}}
-      {{$basketball->brand}}
-      {{$basketball->year}}
-      {{$basketball->type}}
-@endforeach
-
-Basketball count: {{$sets->where('genre','Basketball')->count()}}
-
-  <div class="collection_stats">
-    <table>
+<div class="collection_stats">
+    <table class="tableStyle">
       <thead>
         <th>Genre</th>
         <th>Cards</th>

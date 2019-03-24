@@ -146,7 +146,7 @@
             $(this).slideUp();
           }
         });
-        
+
         var relevant_children = brand_heading.children(`.${current_category}:visible`)
 
         console.log('Which year?', year_heading);
@@ -166,7 +166,7 @@
       </script>
 
 
-      <!-- BOOTSTRAP TABS -->
+      <!-- MDL TABS -->
         <div class="dataBlockPadding">
         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" id="main_area">
           <div class="mdl-tabs__tab-bar">
