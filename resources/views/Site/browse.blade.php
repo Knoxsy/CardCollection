@@ -108,6 +108,7 @@
 
           year_heading.show().children('div').each(function(){
             // then, looping through records within the year heading
+            console.log($(this).attr('class'));
 
             if($(this).attr('class') == current_category){
               $(this).slideDown();
@@ -117,6 +118,9 @@
           });
 
           var relevant_children = year_heading.children(`.${current_category}:visible`)
+
+          console.log('Which year?', year_heading);
+          console.log('How many are visible?', relevant_children.length);
 
           if(relevant_children.length == 0) {
             console.log('EMPTY YEAR', year_heading);
@@ -134,6 +138,7 @@
           var brand_heading = $(this);
 
           brand_heading.show().children('div').each(function(){
+          console.log($(this).attr('class'));
 
           if($(this).attr('class') == current_category){
             $(this).slideDown();
@@ -144,6 +149,9 @@
 
         var relevant_children = brand_heading.children(`.${current_category}:visible`)
 
+        console.log('Which year?', year_heading);
+        console.log('How many are visible?', relevant_children.length);
+
         if(relevant_children.length == 0) {
           console.log('EMPTY BRAND', brand_heading);
           brand_heading.hide();
@@ -153,6 +161,7 @@
         console.groupEnd();
       });
     });
+
 
 
       </script>

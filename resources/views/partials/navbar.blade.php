@@ -1,7 +1,7 @@
 
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-color--blue-grey-900" class="head">
+      <header class="mdl-layout__header mdl-color--blue-grey-900 head">
         <div class="mdl-layout__header-row mdl-color--blue-grey-900">
           <!-- Title -->
           <span class="mdl-layout-title headerFont mdl-color-text--amber-50">Cardboard Gems</span>

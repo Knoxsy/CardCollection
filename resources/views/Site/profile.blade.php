@@ -5,7 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
-<div>
+<div class="paddingNav">
   <h5 class="greeting">Welcome to your collection, {{ Auth::user()->name }}!</h5>
 </div>
 
@@ -199,7 +199,6 @@
   @endphp
 </div>
 </div>
->>>>>>> smf_cleanup
 
   <div class="showsets" id="gaming">
     <h5>Gaming Sets</h5>

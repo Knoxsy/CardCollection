@@ -20,6 +20,10 @@ body {
   color: #F4ECDB !important;
 }
 
+.paddingNav {
+  padding-top: 90px;
+}
+
 /* STYLING FOR HOMEPAGE ~ SITE.HOME.BLADE.PHP */
 
 .mdl-layout__content {
@@ -386,9 +390,9 @@ h5 {
 /* STYLING FOR THE PROFILE PAGE - SITE.PROFILE.BLADE.PHP */
 .buttsProfile {
   font-family: 'Graduate', cursive;
-  margin-left: ;
-  margin-top: 50%;
-  margin-left: 20px;
+
+  margin-top: 315px;
+  margin-left: 50px;
 }
 
 .profileLeft{
@@ -404,13 +408,13 @@ h5 {
 .collection_stats {
   float: left;
   width: 45%;
-  margin-left: 20px;
+  margin-left: 50px;
   margin-top: 30px;
 }
 
 .tableStyle {
   border: solid 2px black;
-  width: 600px;
+  width: 800px;
 }
 
 .tablinks {
@@ -424,7 +428,7 @@ h5 {
 .showsets {
   margin-top: 30px;
   margin-left: 40px;
-  width: 550px;
+  width: 650px;
   border: solid 2px black;
   background-color: #F4ECDB;
   display: none;

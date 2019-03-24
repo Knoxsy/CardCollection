@@ -5,7 +5,7 @@
 @section('content')
 
 <main class="mdl-layout__content">
-  <div class="mdl-grid">
+  <div class="mdl-grid paddingNav">
 
     <div class="mdl-cell mdl-cell--4-col">
       <div class="demo-card-square2 mdl-card2 mdl-shadow--2dp">
