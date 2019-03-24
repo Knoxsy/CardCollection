@@ -5,6 +5,11 @@
 
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <div class="demo-card-square2 mdl-card mdl-shadow--2dp">
+    @if (session('auth'))
+     <div class="unauthorizedUser">
+      <b>{{ session('auth') }}</b>
+     </div>
+    @endif
                 <div class="LoginFont">{{ __('LOGIN') }}</div>
                 <br>
                     <form method="POST" action="{{ route('login') }}">
