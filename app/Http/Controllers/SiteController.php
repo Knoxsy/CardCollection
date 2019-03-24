@@ -58,8 +58,7 @@ class SiteController extends Controller
       // QUERY FOR RETRIEVING USER SETS
       // SELECT * FROM sets INNER JOIN cards ON sets.id = cards.set_id INNER JOIN my_cards ON my_cards.card_id = cards.id WHERE my_cards.user_id = 1;
       $data['sets'] = DB::table('sets')->join('cards', 'sets.id', '=', 'cards.set_id')->join('my_cards', 'my_cards.card_id', '=', 'cards.id')->where('my_cards.user_id', '=', $user->id)->get();
-
-      return view('profile', $data);
+      return view('site.profile', $data);
     } else {
       return redirect('login')->with( 'auth','You must be logged in to view collections.');
     }
