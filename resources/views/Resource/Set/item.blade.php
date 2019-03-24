@@ -92,10 +92,6 @@
 @endforeach
 <div class="clearfix"></div>
 
-@foreach ($mycards as $mycard)
-  {{$mycard->card_id}}
-@endforeach
-
 
 <script>
 
@@ -126,7 +122,6 @@
     clicked = $(this).attr('checked');
     var card_id = $(this).val();
     if (clicked !== 'checked') {  //AJAX CALL TO STORE NEW MYCARD
-      console.log(clicked);
       $.ajax({
         url: '{{ route("storeMyCard") }}',
         method: 'POST',
@@ -139,7 +134,6 @@
         }
       });
     } else {  //AJAX CALL TO DESTROY MYCARD
-      console.log(clicked);
       $.ajax({
         url: '{{ route("deleteMyCard") }}',
         method: "DELETE",
@@ -203,7 +197,5 @@
   }
 
 </script>
-
-
 
 @endsection
