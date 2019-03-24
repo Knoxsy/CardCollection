@@ -1,4 +1,8 @@
 /* STYLING FOR OVER ALL LOOK OF SITE ~ MASTER.MASTER.BLADE.PHP */
+a {
+  text-decoration: none;
+  color: blue;
+}
 
 body {
   background-image: url('Turf.jpg');
