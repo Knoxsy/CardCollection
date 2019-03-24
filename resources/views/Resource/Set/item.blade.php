@@ -42,7 +42,7 @@
     @foreach ($cards as $card)
     <div id="{{$card->id}}" class="tabcontent">
       <div class="card_container">
-        <img src="{{$card->front_image}}" class="theCard" height="350" width="250" />
+        <img src="{{ asset('images/sets/'.$set->year.' '.$set->brand.' '.$set->type.'/'.$card->card_number.''.$card->card_number_append.'.jpg') }}" height="350" width="250" />
         <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
       </div>
     </div>
