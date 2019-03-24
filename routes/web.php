@@ -19,6 +19,7 @@
 //
 // Route::get('/home', 'HomeController@index')->name('home');
 
+Auth::routes();
 
 Route::get('/', 'SiteController@home');
 Route::get('/browse', 'SiteController@browse');
@@ -29,12 +30,8 @@ Route::get('/card', 'CardController@index');
 Route::get('/card/{card}', 'CardController@show')->name("showcard");
 Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show')->name("showset");
-
 Route::get('/mycards', 'MyCardController@index');
-
-// Route::get('/tag', 'TagController@index');
-
-
-Auth::routes();
-
 Route::get('/profile', 'ProfileController@index');
+
+Route::delete('/mycard', 'MyCardController@destroy')->name('deleteMyCard');
+Route::post('/mycard', 'MyCardController@store')->name('storeMyCard');

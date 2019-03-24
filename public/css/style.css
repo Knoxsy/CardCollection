@@ -271,9 +271,9 @@ thead {
   font-size: 20px;
 }
 
-.check {
+/* .check {
   pointer-events: none;
-}
+} */
 
 .tabcontent {
   position: -webkit-sticky; /* Safari */
