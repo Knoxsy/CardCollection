@@ -3,37 +3,53 @@
 @section('title', 'Cardboard Gems')
 
 @section('content')
+<div class="containment">
+  <div class="set_header">
+    <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
+    <span class="setCount">Count: {{$set->count}}</span>
+  </div>
 
-<div class="set_header">
-  <h3>{{$set->year}}&nbsp{{$set->brand}}&nbsp{{$set->type}}</h3><br />
-  <span class="setCount">Count: {{$set->count}}</span>
-</div>
+  <div class="checklist">
+    <form id="addcards">
+    <table>
+      <thead>
+        @auth
+        <th width="50px">Have<br />
+          <input type="checkbox" id="select_all"/>
+        </th>
+        @else
 
-<div class="checklist">
-  <form id="addcards">
-  <table>
-    <thead>
+        @endauth
+        <th width="150px">Card #</th>
+        <th width="350px">Name</th>
+      </thead>
+
       @auth
-      <th width="50px">Have<br />
-        <input type="checkbox" id="select_all"/>
-      </th>
-      @else
-
-      @endauth
-      <th width="150px">Card #</th>
-      <th width="350px">Name</th>
-    </thead>
-
-    @auth
-      <tbody>
-        @php
-          foreach($cards as $card){
-            foreach($mycards as $mycard){
-              $matched = false;
-              if($mycard->card_id == $card->id){
+        <tbody>
+          @php
+            foreach($cards as $card){
+              foreach($mycards as $mycard){
+                $matched = false;
+                if($mycard->card_id == $card->id){
+                  echo "<tr>
+                    <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                      <input type='checkbox' class='check checkbox' name='check[]' value='$card->id' checked/>
+                    </td>
+                    <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                      $card->card_number$card->card_number_append
+                    </td>
+                    <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
+                      $card->name
+                    </td>
+                  </tr>";
+                  $matched = true;
+                  break;
+                }
+              }
+              if (!$matched) {
                 echo "<tr>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                    <input type='checkbox' class='check checkbox' name='check[]' value='$card->id' checked/>
+                    <input type='checkbox' class='check checkbox' name='check[]' value='$card->id'/>
                   </td>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
                     $card->card_number$card->card_number_append
@@ -42,15 +58,15 @@
                     $card->name
                   </td>
                 </tr>";
-                $matched = true;
-                break;
               }
             }
-            if (!$matched) {
+          @endphp
+        </tbody>
+      @else
+        <tbody>
+          @php
+            foreach($cards as $card){
               echo "<tr>
-                <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                  <input type='checkbox' class='check checkbox' name='check[]' value='$card->id'/>
-                </td>
                 <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
                   $card->card_number$card->card_number_append
                 </td>
@@ -59,41 +75,25 @@
                 </td>
               </tr>";
             }
-          }
-        @endphp
-      </tbody>
-    @else
-      <tbody>
-        @php
-          foreach($cards as $card){
-            echo "<tr>
-              <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                $card->card_number$card->card_number_append
-              </td>
-              <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                $card->name
-              </td>
-            </tr>";
-          }
-        @endphp
-      </tbody>
-    @endauth
-  </table>
-</form>
-</div>
+          @endphp
+        </tbody>
+      @endauth
+    </table>
+  </form>
+  </div>
 
-  <div class="backgroundForCard">
-    @foreach ($cards as $card)
-    <div id="{{$card->id}}" class="tabcontent">
-      <div class="card_container">
-        <img src="{{ asset('images/sets/'.$set->year.' '.$set->brand.' '.$set->type.'/'.$card->card_number.''.$card->card_number_append.'.jpg') }}" height="350" width="250" />
-        <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
+    <div class="backgroundForCard">
+      @foreach ($cards as $card)
+      <div id="{{$card->id}}" class="tabcontent">
+        <div class="card_container">
+          <img src="{{ asset('images/sets/'.$set->year.' '.$set->brand.' '.$set->type.'/'.$card->card_number.''.$card->card_number_append.'.jpg') }}" height="350" width="250" />
+          <h5>#{{$card->card_number}}&nbsp{{$card->name}}</h5>
+        </div>
       </div>
+      @endforeach
     </div>
-    @endforeach
   </div>
 </div>
-
 <div class="clearfix"></div>
 
 
