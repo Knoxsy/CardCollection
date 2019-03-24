@@ -14,7 +14,7 @@
 <script>
   $('.flash_fadeout').fadeIn(500,function(){
     window.setTimeout(function(){
-      $('.flash_fadeout').fadeOut(1500, function(){
+      $('.flash_fadeout').fadeOut(2500, function(){
         // $('.flash_fadeout').remove();
       })
     }, 1000);
