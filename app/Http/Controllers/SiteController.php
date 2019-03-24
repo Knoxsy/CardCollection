@@ -61,6 +61,16 @@ class SiteController extends Controller
       return view('site.profile', $data);
     } else {
       return redirect('login')->with( 'auth','You must be logged in to view collections.');
+      // $data['years'] = [];
+      // $data['brands'] = [];
+      // foreach($data['sets'] as $set){
+      //   if(!in_array($set->year, $data['years'])){
+      //     array_push($data['years'], $set->year);
+      //   }
+      //   if(!in_array($set->brand, $data['brands'])){
+      //     array_push($data['brands'], $set->brand);
+      //   }
+      // }
     }
   }
 }
