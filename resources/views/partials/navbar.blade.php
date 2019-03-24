@@ -11,7 +11,7 @@
       @auth
       <ul>
         <div>
-          <p class="logIn1">
+          <p class="logIn1 mdl-color-text--amber-50">
           {{ Auth::user()->name }}
             <a href="{{ route('logout') }}">
               <button class="mdl-button mdl-js-button mdl-button--raised
