@@ -104,7 +104,6 @@ class MyCardController extends Controller
     $mycard->update($request->all());
       // $mycard->user_id = $request->input('user_id');
       // $mycard->card_id = $request->input('card_id');
-      // $mycard->condition = $request->input('condition');
       // $mycard->save();
 
     return $mycard;

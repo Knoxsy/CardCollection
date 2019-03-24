@@ -48,15 +48,6 @@ class SetController extends Controller
       'count' => 'required',
     );
 
-    //     $validator = Validator::make(Input::all(), $rules);
-    //
-    //     //process the login
-    //     if($validator->fails()) {
-    //       return Redirect::to('sets/create')
-    //         ->withErrors($validator)
-    //         ->withInput(Input::except('password'));
-    // } else {
-
         // store
     $set = new Set;
     $set->genre = $request->input('genre');
@@ -64,11 +55,6 @@ class SetController extends Controller
     $set->brand = $request->input('brand');
     $set->count = $request->input('count');
     $set->save();
-
-        // redirect
-            // Session::flash('message', 'Successfully created set!');
-            // return Redirect::to('set');
-      //
   }
 
   /**
@@ -87,12 +73,8 @@ class SetController extends Controller
       $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
     } else {
       $data['set'] = $set; //This shows only the set info
-      $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
+      $data['cards'] = $set->cards()->orderBy('card_number')->get();
     }
-    // $data['mycards'] = $user->mycards()
-    //   ->join()
-    //   ->where('set_id', $set->id)
-    //   ->get(); // get all of the users mycards where the set_id = $set->id
     return view('resource.set.item', $data);
   }
 
@@ -121,23 +103,12 @@ class SetController extends Controller
       'year' => 'required|numeric',
       'brand' => 'required'
     );
-        // $validator = Validator::make(Input::all(), $rules);
-        // if ($validator->fails()) {
-        //     return Redirect::to('set/' . $id . '/edit')
-        //         ->withErrors($validator)
-        //         ->withInput(Input::except('password'));
-        // } else {
-            // store
+
     $set->genre = $request->input('genre');
     $set->year = $request->input('year');
     $set->brand = $request->input('brand');
     $set->count = $request->input('count');
     $set->save();
-
-            // Session::flash('message', 'Successfully updated nerd!');
-            // return Redirect::to('set');
-        // }
-
   }
 
   /**
@@ -149,8 +120,5 @@ class SetController extends Controller
   public function destroy(Set $set)
   {
     $set->delete();
-
-       //  Session::flash('message', 'Successfully deleted the set!');
-       // return Redirect::to('set');
   }
 }

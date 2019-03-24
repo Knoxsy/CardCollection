@@ -185,7 +185,7 @@
                     <div id="{{$set->id}}" class="{{$set->genre}}">
                       <li>
                         <a href="{{route('showset', $set->id)}}">
-                          {{$set->year}} {{$set->brand}} {{$set->type}}
+                          {{$set->year}} {{$set->brand}}
                         </a>
                       </li>
                     </div>
@@ -203,7 +203,7 @@
                   <div id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
                       <a href="{{route('showset', $set->id)}}">
-                        {{$set->year}} {{$set->brand}} {{$set->type}}
+                        {{$set->year}} {{$set->brand}}
                       </a>
                     </li>
                   </div>
