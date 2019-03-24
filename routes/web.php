@@ -32,7 +32,7 @@ Route::get('/set', 'SetController@index');
 Route::get('/set/{set}', 'SetController@show')->name("showset");
 
 Route::get('/mycards', 'MyCardController@index');
-
+Route::get('/search', 'SearchController@filter')->name("search");
 // Route::get('/tag', 'TagController@index');
 
 

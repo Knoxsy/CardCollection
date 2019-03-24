@@ -21,8 +21,10 @@
   <body>
 
     @include('partials.navbar')
+    @include('partials.flash')
     <div class="container">
-      @yield('content')
+        @yield('content')
+      </div>
     </div>
 
   </body>
