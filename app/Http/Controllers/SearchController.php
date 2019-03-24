@@ -13,9 +13,7 @@ class SearchController extends Controller
   public function filter(Request $request)
   {
     // Search for a card based on their name.
-    $data['result'] = Card::where('name', 'LIKE', '%' . $request->input('sample') . '%')->get();
-    Log::debug($data['result']);
-
+    $data['results'] = Card::with('set')->where('name', 'LIKE', '%' . $request->input('sample') . '%')->get();
 
   // Continue for all of the filters.
 

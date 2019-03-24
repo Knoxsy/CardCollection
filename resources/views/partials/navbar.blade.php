@@ -11,7 +11,7 @@
       @auth
       <ul>
         <div>
-          <p class="logIn1">
+          <p class="logIn">
           {{ Auth::user()->name }}
             <a href="{{ route('logout') }}">
               <button class="mdl-button mdl-js-button mdl-button--raised
@@ -60,7 +60,7 @@
         <div class="mdl-textfield__expandable-holder mdl-color--amber-50">
           <form action="{{ route('search') }}">
             <input class="mdl-textfield__input" type="text" style="color:black" name="sample" id="fixed-header-drawer-exp" />
-            <Input type="submit" />
+            <!-- <Input type="submit" /> -->
           </form>
         </div>
       </div>
