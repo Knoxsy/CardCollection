@@ -33,7 +33,7 @@
               if($mycard->card_id == $card->id){
                 echo "<tr>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
-                    <input type='checkbox' class='check checkbox' name='select[]' value='.$card->id.' checked/>
+                    <input type='checkbox' class='check checkbox' name='check[]' value='.$card->id.' checked/>
                   </td>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
                     $card->card_number$card->card_number_append
@@ -82,6 +82,10 @@
 </form>
 </div>
 
+<!-- <div>
+  <button type="submit" name="multiple_update" value="Update">Submit</button>
+</div> -->
+
 @foreach ($cards as $card)
 <div id="{{$card->id}}" class="tabcontent">
   <div class="card_container">
@@ -113,25 +117,24 @@ function openCard(evt, id) {
   // //CLICKING ON THE CHECKBOX ADDS CLICKED CARDS TO THE DATABASE
   // $('input:checkbox').click( function() {
   //   clicked = $(this).attr('checked');
-  //   $userid = $_POST['userid'];
-  //   $cardid = $_POST['cardid'];
   //   if (clicked) {
   //     $.ajax({
-  //       data: {
-  //
-  //       },
-  //       type: "POST",
   //       url: "add_mycard.php",
+  //       method: "POST",
+  //       data: {
+  //         //not sure wat goes here
+  //       },
   //       success: function(data){
   //         alert("Cards added to your collection.");
   //       }
   //     }
   //   } else {
   //     $.ajax({
-  //       data: {
-  //       },
-  //       type: "POST",
   //       url: "remove_mycard.php",
+  //       method: "POST",
+  //       data: {
+  //         //not sure wat goes here
+  //       },
   //       success: function(data){
   //         alert("Cards removed from your collection.");
   //       }
@@ -176,6 +179,17 @@ $(document).ready(function() {
   });
 });
 
+//MAKES THE CARDS STICKY
+window.onscroll = function() {myFunction()};
+var tabcontent = document.getElementById("tabcontent");
+var sticky = tabcontent.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 </script>
 
