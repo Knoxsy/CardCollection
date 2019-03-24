@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Set;
 use App\MyCard;
@@ -71,6 +72,9 @@ class SetController extends Controller
       $data['user'] = $user;
       $data['set'] = $set; //This shows only the set info
       $data['cards'] = $set->cards()->orderBy('card_number')->get(); //Shows cards in the sets
+      // QUERY FOR RETRIEVING USER CARDS!
+      //SELECT * FROM cards INNER JOIN my_cards ON cards.id = my_cards.card_id WHERE my_cards.user_id = 1;
+      $data['mycards'] = DB::table('cards')->join('my_cards', 'cards.id', '=', 'my_cards.card_id')->where('my_cards.user_id','=',$user->id)->where('cards.set_id','=', $set->id)->get();
     } else {
       $data['set'] = $set; //This shows only the set info
       $data['cards'] = $set->cards()->orderBy('card_number')->get();
