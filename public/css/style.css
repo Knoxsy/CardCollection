@@ -341,11 +341,14 @@ thead {
   font-size: 20px;
 }
 
-.check {
+/* .check {
   pointer-events: none;
-}
+} */
 
 .tabcontent {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
   float: left;
   width: 40%;
   display: none;
