@@ -365,6 +365,12 @@ thead {
   width: 250px;
 }
 
+.card_container2 {
+  /* position: relative; */
+  margin-left: 25%;
+  width: 850px;
+}
+
 .theCard {
     border: 2px solid black;
     border-radius: 2%;
@@ -373,6 +379,11 @@ thead {
 h5 {
   text-align: center;
   font-family: 'Graduate', cursive;
+}
+h6 {
+  text-align: center;
+  font-family: 'Graduate', cursive;
+  font-size: 50px;
 }
 
 /* .backgroundForCard {
@@ -487,13 +498,13 @@ hr {
 .inTheCenter {
   float:none;
 }
-
+*/
 .logIn {
  color: #B07F67;
  font-family: Graduate;
- font-size: 15px;
+ font-size: 18px;
 }
-
+/*
 .haveOnSet {
   text-align: left;
 }
