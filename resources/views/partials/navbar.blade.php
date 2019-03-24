@@ -58,9 +58,10 @@
           <i class="material-icons">search</i>
         </label>
         <div class="mdl-textfield__expandable-holder mdl-color--amber-50">
-          <a href="{{ route('search') }}">
+
           <input class="mdl-textfield__input" type="text" style="color:black "name="sample"
             id="fixed-header-drawer-exp" />
+            <a href="{{ route('search') }}">
           </a>
         </div>
       </div>

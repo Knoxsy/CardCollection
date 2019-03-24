@@ -1,17 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Card;
+use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class SearchController extends Controller
 {
   public function filter(Request $request, Card $card)
   {
-    // Search for a user based on their name.
+    // Search for a card based on their name.
 
       return $card->where('name', $request->input('name'))->get();
-  
+
 
 
   // Continue for all of the filters.

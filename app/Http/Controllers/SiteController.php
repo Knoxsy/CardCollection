@@ -59,7 +59,8 @@ class SiteController extends Controller
       }
       return view('profile', $data);
     } else {
-      return redirect('login')->with( 'auth','Unauthorized Page! You Must login to view collections.');
+      session()->flash ('message', 'Unauthorized Page! You Must login to view collections.');
+      return redirect('login');
     }
   }
 }
