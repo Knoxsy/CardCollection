@@ -63,9 +63,9 @@
   <h5>Baseball Sets</h5>
   <hr />
   @foreach($sets->where('genre','Baseball') as $set)
-  <div id="{{$set->id}}" class="{{$set->genre}}">
+  <div id="{{$set->set_id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
@@ -74,12 +74,12 @@
 </div>
 
 <div class="showsets" id="basketball">
-  <hr />
   <h5>Basketball Sets</h5>
+  <hr />
   @foreach($sets->where('genre','Basketball') as $set)
-  <div id="{{$set->id}}" class="{{$set->genre}}">
+  <div id="{{$set->set_id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
@@ -93,7 +93,7 @@
   @foreach($sets->where('genre','Basketball') as $set)
   <div id="{{$set->id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
@@ -107,7 +107,7 @@
   @foreach($sets->where('genre','Misc') as $set)
   <div id="{{$set->id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
@@ -121,7 +121,7 @@
   @foreach($sets->where('genre','Non-Sports') as $set)
   <div id="{{$set->id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
@@ -135,7 +135,7 @@
   @foreach($sets->where('genre','Gaming') as $set)
   <div id="{{$set->id}}" class="{{$set->genre}}">
     <li>
-      <a href="{{route('showset', $set->id)}}">
+      <a href="{{route('showset', $set->set_id)}}">
         {{$set->year}} {{$set->brand}}
       </a>
     </li>
