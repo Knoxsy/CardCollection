@@ -99,7 +99,6 @@
 
 
 <script>
-
   //HOVER - SHOW CARD FUNCTION
   function openCard(evt, id) {
     var i, tabcontent, tablinks;
@@ -193,6 +192,7 @@
 
   //MAKES THE CARDS STICKY
   window.onscroll = function() {myFunction()};
+
   var tabcontent = document.getElementById("tabcontent");
   var sticky = tabcontent.offsetTop;
   function myFunction() {

@@ -96,6 +96,10 @@
     <div class="dataBlock">
       <script>
 
+      setTimeout(function(){
+        $('#Baseball').trigger('click');
+      }, 500);
+
       $('.category_button').click(function(){
         var current_category = $(this).attr('id');
 

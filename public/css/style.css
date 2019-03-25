@@ -350,19 +350,48 @@ thead {
 } */
 
 .tabcontent {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  position: fixed; /* ATTENTION */
+  top: 226px; /* ATTENTION */
+  right: -50px; /* ATTENTION */
   float: left;
   width: 40%;
   display: none;
   margin-right: 10%;
 }
 
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.search_container { /*ATTENTION!!!*/
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_container img { /*ATTENTION!!!*/
+  width:100%;
+  height:auto;
+}
+
+.search_container div { /*ATTENTION!!!*/
+  width: 18%;
+  padding: 30px;
+}
+
 .card_container {
   position: relative;
   margin-left: 25%;
-  width: 250px;
+  width: 80%; /* ATTENTION!!!! */
+}
+
+.card_container img {
+  width: 100%; /* ATTENTION!!!! */
+  height: 100%; /* ATTENTION!!!! */
 }
 
 .card_container2 {
