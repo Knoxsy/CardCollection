@@ -22,37 +22,37 @@
         <tr>
           <td class="tablinks" id="Baseball" onmouseover="openCard(event, 'baseball')">Baseball Cards</td>
           <td class="tablinks" id="Baseball" onmouseover="openCard(event, 'baseball')">{{$cards->where('genre', 'Baseball')->count()}}</td>
-          <td class="tablinks" id="Baseball" onmouseover="openCard(event, 'baseball')">{{$sets->where('genre','Baseball')->count()}}</td>
+          <td class="tablinks" id="Baseball" onmouseover="openCard(event, 'baseball')">{{$sets->where('genre','Baseball')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tablinks" id="Basketball" onmouseover="openCard(event, 'basketball')">Basketball Cards</td>
           <td class="tablinks" id="Basketball" onmouseover="openCard(event, 'basketball')">{{$cards->where('genre', 'Basketball')->count()}}</td>
-          <td class="tablinks" id="Basketball" onmouseover="openCard(event, 'basketball')">{{$sets->where('genre', 'Basketball')->count()}}</td>
+          <td class="tablinks" id="Basketball" onmouseover="openCard(event, 'basketball')">{{$sets->where('genre', 'Basketball')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tablinks" id="Football" onmouseover="openCard(event, 'football')">Football Cards</td>
           <td class="tablinks" id="Football" onmouseover="openCard(event, 'football')">{{$cards->where('genre', 'Football')->count()}}</td>
-          <td class="tablinks" id="Football" onmouseover="openCard(event, 'football')">{{$sets->where('genre', 'Football')->count()}}</td>
+          <td class="tablinks" id="Football" onmouseover="openCard(event, 'football')">{{$sets->where('genre', 'Football')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tablinks" id="MiscSports" onmouseover="openCard(event, 'miscsports')">Misc. Sports Cards</td>
           <td class="tablinks" id="MiscSports" onmouseover="openCard(event, 'miscsports')">{{$cards->where('genre', 'Misc')->count()}}</td>
-          <td class="tablinks" id="MiscSports" onmouseover="openCard(event, 'miscsports')">{{$sets->where('genre', 'Misc')->count()}}</td>
+          <td class="tablinks" id="MiscSports" onmouseover="openCard(event, 'miscsports')">{{$sets->where('genre', 'Misc')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tablinks" id="Nonsports" onmouseover="openCard(event, 'nonsports')">Non-Sports Cards</td>
           <td class="tablinks" id="Nonsports" onmouseover="openCard(event, 'nonsports')">{{$cards->where('genre', 'Non-Sports')->count()}}</td>
-          <td class="tablinks" id="Nonsports" onmouseover="openCard(event, 'nonsports')">{{$sets->where('genre', 'Non-Sports')->count()}}</td>
+          <td class="tablinks" id="Nonsports" onmouseover="openCard(event, 'nonsports')">{{$sets->where('genre', 'Non-Sports')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tablinks" id="Gaming" onmouseover="openCard(event, 'gaming')">Gaming Cards</td>
           <td class="tablinks" id="Gaming" onmouseover="openCard(event, 'gaming')">{{$cards->where('genre', 'Gaming')->count()}}</td>
-          <td class="tablinks" id="Gaming" onmouseover="openCard(event, 'gaming')">{{$sets->where('genre', 'Gaming')->count()}}</td>
+          <td class="tablinks" id="Gaming" onmouseover="openCard(event, 'gaming')">{{$sets->where('genre', 'Gaming')->unique('set_id')->count()}}</td>
         </tr>
         <tr>
           <td class="tableHeading">Total Collection</td>
           <td class="tableHeading">{{$mycards->count()}}</td>
-          <td class="tableHeading">{{$sets->count()}}</td>
+          <td class="tableHeading">{{$sets->unique('set_id')->count()}}</td>
         </tr>
       </table>
     </div>
