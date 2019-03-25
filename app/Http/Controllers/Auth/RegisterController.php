@@ -28,7 +28,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/profile';
+
 
     /**
      * Create a new controller instance.
@@ -67,6 +69,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            session()->flash ('message', 'You are now registered and logged in'),
+            session()->flash('type', 'success'),
         ]);
     }
 }

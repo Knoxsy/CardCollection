@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,8 +21,10 @@
   <body>
 
     @include('partials.navbar')
+    @include('partials.flash')
     <div class="container">
-      @yield('content')
+        @yield('content')
+      </div>
     </div>
 
   </body>

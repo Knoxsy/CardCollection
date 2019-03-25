@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,8 +27,18 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+    protected $redirectTo = 'profile';
 
+    protected function authenticated(Request $request)
+    {
+    if (Auth::check() ) {
+      session()->flash ('message', 'You are now logged in');
+      session()->flash('type', 'success');
+        return redirect('/profile');
+    }
+
+     return redirect('/login');
+    }
     /**
      * Create a new controller instance.
      *

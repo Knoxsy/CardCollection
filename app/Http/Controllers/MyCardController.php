@@ -45,10 +45,9 @@ class MyCardController extends Controller
     );
 
     $mycard = new MyCard;
-    $mycard['user'] = Auth::user()->id;
-    $mycard->user_id = $request->input('user');
+    $mycard->user_id = Auth::user()->id;
     $mycard->card_id = $request->input('card_id');
-    $mycard->condition = $request->input('condition');
+    $mycard->condition = 'none';
     $mycard->save();
 
     return $mycard;
@@ -100,36 +99,29 @@ class MyCardController extends Controller
   //         ->withErrors($validator)
   //         ->withInput(Input::except('password'));
   // } else {
-      // store
+
     $mycard->update($request->all());
       // $mycard->user_id = $request->input('user_id');
       // $mycard->card_id = $request->input('card_id');
-      // $mycard->condition = $request->input('condition');
       // $mycard->save();
 
     return $mycard;
 
-
-      // // redirect
-      //     Session::flash('message', 'Successfully updated mycard!');
-      //     return Redirect::to('mycards');
-      // }
   }
 
-    /**
+    /**  DELETE MYCARD
      * Remove the specified resource from storage.
      *
      * @param  \App\MyCard  $myCard
      * @return \Illuminate\Http\Response
      */
-  public function destroy(MyCard $mycard)
+  public function destroy(Request $request)
   {
-      // delete
-      // $mycard = MyCard::find($id);
-    $mycard->delete();
 
-      // redirect
-      // Session::flash('message', 'Successfully deleted the mycard!');
-      // return Redirect::to('mycards');
+    $request->card_id;
+    Auth::user()->mycards()->where("card_id", "=", $request->card_id)->delete();
+
+    return ['message' => 'success'];
+
   }
 }

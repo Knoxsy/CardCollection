@@ -43,16 +43,6 @@ class CardController extends Controller
       'set_id' => 'required',
     );
 
-    //  TODO  NEED TO WORK ON VALIDATION
-
-    //    $validator = Validator::make(Input::all(), $rules);
-    //
-    //     //process the login
-    //     if($validator->fails()) {
-    //       return Redirect::to('cards/create')
-    //         ->withErrors($validator)
-    //         ->withInput(Input::except('password'));
-    // } else {
         // store
     $card = new Card;
     $card->name = $request->input('name');
@@ -63,15 +53,7 @@ class CardController extends Controller
     $card->save();
 
     return $card;
-
-        // redirect
-            // Session::flash('message', 'Successfully created card!');
-            // return Redirect::to('card');
-      //}
   }
-
-
-
 
   /**  SHOW METHOD - Display the specified resource.
    *
@@ -84,11 +66,6 @@ class CardController extends Controller
     $card = Card::find($id);
     return view('resource.card.item')->with('card', $card);
   }
-
-
-
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -101,7 +78,6 @@ class CardController extends Controller
     // show the edit form and pass the card
     return View::make('card.update')->with('card', $card);
   }
-
     /**
      * Update the specified resource in storage.
      *
@@ -115,15 +91,7 @@ class CardController extends Controller
       'name'  => 'required',
       'card_number' => 'required',
     );
-  //     $validator = Validator::make(Input::all(), $rules);
-  //
-  //     //process the login
-  //     if($validator->fails()) {
-  //       return Redirect::to('cards/' . $id . '/edit')
-  //         ->withErrors($validator)
-  //         ->withInput(Input::except('password'));
-  // } else {
-      // store
+    //store
 
     $card->name = $request->input('name');
     $card->card_number = $request->input('card_number');
@@ -133,14 +101,7 @@ class CardController extends Controller
     $card->save();
 
     return $card;
-
-      // // redirect
-      //     Session::flash('message', 'Successfully updated card!');
-      //     return Redirect::to('cards');
-      // }
   }
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -151,10 +112,5 @@ class CardController extends Controller
    //  {
    //    // delete
    //    $card->delete();
-   //
-   //    return 'Card deleted';
-   //    // redirect
-   //  //   Session::flash('message', 'Successfully deleted the card!');
-   //  //   return Redirect::to('cards');
-   // }
+  
 }

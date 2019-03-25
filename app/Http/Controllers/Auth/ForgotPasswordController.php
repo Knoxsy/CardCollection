@@ -27,6 +27,16 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest');
+
+
+    }
+    public function redirectPath()
+    {
+      session()->flash ('message', 'Password has been reset2');
+      session()->flash('type', 'success');
+      return redirect('/login');
+
     }
 }
