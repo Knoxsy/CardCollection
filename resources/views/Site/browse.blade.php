@@ -112,7 +112,6 @@
 
           year_heading.show().children('div').each(function(){
             // then, looping through records within the year heading
-            console.log($(this).attr('class'));
 
             if($(this).attr('class') == current_category){
               $(this).slideDown();
@@ -123,11 +122,7 @@
 
           var relevant_children = year_heading.children(`.${current_category}:visible`)
 
-          console.log('Which year?', year_heading);
-          console.log('How many are visible?', relevant_children.length);
-
           if(relevant_children.length == 0) {
-            console.log('EMPTY YEAR', year_heading);
             year_heading.hide();
           }else{
             year_heading.show();
@@ -151,22 +146,17 @@
           }
         });
 
-        var relevant_children = brand_heading.children(`.${current_category}:visible`)
+        var relevant_brandchildren = brand_heading.children(`.${current_category}:visible`)
 
-        console.log('Which year?', year_heading);
-        console.log('How many are visible?', relevant_children.length);
-
-        if(relevant_children.length == 0) {
-          console.log('EMPTY BRAND', brand_heading);
+        if(relevant_brandchildren.length == 0) {
           brand_heading.hide();
         }else{
           brand_heading.show();
         }
         console.groupEnd();
+
       });
     });
-
-
 
       </script>
 
@@ -203,9 +193,10 @@
             <div id="brand_list" class="brand dataBlockFont" type ="hidden"
             style="display:none">
               @foreach($brands as $brand)
+              <div id="brand_{{$brand}}">
                 <h6 class="dataBlockFont">{{$brand}}</h6>
                 @foreach($sets->where('brand', $brand) as $set)
-                  <div class="linkPadding" id="{{$set->id}}" class="{{$set->genre}}">
+                  <div  id="{{$set->id}}" class="{{$set->genre}}">
                     <li>
                       <a href="{{route('showset', $set->id)}}">
                         {{$set->year}} {{$set->brand}}
@@ -213,6 +204,7 @@
                     </li>
                   </div>
                 @endforeach
+              </div>
               @endforeach
             </div>
           </div>
@@ -220,4 +212,5 @@
       </div>
     </div>
   </div>
+</div>
   @endsection
