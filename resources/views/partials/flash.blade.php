@@ -2,11 +2,11 @@
 .flash_fadeout{
   color: #282E03;
   background-color:#95B067;
-  font-size: 20px;
+  font-size: 40px;
   text-align: center;
 }
 </style>
-
+<br>
 @if($message = session('message'))
     <div class="flash_fadeout">{!! $message !!}</div>
 @endif
