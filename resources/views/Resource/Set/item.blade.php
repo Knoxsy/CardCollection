@@ -46,6 +46,7 @@
                   break;
                 }
               }
+              $matched = false;
               if (!$matched) {
                 echo "<tr>
                   <td class='tablinks' onmouseover='openCard(event, ".$card->id.")'>
