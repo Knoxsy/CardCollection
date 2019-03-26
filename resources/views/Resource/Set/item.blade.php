@@ -15,7 +15,7 @@
       <thead>
         @auth
         <th width="50px">Have<br />
-          <input type="checkbox" id="select_all"/>
+          <!-- <input type="checkbox" id="select_all"/> -->
         </th>
         @else
 
