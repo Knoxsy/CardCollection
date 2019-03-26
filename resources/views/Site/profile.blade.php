@@ -78,7 +78,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Baseball') as $set){
+  foreach($sets->where('genre','Baseball')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand.$set->type, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
@@ -99,7 +99,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Basketball') as $set){
+  foreach($sets->where('genre','Basketball')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
@@ -120,7 +120,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Football') as $set){
+  foreach($sets->where('genre','Football')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
@@ -141,7 +141,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Misc') as $set){
+  foreach($sets->where('genre','Misc')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
@@ -162,7 +162,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Non-Sports') as $set){
+  foreach($sets->where('genre','Non-Sports')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
@@ -183,7 +183,7 @@
   <hr />
   @php
   $set_name = array();
-  foreach($sets->where('genre','Gaming') as $set){
+  foreach($sets->where('genre','Gaming')->unique('set_id') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
       $set_name[]= $set->year.$set->brand.$set->type;
       echo '
