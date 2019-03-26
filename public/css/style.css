@@ -247,6 +247,7 @@ h3 {
 .dataBlockFont {
   font-family: 'Graduate', cursive;
   font-size: 20px;
+  text-align: left;
 }
 
 .dataBlockPadding {

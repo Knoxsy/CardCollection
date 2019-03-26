@@ -79,13 +79,13 @@
   @php
   $set_name = array();
   foreach($sets->where('genre','Baseball') as $set){
-    if(!in_array($set->year.$set->brand, $set_name)){
+    if(!in_array($set->year.$set->brand.$set->type, $set_name)){
       $set_name[]= $set->year.$set->brand;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand .' ' .$set->type.'
             </a>
           </li>
         </div>';
@@ -106,7 +106,7 @@
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand . ' '.$set->type.'
             </a>
           </li>
         </div>';
