@@ -80,7 +80,7 @@
   $set_name = array();
   foreach($sets->where('genre','Baseball') as $set){
     if(!in_array($set->year.$set->brand.$set->type, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
@@ -101,7 +101,7 @@
   $set_name = array();
   foreach($sets->where('genre','Basketball') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
@@ -122,12 +122,12 @@
   $set_name = array();
   foreach($sets->where('genre','Football') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand . ' '.$set->type.'
             </a>
           </li>
         </div>';
@@ -143,12 +143,12 @@
   $set_name = array();
   foreach($sets->where('genre','Misc') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand . ' '.$set->type.'
             </a>
           </li>
         </div>';
@@ -164,12 +164,12 @@
   $set_name = array();
   foreach($sets->where('genre','Non-Sports') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand . ' '.$set->type.'
             </a>
           </li>
         </div>';
@@ -185,12 +185,12 @@
   $set_name = array();
   foreach($sets->where('genre','Gaming') as $set){
     if(!in_array($set->year.$set->brand, $set_name)){
-      $set_name[]= $set->year.$set->brand;
+      $set_name[]= $set->year.$set->brand.$set->type;
       echo '
         <div id="{{$set->set_id}}" class="{{$set->genre}}">
           <li>
             <a href="'.route('showset', $set->set_id).'">
-              ' . $set->year .' ' . $set->brand . '
+              ' . $set->year .' ' . $set->brand . ' '.$set->type.'
             </a>
           </li>
         </div>';
