@@ -203,7 +203,7 @@
   <div class="showsets" id="gaming">
     <h5>Gaming Sets</h5>
     <hr />
-    @foreach($sets->where('genre','Gaming') as $set)
+    @foreach($sets->where('genre','Gaming')->unique('set_id') as $set)
     <div class="textPadding" id="{{$set->id}}" class="{{$set->genre}}">
       <li>
         <a href="{{route('showset', $set->set_id)}}">
